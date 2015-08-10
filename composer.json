@@ -7,13 +7,19 @@
         "clearbooks/labs": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.1@dev"
+        "phpunit/phpunit": "^4.8"
     },
     "license": "LGPL-v3",
     "authors": [
         {
             "name": "Crimson Ducks",
             "email": "support@clearbooks.co.uk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/clearbooks/labs"
         }
     ],
     "minimum-stability": "dev"
