@@ -22,5 +22,15 @@
             "url": "https://github.com/clearbooks/labs"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Clearbooks\\LabsApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Clearbooks\\LabsApi\\": "tests/"
+        }
+    },
     "minimum-stability": "dev"
 }
