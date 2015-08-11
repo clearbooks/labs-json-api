@@ -12,7 +12,7 @@ class GetReleaseTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->ctrl = new GetRelease( new GetPublicRelease( new DummyReleaseGateway, new DateTime ) );
+        $this->ctrl = new GetRelease;
     }
 
     private function get()
