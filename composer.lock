@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a3f726d94a25f4d7ca17a65aa7236023",
+    "hash": "6a438d37a2502afcb0181ca1f16fe4e6",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "a98be207dceee2dc7e2fe664882960d48b6064c4"
+                "reference": "ab6fe76ae9388a9945d7797e5e11c96b263b6ca3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/a98be207dceee2dc7e2fe664882960d48b6064c4",
-                "reference": "a98be207dceee2dc7e2fe664882960d48b6064c4",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/ab6fe76ae9388a9945d7797e5e11c96b263b6ca3",
+                "reference": "ab6fe76ae9388a9945d7797e5e11c96b263b6ca3",
                 "shasum": ""
             },
             "require-dev": {
@@ -46,10 +46,176 @@
             ],
             "description": "Sensible releases",
             "support": {
-                "source": "https://github.com/clearbooks/labs/tree/LABS-15",
+                "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-08-05 15:14:00"
+            "time": "2015-08-10 14:56:57"
+        },
+        {
+            "name": "container-interop/container-interop",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/container-interop.git",
+                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/fc08354828f8fd3245f77a66b9e23a6bca48297e",
+                "reference": "fc08354828f8fd3245f77a66b9e23a6bca48297e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/Interop/Container/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+            "time": "2014-12-30 15:22:37"
+        },
+        {
+            "name": "php-di/invoker",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-DI/Invoker.git",
+                "reference": "7ea703c62dbb29d64763fa85258826034ce3c97d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/7ea703c62dbb29d64763fa85258826034ce3c97d",
+                "reference": "7ea703c62dbb29d64763fa85258826034ce3c97d",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "~1.1"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1.8",
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Invoker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Generic and extensible callable invoker",
+            "homepage": "https://github.com/PHP-DI/Invoker",
+            "keywords": [
+                "callable",
+                "dependency",
+                "dependency-injection",
+                "injection",
+                "invoke",
+                "invoker"
+            ],
+            "time": "2015-04-24 10:18:34"
+        },
+        {
+            "name": "php-di/php-di",
+            "version": "5.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-DI/PHP-DI.git",
+                "reference": "927b36f37201a754ee86957de43d4784336803fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/927b36f37201a754ee86957de43d4784336803fe",
+                "reference": "927b36f37201a754ee86957de43d4784336803fe",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "~1.0",
+                "php": ">=5.4.0",
+                "php-di/invoker": "~1.0",
+                "php-di/phpdoc-reader": "~2.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "~1.2",
+                "doctrine/cache": "~1.0",
+                "mnapoli/phpunit-easymock": "~0.1.4",
+                "ocramius/proxy-manager": "~1.0",
+                "phpunit/phpunit": "~4.5"
+            },
+            "suggest": {
+                "doctrine/annotations": "Install it if you want to use annotations (version ~1.2)",
+                "doctrine/cache": "Install it if you want to use the cache (version ~1.0)",
+                "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~1.0)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DI\\": "src/DI/"
+                },
+                "files": [
+                    "src/DI/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The dependency injection container for humans",
+            "homepage": "http://php-di.org/",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "di"
+            ],
+            "time": "2015-06-04 11:55:24"
+        },
+        {
+            "name": "php-di/phpdoc-reader",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHP-DI/PhpDocReader.git",
+                "reference": "21dce5e29f640d655e7b4583ecfb7d166127a5da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHP-DI/PhpDocReader/zipball/21dce5e29f640d655e7b4583ecfb7d166127a5da",
+                "reference": "21dce5e29f640d655e7b4583ecfb7d166127a5da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpDocReader\\": "src/PhpDocReader"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PhpDocReader parses @var and @param values in PHP docblocks (supports namespaced class names with the same resolution rules as PHP)",
+            "keywords": [
+                "phpdoc",
+                "reflection"
+            ],
+            "time": "2015-06-01 14:23:20"
         },
         {
             "name": "pimple/pimple",
@@ -541,6 +707,43 @@
                 "url"
             ],
             "time": "2015-08-05 15:58:16"
+        },
+        {
+            "name": "tomverran/di-container-mock",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tomverran/di-container-mock.git",
+                "reference": "fa47a598391790a0b03d0853cb6f3c0ed5e4ef4b"
+            },
+            "require": {
+                "container-interop/container-interop": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TomVerran\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Verran",
+                    "homepage": "https://carefulcoder.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A mock container-interop container",
+            "homepage": "https://carefulcoder.co.uk",
+            "keywords": [
+                "Container",
+                "DI",
+                "IoC"
+            ],
+            "time": "2015-02-08 19:57:27"
         }
     ],
     "packages-dev": [

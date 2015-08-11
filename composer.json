@@ -4,7 +4,9 @@
     "type": "project",
     "require": {
         "silex/silex": "1.3",
-        "clearbooks/labs": "dev-master"
+        "clearbooks/labs": "dev-master",
+        "tomverran/di-container-mock": "*",
+        "php-di/php-di": "^5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8"
@@ -20,6 +22,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/clearbooks/labs"
+        },
+        {
+            "type": "composer",
+            "url": "https://carefulcoder.co.uk/composer"
         }
     ],
     "autoload": {
