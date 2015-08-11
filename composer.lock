@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "1712940cd20dcee227f2aca1d2d59f39",
+=======
+    "hash": "33b437bd165402985570d1a640de36d6",
+>>>>>>> master
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -878,43 +882,6 @@
                 "url"
             ],
             "time": "2015-08-05 15:58:16"
-        },
-        {
-            "name": "tomverran/di-container-mock",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:tomverran/di-container-mock.git",
-                "reference": "fa47a598391790a0b03d0853cb6f3c0ed5e4ef4b"
-            },
-            "require": {
-                "container-interop/container-interop": "~1.0",
-                "php": ">=5.5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TomVerran\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Verran",
-                    "homepage": "https://carefulcoder.co.uk",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A mock container-interop container",
-            "homepage": "https://carefulcoder.co.uk",
-            "keywords": [
-                "Container",
-                "DI",
-                "IoC"
-            ],
-            "time": "2015-02-08 19:57:27"
         },
         {
             "name": "zircote/swagger-php",
@@ -1929,6 +1896,43 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-08-01 06:48:35"
+        },
+        {
+            "name": "tomverran/di-container-mock",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tomverran/di-container-mock.git",
+                "reference": "fa47a598391790a0b03d0853cb6f3c0ed5e4ef4b"
+            },
+            "require": {
+                "container-interop/container-interop": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TomVerran\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Verran",
+                    "homepage": "https://carefulcoder.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A mock container-interop container",
+            "homepage": "https://carefulcoder.co.uk",
+            "keywords": [
+                "Container",
+                "DI",
+                "IoC"
+            ],
+            "time": "2015-02-08 19:57:27"
         }
     ],
     "aliases": [],
