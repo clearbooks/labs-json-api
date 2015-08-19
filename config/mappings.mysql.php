@@ -1,17 +1,21 @@
 <?php
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
+use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
-use Doctrine\DBAL\Driver\Connection;
+use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
+use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 
 return [
     ReleaseGateway::class => \DI\object( MysqlReleaseGateway::class ),
+    ReleaseToggleCollection::class => \DI\object( MysqlReleaseToggleCollectionGateway::class ),
+
     Connection::class => function() {
-        DriverManager::getConnection([
-            'dbname' => '{{ labs_db_name }}',
-            'user' => '{{ labs_db_user }}',
-            'password' => '{{ labs_db_pass }}',
-            'host' => '{{ labs_db_host }}',
+        return DriverManager::getConnection([
+            'dbname' => 'labs',
+            'user' => 'root',
+            'password' => '',
+            'host' => 'localhost',
             'driver' => 'pdo_mysql',
         ] );
     }

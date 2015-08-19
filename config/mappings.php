@@ -1,4 +1,4 @@
 <?php
 return [
-    DateTimeInterface::class => \DI\object( DateTime::class )
+    DateTimeInterface::class => new DateTime,
 ] + include "mappings.mysql.php";
