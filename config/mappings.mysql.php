@@ -12,10 +12,10 @@ return [
 
     Connection::class => function() {
         return DriverManager::getConnection([
-            'dbname' => 'labs',
-            'user' => 'root',
-            'password' => '',
-            'host' => 'localhost',
+            'dbname' => '{{ labs_db_name }}',
+            'user' => '{{ labs_db_user }}',
+            'password' => '{{ labs_db_pass }}',
+            'host' => '{{ labs_db_host }}',
             'driver' => 'pdo_mysql',
         ] );
     }

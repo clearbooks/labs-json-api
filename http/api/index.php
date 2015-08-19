@@ -14,6 +14,5 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
     return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
 });
 
-$app->get( 'release/list', GetRelease::class );
 $app->get( 'toggle/list', GetToggles::class );
 $app->run();
