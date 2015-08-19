@@ -1,20 +1,18 @@
 <?php
 namespace Clearbooks\LabsApi\Toggle;
+use Clearbooks\Labs\Release\Gateway\BrollyReleaseToggleCollection;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollectionMock;
 use Clearbooks\Labs\Release\GetReleaseToggles;
+use Clearbooks\Labs\Toggle\Entity\BrollyToggle;
+use Clearbooks\LabsApi\EndpointTest;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class GetTogglesTest
  * @package Clearbooks\LabsApi\Toggle
  */
-class GetTogglesTest extends \PHPUnit_Framework_TestCase
+class GetTogglesTest extends EndpointTest
 {
-    /**
-     * @var GetToggles
-     */
-    private $endpoint;
-
     /**
      * @var ReleaseToggleCollectionMock
      */
@@ -30,8 +28,8 @@ class GetTogglesTest extends \PHPUnit_Framework_TestCase
      */
     public function givenNoRelease_return400()
     {
-        $response = $this->endpoint->execute( new Request );
-        $this->assertEquals( 400, $response->getStatusCode() );
+        $this->executeWithQuery( [] );
+        $this->assertEquals( 400, $this->response->getStatusCode() );
     }
 
     /**
@@ -39,7 +37,21 @@ class GetTogglesTest extends \PHPUnit_Framework_TestCase
      */
     public function givenRelease_passThroughToGateway()
     {
-        $this->endpoint->execute( new Request( ['release' => 1] ) );
+        $this->executeWithQuery( ['release' => 1] );
         $this->assertEquals( 1, $this->collectionMock->releaseId );
+    }
+
+    /**
+     * @test
+     */
+    public function givenGatewayYieldingToggles_returnNameInJson()
+    {
+        $this->endpoint = new GetToggles( new GetReleaseToggles( new BrollyReleaseToggleCollection ) );
+        $this->executeWithQuery( ['release' => 1] );
+        $this->assertJsonResponse( [
+            [
+                'name' => BrollyToggle::NAME
+            ]
+        ] );
     }
 }
