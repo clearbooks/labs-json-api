@@ -1,8 +1,11 @@
 <?php
 use Clearbooks\LabsApi\Release\GetRelease;
-require_once "../../vendor/autoload.php";
+use Clearbooks\LabsApi\Toggle\GetToggles;
 
+require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
+$app['debug'] = true;
+
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
 
@@ -11,5 +14,5 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
     return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
 });
 
-$app->get( 'release/list', GetRelease::class );
+$app->get( 'toggle/list', GetToggles::class );
 $app->run();
