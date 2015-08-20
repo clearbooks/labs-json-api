@@ -1,5 +1,5 @@
 <?php
-use Clearbooks\LabsApi\Release\GetRelease;
+use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetToggles;
 
 require_once "../../vendor/autoload.php";
@@ -15,4 +15,5 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
 });
 
 $app->get( 'toggle/list', GetToggles::class );
+$app->get( 'public-releases/list', GetAllPublicReleases::class);
 $app->run();

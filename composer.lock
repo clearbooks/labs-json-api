@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "e211bf8fd61833f1e9663ae386ebb18bfa518f1f"
+                "reference": "34155c955b3010b51dd87bc905ef451c9b7b07cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/e211bf8fd61833f1e9663ae386ebb18bfa518f1f",
-                "reference": "e211bf8fd61833f1e9663ae386ebb18bfa518f1f",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/34155c955b3010b51dd87bc905ef451c9b7b07cc",
+                "reference": "34155c955b3010b51dd87bc905ef451c9b7b07cc",
                 "shasum": ""
             },
             "require-dev": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-08-19 15:02:34"
+            "time": "2015-08-20 08:26:15"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -1632,12 +1632,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc"
+                "reference": "a7df5a5b2d68fcf5ba36a223bde077157ef88fc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b7417edaf28059ea63d86be941e6004dbfcc0cc",
-                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a7df5a5b2d68fcf5ba36a223bde077157ef88fc7",
+                "reference": "a7df5a5b2d68fcf5ba36a223bde077157ef88fc7",
                 "shasum": ""
             },
             "require": {
@@ -1696,7 +1696,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-19 09:20:57"
+            "time": "2015-08-20 05:16:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
