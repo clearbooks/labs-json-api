@@ -31,6 +31,16 @@ class GetAllPublicReleasesTest extends EndpointTest
     }
 
     /**
+     * @return DateTime
+     */
+    private function getDateTenDaysIntoFuture()
+    {
+        $futureDate = new DateTime();
+        $futureDate->modify("+7 day");
+        return $futureDate;
+    }
+
+    /**
      * @test
      */
     public function givenGatewayWithOneVisibleRelease_WhenGettingReleases_GetVisibleRelease()
@@ -96,16 +106,6 @@ class GetAllPublicReleasesTest extends EndpointTest
                 'releaseInfoUrl' => 'B'
             ]]
         );
-    }
-
-    /**
-     * @return DateTime
-     */
-    private function getDateTenDaysIntoFuture()
-    {
-        $futureDate = new DateTime();
-        $futureDate->modify("+7 day");
-        return $futureDate;
     }
 
 }
