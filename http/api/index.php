@@ -2,6 +2,23 @@
 use Clearbooks\LabsApi\Release\GetRelease;
 require_once "../../vendor/autoload.php";
 
+/**
+ * Swagger api information
+ *
+ * @SWG\Info(
+ *  title="Labs json api",
+ *  description="An api for labs",
+ *  version="Early"
+ * )
+ */
+
+/**
+ * @SWG\Tag(
+ *  name="release",
+ *  description="Operations about releases"
+ * )
+ */
+
 $app = new \Silex\Application();
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
@@ -14,8 +31,4 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
 
 $app->get( 'release/list', GetRelease::class );
 
-// For the api-documentation
-$app->get( 'api-docs', function() {
-    return file_get_contents('api-docs/api-docs.html');
-});
 $app->run();
