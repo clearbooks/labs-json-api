@@ -1,6 +1,6 @@
 <?php
-use Clearbooks\LabsApi\Release\GetRelease;
 use Clearbooks\LabsApi\Toggle\GetToggles;
+use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
 
 require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
@@ -15,4 +15,5 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
 });
 
 $app->get( 'toggle/list', GetToggles::class );
+$app->get( 'toggle/get-user-toggles', GetUserTogglesForRelease::class);
 $app->run();

@@ -1,14 +1,17 @@
 <?php
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
+use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
+use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 
 return [
     ReleaseGateway::class => \DI\object( MysqlReleaseGateway::class ),
     ReleaseToggleCollection::class => \DI\object( MysqlReleaseToggleCollectionGateway::class ),
+    UserToggleGateway::class => \Di\object(MysqlUserToggleGateway::class),
 
     Connection::class => function() {
         return DriverManager::getConnection([
