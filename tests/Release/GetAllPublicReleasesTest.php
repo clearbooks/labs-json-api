@@ -54,9 +54,10 @@ class GetAllPublicReleasesTest extends EndpointTest
      */
     public function givenGatewayWithTwoVisibleReleases_WhenGettingReleases_GetBothReleases()
     {
+        $futureDate = $this->getDateTenDaysIntoFuture();
         $this->createCollectionMock([
             new Release('A', 'B', new DateTime('2010-01-01'), true),
-            new Release('C', 'D', new DateTime('2011-01-01'), true)
+            new Release('C', 'D', $futureDate, true)
         ]);
 
         $this->executeWithQuery([]);
@@ -69,11 +70,42 @@ class GetAllPublicReleasesTest extends EndpointTest
                 ],
                 [
                     'name' => 'C',
-                    'date' => '2011-01-01',
+                    'date' => $futureDate->format('Y-m-d'),
                     'releaseInfoUrl' => 'D'
                 ]
             ]
         );
+    }
+
+    /**
+     * @test
+     */
+    public function givenGatewayWithOneVisibleAndOneNonVisibleRelease_WhenGettingReleases_GetOnlyVisibleRelease()
+    {
+        $futureDate = $this->getDateTenDaysIntoFuture();
+        $this->createCollectionMock([
+            new Release('A', 'B', new DateTime('2010-01-01'), true),
+            new Release('C', 'D', $futureDate, false)
+        ]);
+
+        $this->executeWithQuery([]);
+        $this->assertJsonResponse(
+            [[
+                'name' => 'A',
+                'date' => '2010-01-01',
+                'releaseInfoUrl' => 'B'
+            ]]
+        );
+    }
+
+    /**
+     * @return DateTime
+     */
+    private function getDateTenDaysIntoFuture()
+    {
+        $futureDate = new DateTime();
+        $futureDate->modify("+7 day");
+        return $futureDate;
     }
 
 }
