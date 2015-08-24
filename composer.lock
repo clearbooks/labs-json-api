@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "e9e8582a6d270ad766cdabed8b40ffd6fbd2e41e"
+                "reference": "fa4eea39a62cbdf6340c160597b27cd58f9c62ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/e9e8582a6d270ad766cdabed8b40ffd6fbd2e41e",
-                "reference": "e9e8582a6d270ad766cdabed8b40ffd6fbd2e41e",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/fa4eea39a62cbdf6340c160597b27cd58f9c62ee",
+                "reference": "fa4eea39a62cbdf6340c160597b27cd58f9c62ee",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-08-19 14:53:06"
+            "time": "2015-08-24 07:56:03"
         },
         {
             "name": "container-interop/container-interop",
@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "e6ce720c140d144e2b2e2b14d36b887011e2a578"
+                "reference": "e60f2546284ffe903439b9c2a1380e71235cd97f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/e6ce720c140d144e2b2e2b14d36b887011e2a578",
-                "reference": "e6ce720c140d144e2b2e2b14d36b887011e2a578",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/e60f2546284ffe903439b9c2a1380e71235cd97f",
+                "reference": "e60f2546284ffe903439b9c2a1380e71235cd97f",
                 "shasum": ""
             },
             "require": {
@@ -957,7 +957,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-01 06:34:55"
+            "time": "2015-08-22 07:42:07"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1023,12 +1023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "caede1f3361223098395b955bdbf3fe59d58d3ba"
+                "reference": "004010c618252aca172f49b421baaa17a29423c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/caede1f3361223098395b955bdbf3fe59d58d3ba",
-                "reference": "caede1f3361223098395b955bdbf3fe59d58d3ba",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/004010c618252aca172f49b421baaa17a29423c0",
+                "reference": "004010c618252aca172f49b421baaa17a29423c0",
                 "shasum": ""
             },
             "require": {
@@ -1068,7 +1068,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-05 15:58:16"
+            "time": "2015-08-24 07:18:02"
         },
         {
             "name": "symfony/http-kernel",
@@ -1156,12 +1156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "b7c7ba4300592b5127318301d3d5aef537c05664"
+                "reference": "e9554bafc78c93b15ef56ce72c5aa2f3a511e683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/b7c7ba4300592b5127318301d3d5aef537c05664",
-                "reference": "b7c7ba4300592b5127318301d3d5aef537c05664",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/e9554bafc78c93b15ef56ce72c5aa2f3a511e683",
+                "reference": "e9554bafc78c93b15ef56ce72c5aa2f3a511e683",
                 "shasum": ""
             },
             "require": {
@@ -1219,7 +1219,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2015-08-05 15:58:16"
+            "time": "2015-08-24 07:31:10"
         }
     ],
     "packages-dev": [
@@ -1632,12 +1632,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a7df5a5b2d68fcf5ba36a223bde077157ef88fc7"
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a7df5a5b2d68fcf5ba36a223bde077157ef88fc7",
-                "reference": "a7df5a5b2d68fcf5ba36a223bde077157ef88fc7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2246830f4a1a551c67933e4171bf2126dc29d357",
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357",
                 "shasum": ""
             },
             "require": {
@@ -1696,7 +1696,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-20 05:16:08"
+            "time": "2015-08-24 04:09:38"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2132,12 +2132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "d067e47c2be88b62c3e50d1362d959efc46ffefc"
+                "reference": "737b5ca48a451f5e4ed542aae7ed1ab6996bd7eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/d067e47c2be88b62c3e50d1362d959efc46ffefc",
-                "reference": "d067e47c2be88b62c3e50d1362d959efc46ffefc",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/737b5ca48a451f5e4ed542aae7ed1ab6996bd7eb",
+                "reference": "737b5ca48a451f5e4ed542aae7ed1ab6996bd7eb",
                 "shasum": ""
             },
             "require": {
@@ -2173,7 +2173,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-01 06:48:35"
+            "time": "2015-08-24 07:21:16"
         },
         {
             "name": "tomverran/di-container-mock",
