@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4551d7bd3b6f636e933d81420d93f1f2",
+    "hash": "63bafcd22512f5305db4571cc3520041",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -1018,6 +1018,55 @@
             "time": "2015-06-24 15:32:32"
         },
         {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "9f0e31a1dd55f527c669b6de11bfedd950db7fe1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/9f0e31a1dd55f527c669b6de11bfedd950db7fe1",
+                "reference": "9f0e31a1dd55f527c669b6de11bfedd950db7fe1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-07-09 16:12:34"
+        },
+        {
             "name": "symfony/http-foundation",
             "version": "2.8.x-dev",
             "source": {
@@ -1076,12 +1125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "8480ac939c8f6441e3575badb2306b936e14184a"
+                "reference": "ff2f01120243be592c2d7547bdfdf87d27a7f85b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/8480ac939c8f6441e3575badb2306b936e14184a",
-                "reference": "8480ac939c8f6441e3575badb2306b936e14184a",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/ff2f01120243be592c2d7547bdfdf87d27a7f85b",
+                "reference": "ff2f01120243be592c2d7547bdfdf87d27a7f85b",
                 "shasum": ""
             },
             "require": {
@@ -1148,7 +1197,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-01 06:34:21"
+            "time": "2015-08-24 07:18:02"
         },
         {
             "name": "symfony/routing",
@@ -1220,6 +1269,103 @@
                 "url"
             ],
             "time": "2015-08-24 07:31:10"
+        },
+        {
+            "name": "tomverran/di-container-mock",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:tomverran/di-container-mock.git",
+                "reference": "fa47a598391790a0b03d0853cb6f3c0ed5e4ef4b"
+            },
+            "require": {
+                "container-interop/container-interop": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TomVerran\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Verran",
+                    "homepage": "https://carefulcoder.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A mock container-interop container",
+            "homepage": "https://carefulcoder.co.uk",
+            "keywords": [
+                "Container",
+                "DI",
+                "IoC"
+            ],
+            "time": "2015-02-08 19:57:27"
+        },
+        {
+            "name": "zircote/swagger-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zircote/swagger-php.git",
+                "reference": "79597cdb3ec898f1e2b50aaf52d0f93a9fd07c37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/79597cdb3ec898f1e2b50aaf52d0f93a9fd07c37",
+                "reference": "79597cdb3ec898f1e2b50aaf52d0f93a9fd07c37",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "*",
+                "php": ">=5.4.0",
+                "symfony/finder": "*"
+            },
+            "require-dev": {
+                "zendframework/zend-form": "*"
+            },
+            "bin": [
+                "bin/swagger"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Swagger\\": "src"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Allen",
+                    "email": "zircote@gmail.com",
+                    "homepage": "http://www.zircote.com"
+                },
+                {
+                    "name": "Bob Fanger",
+                    "email": "bfanger@gmail.com",
+                    "homepage": "http://bfanger.nl"
+                }
+            ],
+            "description": "Swagger-PHP - Generate interactive documentation for your RESTful API using phpdoc annotations",
+            "homepage": "https://github.com/zircote/swagger-php/",
+            "keywords": [
+                "api",
+                "json",
+                "rest",
+                "service discovery"
+            ],
+            "time": "2015-08-14 08:30:02"
         }
     ],
     "packages-dev": [
@@ -2174,49 +2320,13 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-08-24 07:21:16"
-        },
-        {
-            "name": "tomverran/di-container-mock",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:tomverran/di-container-mock.git",
-                "reference": "fa47a598391790a0b03d0853cb6f3c0ed5e4ef4b"
-            },
-            "require": {
-                "container-interop/container-interop": "~1.0",
-                "php": ">=5.5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TomVerran\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Verran",
-                    "homepage": "https://carefulcoder.co.uk",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A mock container-interop container",
-            "homepage": "https://carefulcoder.co.uk",
-            "keywords": [
-                "Container",
-                "DI",
-                "IoC"
-            ],
-            "time": "2015-02-08 19:57:27"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "clearbooks/labs": 20,
+        "zircote/swagger-php": 20,
         "clearbooks/labs-mysql": 20
     },
     "prefer-stable": false,
