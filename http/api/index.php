@@ -44,7 +44,7 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
  * )
  */
 $app->get( 'toggle/list', GetToggles::class );
-$app->get( 'toggle/is-active', GetIsToggleActive::class);r
+$app->get( 'toggle/is-active', GetIsToggleActive::class);
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
 
 $app->run();
