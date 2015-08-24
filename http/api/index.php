@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetToggles;
 
@@ -43,6 +44,7 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
  * )
  */
 $app->get( 'toggle/list', GetToggles::class );
+$app->get( 'toggle/is-active', GetIsToggleActive::class);
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
 
 $app->run();
