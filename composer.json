@@ -5,6 +5,8 @@
     "require": {
         "silex/silex": "1.3",
         "clearbooks/labs": "dev-master",
+        "tomverran/di-container-mock": "*",
+        "zircote/swagger-php": "dev-master",
         "clearbooks/labs-mysql": "dev-master",
         "php-di/php-di": "^5.0"
     },
