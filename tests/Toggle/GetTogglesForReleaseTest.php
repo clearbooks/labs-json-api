@@ -5,13 +5,12 @@ use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollectionMock;
 use Clearbooks\Labs\Release\GetReleaseToggles;
 use Clearbooks\Labs\Toggle\Entity\BrollyToggle;
 use Clearbooks\LabsApi\EndpointTest;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class GetTogglesTest
  * @package Clearbooks\LabsApi\Toggle
  */
-class GetTogglesTest extends EndpointTest
+class GetTogglesForReleaseTest extends EndpointTest
 {
     /**
      * @var ReleaseToggleCollectionMock
@@ -20,7 +19,7 @@ class GetTogglesTest extends EndpointTest
 
     public function setUp()
     {
-        $this->endpoint = new GetToggles( new GetReleaseToggles( $this->collectionMock = new ReleaseToggleCollectionMock() ) );
+        $this->endpoint = new GetTogglesForRelease( new GetReleaseToggles( $this->collectionMock = new ReleaseToggleCollectionMock() ) );
     }
 
     /**
@@ -46,7 +45,7 @@ class GetTogglesTest extends EndpointTest
      */
     public function givenGatewayYieldingToggles_returnNameInJson()
     {
-        $this->endpoint = new GetToggles( new GetReleaseToggles( new BrollyReleaseToggleCollection ) );
+        $this->endpoint = new GetTogglesForRelease( new GetReleaseToggles( new BrollyReleaseToggleCollection ) );
         $this->executeWithQuery( ['release' => 1] );
         $this->assertJsonResponse( [
             [
