@@ -13,16 +13,10 @@ use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
  *  description="An api for labs",
  *  version="Early"
  * )
- */
-
-/**
  * @SWG\Tag(
  *  name="toggles",
  *  description="Operations involving toggles"
  * )
- */
-
-/**
  * @SWG\Tag(
  *  name="releases",
  *  description="Operations involving releases"
@@ -39,6 +33,20 @@ $cb->addDefinitions( '../../config/mappings.php' );
 $app['resolver'] = $app->share(function () use ( $app, $cb ) {
     return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
 });
+
+/**
+ * @SWG\Get(
+ *  path="/public-releases/list",
+ *  summary="Get a list of the public releases",
+ *  produces={"application/json"},
+ *  tags={"releases"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="List of public releases"
+ *  )
+ * )
+ */
+$app->get( 'public-releases/list', GetAllPublicReleases::class);
 
 /**
  * @SWG\Get(
@@ -60,21 +68,6 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
  * )
  */
 $app->get( 'toggle/list', GetTogglesForRelease::class );
-
-/**
- * @SWG\Get(
- *  path="/public-releases/list",
- *  summary="Get a list of the public releases",
- *  produces={"application/json"},
- *  tags={"releases"},
- *  @SWG\Response(
- *   response=200,
- *   description="List of public releases"
- *  )
- * )
- */
-$app->get( 'toggle/get-user-toggles', GetUserTogglesForRelease::class);
-$app->get( 'public-releases/list', GetAllPublicReleases::class);
 
 /**
  * @SWG\Get(
@@ -100,6 +93,31 @@ $app->get( 'public-releases/list', GetAllPublicReleases::class);
  * )
  */
 $app->get( 'toggle/is-active', GetIsToggleActive::class);
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/user/list",
+ *  summary="Get all user toggles for a given release",
+ *  produces={"application/json"},
+ *  tags={"toggles", "releases"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of the toggle names for the specified release"
+ *  ),
+ *  @SWG\Response(
+ *   response=400,
+ *   description="You didn't specify a release ID"
+ *  ),
+ *  @SWG\Parameter(
+ *   name="release",
+ *   description="The release ID to get toggles for",
+ *   in="query",
+ *   required=true,
+ *   type="integer"
+ *  )
+ * )
+ */
+$app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
 
 /**
  * @SWG\Get(
