@@ -8,8 +8,6 @@ use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlActivatableToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
-use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
-use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGroupToggleGateway;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
