@@ -2,7 +2,7 @@
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
-use Clearbooks\LabsApi\Toggle\GetToggles;
+use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 
 /**
  * Swagger api information
@@ -16,8 +16,15 @@ use Clearbooks\LabsApi\Toggle\GetToggles;
 
 /**
  * @SWG\Tag(
- *  name="release",
- *  description="Operations about toggles"
+ *  name="toggles",
+ *  description="Operations involving toggles"
+ * )
+ */
+
+/**
+ * @SWG\Tag(
+ *  name="releases",
+ *  description="Operations involving releases"
  * )
  */
 require_once "../../vendor/autoload.php";
@@ -35,18 +42,82 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
 /**
  * @SWG\Get(
  *  path="/toggle/list",
- *  summary="Get a list of toggles",
+ *  summary="Get a list of toggles for a particular release",
  *  produces={"application/json"},
  *  tags={"toggles"},
  *  @SWG\Response(
  *   response=200,
  *   description="List of toggles"
+ *  ),
+ *  @SWG\Parameter(
+ *   name="release",
+ *   description="The id of the release to get the toggles for",
+ *   in="query",
+ *   required=true,
+ *   type="integer"
  *  )
  * )
  */
-$app->get( 'toggle/list', GetToggles::class );
+$app->get( 'toggle/list', GetTogglesForRelease::class );
+
+/**
+ * @SWG\Get(
+ *  path="/public-releases/list",
+ *  summary="Get a list of the public releases",
+ *  produces={"application/json"},
+ *  tags={"releases"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="List of public releases"
+ *  )
+ * )
+ */
 $app->get( 'public-releases/list', GetAllPublicReleases::class);
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/is-active",
+ *  summary="Find out if a toggle is active",
+ *  produces={"application/json"},
+ *  tags={"toggles"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="The name of the toggle and if it is active"
+ *  ),
+ *  @SWG\Response(
+ *   response=400,
+ *   description="You didn't specify a toggle name."
+ *  ),
+ *  @SWG\Parameter(
+ *   name="name",
+ *   description="The name of the toggle to check",
+ *   in="query",
+ *   required=true,
+ *   type="string"
+ *  )
+ * )
+ */
 $app->get( 'toggle/is-active', GetIsToggleActive::class);
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/group/list",
+ *  summary="List all group toggles for a particular release",
+ *  produces={"application/json"},
+ *  tags={"toggles", "releases"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of group toggles"
+ *  ),
+ *  @SWG\Parameter(
+ *   name="release",
+ *   description="The id of the release to get the toggles for",
+ *   in="query",
+ *   required=true,
+ *   type="integer"
+ *  )
+ * )
+ */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
 
 $app->run();

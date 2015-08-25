@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class GetToggles implements Endpoint
+class GetTogglesForRelease implements Endpoint
 {
     /**
      * @var GetReleaseToggles
