@@ -2,9 +2,15 @@
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
+use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
+use Clearbooks\LabsMysql\Toggle\MysqlActivatableToggleGateway;
+use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
+use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
+use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
+use Clearbooks\LabsMysql\Toggle\MysqlGroupToggleGateway;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 
@@ -12,6 +18,8 @@ return [
     ReleaseGateway::class => \DI\object( MysqlReleaseGateway::class ),
     ReleaseToggleCollection::class => \DI\object( MysqlReleaseToggleCollectionGateway::class ),
     UserToggleGateway::class => \Di\object(MysqlUserToggleGateway::class),
+    ActivatableToggleGateway::class => \DI\object (MysqlActivatableToggleGateway::class),
+    GroupToggleGateway::class => \Di\object(MysqlGroupToggleGateway::class),
 
     Connection::class => function() {
         return DriverManager::getConnection([
