@@ -4,7 +4,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EndpointDummy implements Endpoint
 {
-    public function execute( Request $r )
+    public function execute( Request $request )
     {
         // do nothing.
     }

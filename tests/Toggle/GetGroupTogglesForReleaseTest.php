@@ -46,7 +46,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
     public function givenNoReleaseID_return400()
     {
         $this->executeWithQuery([]);
-        $this->assertEquals(400, $this->response->getStatusCode());
+        $this->assert400();
     }
 
     /**

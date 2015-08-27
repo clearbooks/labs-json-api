@@ -32,4 +32,9 @@ abstract class EndpointTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals( $expected, json_decode( $this->response->getContent(), true ) );
     }
+
+    protected function assert400()
+    {
+        $this->assertEquals(400, $this->response->getStatusCode());
+    }
 }
