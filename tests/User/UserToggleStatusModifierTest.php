@@ -40,7 +40,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenNoToggleId_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery(['newStatus' => ToggleStatusModifier::TOGGLE_STATUS_ACTIVE, 'userId' => '1']);
+        $this->executeWithQuery(['newStatus' => "active", 'userId' => '1']);
         $this->assert400();
 
     }
@@ -59,7 +59,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenNoUserId_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery(['toggleId' => '1', 'newStatus' => ToggleStatusModifier::TOGGLE_STATUS_ACTIVE]);
+        $this->executeWithQuery(['toggleId' => '1', 'newStatus' => "active"]);
         $this->assert400();
     }
 
@@ -84,7 +84,7 @@ class UserToggleStatusModifierTest extends EndpointTest
         $this->executeWithQuery(
             [
                 'toggleId' => '1',
-                'newStatus' => ToggleStatusModifier::TOGGLE_STATUS_ACTIVE,
+                'newStatus' => "active",
                 'userId' => '1'
             ]
         );
