@@ -42,7 +42,6 @@ class UserToggleStatusModifierTest extends EndpointTest
     {
         $this->executeWithQuery(['newStatus' => "active", 'userId' => '1']);
         $this->assert400();
-
     }
 
     /**
@@ -88,7 +87,6 @@ class UserToggleStatusModifierTest extends EndpointTest
                 'userId' => '1'
             ]
         );
-
         $this->assertJsonResponse([true]);
     }
 }

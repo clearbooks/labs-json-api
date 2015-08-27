@@ -49,17 +49,13 @@ class UserToggleStatusModifier implements Endpoint
         }
 
         $groupId = $request->get('groupId');
-
         $labsRequest = $this->createLabsRequest($request, $groupId);
-
         $this->statusModifier->execute($labsRequest, $this->toggleStatusModifierResponseHandler);
-
         $response = $this->toggleStatusModifierResponseHandler->getLastHandledResponse();
 
         if(!empty($response->getErrors())) {
             return new JsonResponse("An error occurred", 400);
         }
-
         return new JsonResponse([true]);
     }
 
