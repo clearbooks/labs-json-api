@@ -18,6 +18,7 @@ return [
     UserToggleGateway::class => \Di\object(MysqlUserToggleGateway::class),
     ActivatableToggleGateway::class => \DI\object (MysqlActivatableToggleGateway::class),
     GroupToggleGateway::class => \Di\object(MysqlGroupToggleGateway::class),
+    //ActivatedToggleGateway::class => \Di\object(MysqlActivatedToggleGateway::class),
 
     Connection::class => function() {
         return DriverManager::getConnection([
