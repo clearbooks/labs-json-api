@@ -4,5 +4,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface Endpoint
 {
-    public function execute( Request $r );
+    public function execute( Request $request );
 }

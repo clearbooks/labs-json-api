@@ -44,7 +44,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
     public function givenNoReleaseId_return400()
     {
         $this->executeWithQuery([]);
-        $this->assertEquals(400, $this->response->getStatusCode());
+        $this->assert400();
     }
 
     /**

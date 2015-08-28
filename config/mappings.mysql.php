@@ -4,6 +4,11 @@ use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\Labs\Toggle\Gateway\ActivatedToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
+use Clearbooks\Labs\User\MockPermissionService;
+use Clearbooks\Labs\User\UseCase\PermissionService;
+use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
+use Clearbooks\Labs\User\ToggleStatusModifier as ToggleStatusModifierImplementation;
+use Clearbooks\Labs\User\UseCase\ToggleStatusModifierService;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
@@ -11,6 +16,7 @@ use Clearbooks\LabsMysql\Toggle\MysqlActivatableToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGroupToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MySqlActivatedToggleGateway;
+use Clearbooks\LabsMysql\User\MysqlToggleStatusModifierService;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 
@@ -21,6 +27,9 @@ return [
     ActivatableToggleGateway::class => \DI\object (MysqlActivatableToggleGateway::class),
     GroupToggleGateway::class => \Di\object(MysqlGroupToggleGateway::class),
     ActivatedToggleGateway::class => \Di\object(MysqlActivatedToggleGateway::class),
+    ToggleStatusModifier::class => \Di\object(ToggleStatusModifierImplementation::class),
+    ToggleStatusModifierService::class => \Di\object(MysqlToggleStatusModifierService::class),
+    PermissionService::class => \Di\object(MockPermissionService::class),
 
     Connection::class => function() {
         return DriverManager::getConnection([

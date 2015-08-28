@@ -5,6 +5,7 @@ use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Clearbooks\LabsApi\User\UserToggleStatusModifier;
 
 /**
  * Swagger api information
@@ -161,5 +162,7 @@ $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
  * )
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
+
+$app->post('toggle/change-status', UserToggleStatusModifier::class);
 
 $app->run();
