@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63bafcd22512f5305db4571cc3520041",
+    "hash": "04b99110d647f280d7f7665a998a2d49",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "9b3aa0f7df42c2188e4ccecaa55ba52f6de67b40"
+                "reference": "00dd67ed5ac9253acd3b939422ecde8597ff1399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/9b3aa0f7df42c2188e4ccecaa55ba52f6de67b40",
-                "reference": "9b3aa0f7df42c2188e4ccecaa55ba52f6de67b40",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/00dd67ed5ac9253acd3b939422ecde8597ff1399",
+                "reference": "00dd67ed5ac9253acd3b939422ecde8597ff1399",
                 "shasum": ""
             },
             "require-dev": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-08-24 13:16:41"
+            "time": "2015-08-28 10:58:49"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "3cd7903336af3d5e273d8cfdb0f5105f22ca94bc"
+                "reference": "15790801013785a18e6f526ca8b66b7b200384e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/3cd7903336af3d5e273d8cfdb0f5105f22ca94bc",
-                "reference": "3cd7903336af3d5e273d8cfdb0f5105f22ca94bc",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/15790801013785a18e6f526ca8b66b7b200384e0",
+                "reference": "15790801013785a18e6f526ca8b66b7b200384e0",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-08-24 09:37:00"
+            "time": "2015-08-27 08:13:06"
         },
         {
             "name": "container-interop/container-interop",
@@ -476,12 +476,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "b0b2feffb47906a03b570777c07044c529d1d124"
+                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/b0b2feffb47906a03b570777c07044c529d1d124",
-                "reference": "b0b2feffb47906a03b570777c07044c529d1d124",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
+                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +535,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-07-07 15:32:45"
+            "time": "2015-08-26 14:31:47"
         },
         {
             "name": "doctrine/lexer",
@@ -590,6 +590,48 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "emarref/jwt",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/emarref/jwt.git",
+                "reference": "5af74c1850583eb6981e5e39fec0690e16a5039b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/emarref/jwt/zipball/5af74c1850583eb6981e5e39fec0690e16a5039b",
+                "reference": "5af74c1850583eb6981e5e39fec0690e16a5039b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "ext-openssl": "Enables more token encryption options"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emarref\\Jwt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Malcolm Fell",
+                    "email": "emarref@gmail.com"
+                }
+            ],
+            "description": "A JWT implementation",
+            "time": "2015-04-08 21:14:13"
         },
         {
             "name": "php-di/invoker",
@@ -1023,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "dbfd78d0b328f4b9eba3e0da8adf849dacff920e"
+                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/dbfd78d0b328f4b9eba3e0da8adf849dacff920e",
-                "reference": "dbfd78d0b328f4b9eba3e0da8adf849dacff920e",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/0b7491ac2f12058fda021a3a1542ea42f170ca65",
+                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1106,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:21:16"
+            "time": "2015-08-27 07:55:57"
         },
         {
             "name": "symfony/http-foundation",
@@ -1072,12 +1114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "004010c618252aca172f49b421baaa17a29423c0"
+                "reference": "3f179ebcfc2f9cb82a47e890ed4622f48cfb4602"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/004010c618252aca172f49b421baaa17a29423c0",
-                "reference": "004010c618252aca172f49b421baaa17a29423c0",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/3f179ebcfc2f9cb82a47e890ed4622f48cfb4602",
+                "reference": "3f179ebcfc2f9cb82a47e890ed4622f48cfb4602",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1159,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:18:02"
+            "time": "2015-08-27 06:53:13"
         },
         {
             "name": "symfony/http-kernel",
@@ -2327,7 +2369,8 @@
     "stability-flags": {
         "clearbooks/labs": 20,
         "zircote/swagger-php": 20,
-        "clearbooks/labs-mysql": 20
+        "clearbooks/labs-mysql": 20,
+        "emarref/jwt": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

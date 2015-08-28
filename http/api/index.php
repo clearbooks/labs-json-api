@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\LabsApi\Auth\AuthTest;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
@@ -139,5 +140,7 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  * )
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
+
+$app->get( 'test-auth', AuthTest::class);
 
 $app->run();
