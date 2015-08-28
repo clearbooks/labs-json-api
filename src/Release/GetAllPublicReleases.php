@@ -30,7 +30,7 @@ class GetAllPublicReleases implements Endpoint
 
     }
 
-    public function execute(Request $r)
+    public function execute(Request $request)
     {
         $releases = $this->getReleases->execute();
         $json = [];
