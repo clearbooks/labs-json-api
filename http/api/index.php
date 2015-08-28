@@ -5,6 +5,8 @@ use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Silex\Application;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Swagger api information
@@ -33,6 +35,10 @@ $cb->useAutowiring( true );
 $cb->addDefinitions( '../../config/mappings.php' );
 $app['resolver'] = $app->share(function () use ( $app, $cb ) {
     return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
+});
+
+$app->before(function(Request $request, Application $app) {
+    echo "HELLO";
 });
 
 /**

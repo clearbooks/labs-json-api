@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "00dd67ed5ac9253acd3b939422ecde8597ff1399"
+                "reference": "df882936d5f234c0ae7ee45935d24f88fd640efc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/00dd67ed5ac9253acd3b939422ecde8597ff1399",
-                "reference": "00dd67ed5ac9253acd3b939422ecde8597ff1399",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/df882936d5f234c0ae7ee45935d24f88fd640efc",
+                "reference": "df882936d5f234c0ae7ee45935d24f88fd640efc",
                 "shasum": ""
             },
             "require-dev": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-08-28 10:58:49"
+            "time": "2015-08-28 11:58:39"
         },
         {
             "name": "clearbooks/labs-mysql",
