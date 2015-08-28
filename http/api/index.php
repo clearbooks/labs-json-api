@@ -12,6 +12,7 @@ use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Clearbooks\LabsApi\User\UserToggleStatusModifier;
 
 /**
  * Swagger api information
@@ -165,5 +166,7 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  * )
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
+
+$app->post('toggle/change-status', UserToggleStatusModifier::class);
 
 $app->run();
