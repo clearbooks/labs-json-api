@@ -1,10 +1,15 @@
 <?php
-use Clearbooks\LabsApi\Auth\AuthTest;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Emarref\Jwt\Algorithm\Hs512;
+use Emarref\Jwt\Encryption\Factory;
+use Emarref\Jwt\Exception\VerificationException;
+use Emarref\Jwt\Jwt;
+use Emarref\Jwt\Token;
+use Emarref\Jwt\Verification\Context;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -38,7 +43,21 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
 });
 
 $app->before(function(Request $request, Application $app) {
-    echo "HELLO";
+    $jwt = new Jwt();
+
+    $algorithm = new Hs512('{{ secret_key }}');
+
+    if(!$algorithm instanceof Hs512) {die;}
+
+    $encryption = Factory::create($algorithm);
+    $context = new Context($encryption);
+    $token = $jwt->deserialize("{{ where_to_get_key }}");
+
+    try {
+        return $jwt->verify($token, $context);
+    } catch (VerificationException $e) {
+        return $e;
+    }
 });
 
 /**
@@ -146,7 +165,5 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  * )
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
-
-$app->get( 'test-auth', AuthTest::class);
 
 $app->run();
