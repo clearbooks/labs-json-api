@@ -30,9 +30,9 @@ $app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
-$c = $cb->build();
-
 $cb->addDefinitions( '../../config/mappings.php' );
+
+$c = $cb->build();
 $app['resolver'] = $app->share( function () use ( $app, $c ) {
     return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $c );
 });
