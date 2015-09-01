@@ -1,10 +1,14 @@
 <?php
+use Clearbooks\LabsApi\Framework\Tokens\AuthenticationProvider;
+use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Algorithm\Hs512;
+use Emarref\Jwt\Algorithm\None;
 use Emarref\Jwt\Encryption\Factory;
 use Emarref\Jwt\Exception\VerificationException;
 use Emarref\Jwt\Jwt;
@@ -37,25 +41,22 @@ $app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
-
+$c = $cb->build();
 $cb->addDefinitions( '../../config/mappings.php' );
-$app['resolver'] = $app->share(function () use ( $app, $cb ) {
-    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
+$app['resolver'] = $app->share(function () use ( $app, $c ) {
+    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $c );
 });
 
-$app->before(function(Request $request, Application $app) {
-    $jwt = new Jwt();
+$algorithm = $c->get(AlgorithmInterface::class);
 
-    $algorithm = new Hs512('{{ secret_key }}');
+$app->before(function(Request $request, Application $app, $algorithm) {
+//    $authProvider = new TokenProvider("eyJhbGciOiJub25lIn0.e30.");
+    $authProvider = new TokenProvider($request, new Jwt(), $algorithm);
 
-    if(!$algorithm instanceof Hs512) {die;}
-
-    $encryption = Factory::create($algorithm);
-    $context = new Context($encryption);
-    $token = $jwt->deserialize("{{ where_to_get_key }}");
+//    if(!$algorithm instanceof Hs512) {die;}
 
     try {
-        return $jwt->verify($token, $context);
+        return $authProvider->verifyToken();
     } catch (VerificationException $e) {
         return $e;
     }
