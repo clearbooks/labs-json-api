@@ -27,7 +27,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
         ];
 
         $releaseToggles = [
-            new Release('Test', 'Url', new DateTime(), true),
+            new Release('Test', 'Test', 'Url', new DateTime(), true),
         ];
 
         $this->endpoint = new GetUserTogglesForRelease(
