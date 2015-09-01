@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\Labs\Release\Gateway\PublicReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
@@ -8,6 +9,7 @@ use Clearbooks\Labs\User\UseCase\PermissionService;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\Labs\User\ToggleStatusModifier as ToggleStatusModifierImplementation;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifierService;
+use Clearbooks\LabsMysql\Release\MysqlPublicReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
@@ -27,6 +29,7 @@ return [
     ToggleStatusModifier::class => \Di\object(ToggleStatusModifierImplementation::class),
     ToggleStatusModifierService::class => \Di\object(MysqlToggleStatusModifierService::class),
     PermissionService::class => \Di\object(MockPermissionService::class),
+    PublicReleaseGateway::class => \Di\object(MysqlPublicReleaseGateway::class),
 
     Connection::class => function() {
         return DriverManager::getConnection([
