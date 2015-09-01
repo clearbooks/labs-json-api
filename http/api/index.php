@@ -1,14 +1,16 @@
 <?php
 use Clearbooks\LabsApi\Framework\AuthenticationProvider;
+use Clearbooks\LabsApi\Framework\ContainerBuilderProvider;
+use Clearbooks\LabsApi\Framework\ControllerResolver;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
-use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
+use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Clearbooks\LabsApi\User\UserToggleStatusModifier;
 use Emarref\Jwt\Token;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use Clearbooks\LabsApi\User\UserToggleStatusModifier;
 
 /**
  * Swagger api information
@@ -31,13 +33,10 @@ require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
 $app['debug'] = true;
 
-$cb = new \DI\ContainerBuilder();
-$cb->useAutowiring( true );
-$cb->addDefinitions( '../../config/mappings.php' );
-$app['container_builder'] = $cb->build();
+$app->register(new ContainerBuilderProvider());
 $app->register(new AuthenticationProvider());
 $app['resolver'] = $app->share(function () use ( $app ) {
-    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $app['container_builder'] );
+    return new ControllerResolver( $app, $app['container_builder'] );
 });
 
 
