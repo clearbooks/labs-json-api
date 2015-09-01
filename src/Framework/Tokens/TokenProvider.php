@@ -60,11 +60,11 @@ class TokenProvider implements AuthenticationProvider, UserInformationProvider
 
     public function getUserId()
     {
-        // TODO: Implement getUserId() method.
+        return $this->token->getPayload()->findClaimByName('userId')->getValue();
     }
 
     public function getGroupId()
     {
-        // TODO: Implement getGroupId() method.
+        return $this->token->getPayload()->findClaimByName('groupId')->getValue();
     }
 }

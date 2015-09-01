@@ -1,8 +1,8 @@
 <?php
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
-use Emarref\Jwt\Algorithm\None;
+use Emarref\Jwt\Algorithm\Hs512;
 
 return [
     DateTimeInterface::class => new DateTime,
-    AlgorithmInterface::class => new None
+    AlgorithmInterface::class => new Hs512("{{ encryption_secret_key }}")
 ] + include "mappings.mysql.php";

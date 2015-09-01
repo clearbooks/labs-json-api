@@ -1,5 +1,4 @@
 <?php
-use Clearbooks\LabsApi\Framework\Tokens\AuthenticationProvider;
 use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
@@ -8,12 +7,9 @@ use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Algorithm\Hs512;
-use Emarref\Jwt\Algorithm\None;
-use Emarref\Jwt\Encryption\Factory;
 use Emarref\Jwt\Exception\VerificationException;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
-use Emarref\Jwt\Verification\Context;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Clearbooks\LabsApi\User\UserToggleStatusModifier;
@@ -41,24 +37,25 @@ $app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
-$c = $cb->build();
 $cb->addDefinitions( '../../config/mappings.php' );
-$app['resolver'] = $app->share(function () use ( $app, $c ) {
-    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $c );
+$app['container_builder'] = $cb->build();
+$app['resolver'] = $app->share(function () use ( $app ) {
+    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $app['container_builder'] );
 });
 
-$algorithm = $c->get(AlgorithmInterface::class);
 
-$app->before(function(Request $request, Application $app, $algorithm) {
-//    $authProvider = new TokenProvider("eyJhbGciOiJub25lIn0.e30.");
+$app->before(function(Request $request, Application $app) {
+
+    $algorithm = $app['container_builder']->get(AlgorithmInterface::class);
     $authProvider = new TokenProvider($request, new Jwt(), $algorithm);
 
-//    if(!$algorithm instanceof Hs512) {die;}
+    if(!$algorithm instanceof Hs512) {die;}
 
     try {
-        return $authProvider->verifyToken();
+        $authProvider->verifyToken();
     } catch (VerificationException $e) {
-        return $e;
+        echo $e;
+        die;
     }
 });
 
