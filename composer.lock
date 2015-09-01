@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "15790801013785a18e6f526ca8b66b7b200384e0"
+                "reference": "ee71bbb8d2de068edac152ddeac4672733ec7215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/15790801013785a18e6f526ca8b66b7b200384e0",
-                "reference": "15790801013785a18e6f526ca8b66b7b200384e0",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/ee71bbb8d2de068edac152ddeac4672733ec7215",
+                "reference": "ee71bbb8d2de068edac152ddeac4672733ec7215",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +93,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-08-27 08:13:06"
+            "time": "2015-09-01 11:22:18"
         },
         {
             "name": "container-interop/container-interop",
@@ -128,12 +128,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4"
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f4a91702ca3cd2e568c3736aa031ed00c3752af4",
-                "reference": "f4a91702ca3cd2e568c3736aa031ed00c3752af4",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-06-17 12:21:22"
+            "time": "2015-08-31 12:32:49"
         },
         {
             "name": "doctrine/cache",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b"
+                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e7b77e5abe230a2cc1db5005fb86435da213ae3b",
-                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
                 "shasum": ""
             },
             "require": {
@@ -258,7 +258,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-06-29 15:03:18"
+            "time": "2015-08-31 12:36:41"
         },
         {
             "name": "doctrine/collections",
@@ -952,12 +952,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "e60f2546284ffe903439b9c2a1380e71235cd97f"
+                "reference": "3c14966b099b4ba807f146df4c6a7acffba2f793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/e60f2546284ffe903439b9c2a1380e71235cd97f",
-                "reference": "e60f2546284ffe903439b9c2a1380e71235cd97f",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/3c14966b099b4ba807f146df4c6a7acffba2f793",
+                "reference": "3c14966b099b4ba807f146df4c6a7acffba2f793",
                 "shasum": ""
             },
             "require": {
@@ -999,7 +999,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-22 07:42:07"
+            "time": "2015-08-31 12:33:08"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1167,12 +1167,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "ff2f01120243be592c2d7547bdfdf87d27a7f85b"
+                "reference": "330079921340f2d273dd24df16fc129948614e77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/ff2f01120243be592c2d7547bdfdf87d27a7f85b",
-                "reference": "ff2f01120243be592c2d7547bdfdf87d27a7f85b",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/330079921340f2d273dd24df16fc129948614e77",
+                "reference": "330079921340f2d273dd24df16fc129948614e77",
                 "shasum": ""
             },
             "require": {
@@ -1239,7 +1239,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:18:02"
+            "time": "2015-09-01 07:33:03"
         },
         {
             "name": "symfony/routing",
@@ -1820,12 +1820,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357"
+                "reference": "e813a37dd85b574987393412c34bcdd3eebc1c9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2246830f4a1a551c67933e4171bf2126dc29d357",
-                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e813a37dd85b574987393412c34bcdd3eebc1c9d",
+                "reference": "e813a37dd85b574987393412c34bcdd3eebc1c9d",
                 "shasum": ""
             },
             "require": {
@@ -1884,7 +1884,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-24 04:09:38"
+            "time": "2015-08-31 17:22:49"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
