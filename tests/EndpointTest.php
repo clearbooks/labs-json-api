@@ -24,6 +24,11 @@ abstract class EndpointTest extends \PHPUnit_Framework_TestCase
         $this->response = $this->endpoint->execute( new Request( $query ) );
     }
 
+    protected function executeWithPostParams( $params )
+    {
+        $this->response = $this->endpoint->execute( new Request( [], $params ) );
+    }
+
     /**
      * Assert a JSON response
      * @param $expected

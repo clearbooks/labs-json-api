@@ -31,7 +31,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
         ];
 
         $releases = [
-            new Release('Cat', 'url', new DateTime(), true)
+            new Release('Cat', 'dog', 'url', new DateTime(), true)
         ];
 
         $this->endpoint = new GetGroupTogglesForRelease(new labsGetGroupToggles(
