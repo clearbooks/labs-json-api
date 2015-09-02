@@ -66,7 +66,9 @@ class UserToggleStatusModifier implements Endpoint
      */
     private function createLabsRequest(Request $request, $groupId = null)
     {
-        return new ModifyToggleRequest($request->query->get('toggleId'), $request->query->get('newStatus'), $request->query->get('userId'), $groupId);
+        return new ModifyToggleRequest($request->request->get('toggleId'),
+                                       $request->request->get('newStatus'),
+                                       $request->request->get('userId'), $groupId);
     }
 
     /**
@@ -75,9 +77,9 @@ class UserToggleStatusModifier implements Endpoint
      */
     private function requestIsNotValid(Request $request)
     {
-        $toggleId = $request->query->get('toggleId');
-        $newStatus = $request->query->get('newStatus');
-        $userId = $request->query->get('userId');
+        $toggleId = $request->request->get('toggleId');
+        $newStatus = $request->request->get('newStatus');
+        $userId = $request->request->get('userId');
 
         return(!isset($toggleId) || !isset($newStatus) || !isset($userId));
     }
