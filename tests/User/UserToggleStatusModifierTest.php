@@ -40,7 +40,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenNoToggleId_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery(['newStatus' => "active", 'userId' => '1']);
+        $this->executeWithPostParams(['newStatus' => "active", 'userId' => '1']);
         $this->assert400();
     }
 
@@ -49,7 +49,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenNoNewStatus_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery(['toggleId' => '1', 'userId' => '1']);
+        $this->executeWithPostParams(['toggleId' => '1', 'userId' => '1']);
         $this->assert400();
     }
 
@@ -58,7 +58,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenNoUserId_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery(['toggleId' => '1', 'newStatus' => "active"]);
+        $this->executeWithPostParams(['toggleId' => '1', 'newStatus' => "active"]);
         $this->assert400();
     }
 
@@ -67,7 +67,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenToggleThatWillError_WhenTogglingStatus_Return400()
     {
-        $this->executeWithQuery([
+        $this->executeWithPostParams([
             'toggleId' => '1',
             'newStatus' => 'asdf',
             'userId' => '1'
@@ -80,7 +80,7 @@ class UserToggleStatusModifierTest extends EndpointTest
      */
     public function givenCorrectToggleInfo_WhenTogglingStatus_CorrectlyToggleStatus()
     {
-        $this->executeWithQuery(
+        $this->executeWithPostParams(
             [
                 'toggleId' => '1',
                 'newStatus' => "active",
