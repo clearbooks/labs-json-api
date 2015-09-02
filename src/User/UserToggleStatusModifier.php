@@ -18,6 +18,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserToggleStatusModifier implements Endpoint
 {
+    const TOGGLE_ID = 'toggleId';
+    const NEW_STATUS = 'newStatus';
+    const USER_ID = 'userId';
     /**
      * @var UserToggleStatusModifier
      */
@@ -66,7 +69,9 @@ class UserToggleStatusModifier implements Endpoint
      */
     private function createLabsRequest(Request $request, $groupId = null)
     {
-        return new ModifyToggleRequest($request->get('toggleId'), $request->get('newStatus'), $request->get('userId'), $groupId);
+        return new ModifyToggleRequest($request->request->get( self::TOGGLE_ID ),
+                                       $request->request->get( self::NEW_STATUS ),
+                                       $request->request->get( self::USER_ID ), $groupId);
     }
 
     /**
@@ -75,9 +80,9 @@ class UserToggleStatusModifier implements Endpoint
      */
     private function requestIsNotValid(Request $request)
     {
-        $toggleId = $request->get('toggleId');
-        $newStatus = $request->get('newStatus');
-        $userId = $request->get('userId');
+        $toggleId = $request->request->get( self::TOGGLE_ID );
+        $newStatus = $request->request->get( self::NEW_STATUS );
+        $userId = $request->request->get( self::USER_ID );
 
         return(!isset($toggleId) || !isset($newStatus) || !isset($userId));
     }
