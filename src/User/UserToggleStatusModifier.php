@@ -60,6 +60,8 @@ class UserToggleStatusModifier implements Endpoint
      */
     public function execute(Request $request)
     {
+        $this->tokenProvider->setToken($request);
+
         if($this->requestIsNotValid($request)) {
             return new JsonResponse("You didn't include all the necessary information", 400);
         }
@@ -85,7 +87,7 @@ class UserToggleStatusModifier implements Endpoint
     {
         return new ModifyToggleRequest($request->request->get( self::TOGGLE_ID ),
                                        $request->request->get( self::NEW_STATUS ),
-                                       $request->request->get( self::USER_ID ), $groupId);
+                                       $userId, $groupId);
     }
 
     /**
@@ -96,7 +98,6 @@ class UserToggleStatusModifier implements Endpoint
     {
         $toggleId = $request->request->get( self::TOGGLE_ID );
         $newStatus = $request->request->get( self::NEW_STATUS );
-
         return(!isset($toggleId) || !isset($newStatus));
     }
 

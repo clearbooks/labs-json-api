@@ -10,6 +10,7 @@ namespace Clearbooks\LabsApi\User;
 
 
 use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class MockTokenProvider implements TokenProviderInterface
 {
@@ -33,5 +34,10 @@ class MockTokenProvider implements TokenProviderInterface
 
     public function getGroupId() {
         return $this->groupId;
+    }
+
+    public function setToken(Request $request)
+    {
+        //Empty
     }
 }
