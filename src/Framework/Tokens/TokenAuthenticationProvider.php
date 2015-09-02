@@ -10,7 +10,7 @@ namespace Clearbooks\LabsApi\Framework\Tokens;
 
 use Emarref\Jwt\Token;
 
-interface AuthenticationProvider
+interface TokenAuthenticationProvider
 {
     public function verifyToken();
 }

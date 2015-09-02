@@ -16,7 +16,7 @@ use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
 use Symfony\Component\HttpFoundation\Request;
 
-class TokenProvider implements AuthenticationProvider, UserInformationProvider, TokenProviderInterface
+class TokenProvider implements TokenProviderInterface
 {
     /**
      * @var Jwt
@@ -40,17 +40,21 @@ class TokenProvider implements AuthenticationProvider, UserInformationProvider, 
     private $token;
 
     /**
-     * @param Request $request
      * @param Jwt $jwt
      * @param AlgorithmInterface $algorithm
      */
-    public function __construct(Request $request, Jwt $jwt, AlgorithmInterface $algorithm)
+    public function __construct(Jwt $jwt, AlgorithmInterface $algorithm)
     {
         $this->jwt = $jwt;
         $this->algorithm = $algorithm;
         $this->encryption = Factory::create($algorithm);
         $this->context = new Context($this->encryption);
+    }
+
+    public function setToken(Request $request)
+    {
         $this->token = $this->jwt->deserialize($request->headers->get('Authorization'));
+
     }
 
     public function verifyToken()

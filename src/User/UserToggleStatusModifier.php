@@ -13,7 +13,6 @@ use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\LabsApi\Framework\Endpoint;
-use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
 use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -30,7 +29,7 @@ class UserToggleStatusModifier implements Endpoint
      */
     private $toggleStatusModifierResponseHandler;
     /**
-     * @var TokenProvider
+     * @var TokenProviderInterface
      */
     private $tokenProvider;
 
@@ -90,9 +89,8 @@ class UserToggleStatusModifier implements Endpoint
      */
     private function requestIsNotValid(Request $request)
     {
-        $toggleId = $request->get('toggleId');
-        $newStatus = $request->get('newStatus');
-
+        $toggleId = $request->request->get('toggleId');
+        $newStatus = $request->request->get('newStatus');
         return(!isset($toggleId) || !isset($newStatus));
     }
 
