@@ -9,34 +9,52 @@
 namespace Clearbooks\LabsApi\Framework;
 
 
-use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
+use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Algorithm\Hs512;
+use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 use Silex\Application;
+use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class AuthenticationProvider
+class AuthenticationProvider implements ServiceProviderInterface
 {
-    private $algorithm;
-    private $tokenProvider;
-
-    public function __construct(AlgorithmInterface $algorithm, TokenProviderInterface $tokenProvider)
+    /**
+     * Registers services on the given app.
+     *
+     * This method should only be used to configure services and parameters.
+     * It should not get services.
+     * @param Application $app
+     */
+    public function register(Application $app)
     {
-        $this->algorithm = $algorithm;
-        $this->tokenProvider = $tokenProvider;
+        $app['token_authenticator'] = $app->protect(function(Request $request) use ($app) {
+            $algorithm = $app['container_builder']->get(AlgorithmInterface::class);
+            $tokenProvider = new TokenProvider(
+                $app['container_builder']->get(Jwt::class),
+                $algorithm
+            );
+            $tokenProvider->setToken($request->headers->get('Authorization'));
+            if(!$algorithm instanceof Hs512) {
+                return new JsonResponse("Algorithm was not Hs512", 403);
+            }
+            if(!$tokenProvider->verifyToken()) {
+                return new JsonResponse("Couldn't verify token", 403);
+            }
+            return null;
+        });
     }
 
-    public function verify(Request $request)
+    /**
+     * Bootstraps the application.
+     *
+     * This method is called after all services are registered
+     * and should be used for "dynamic" configuration (whenever
+     * a service must be requested).
+     */
+    public function boot(Application $app)
     {
-        $this->tokenProvider->setToken($request->headers->get('Authorization'));
-        if(!$this->algorithm instanceof Hs512) {
-            return new JsonResponse("Algorithm was not Hs512", 403);
-        }
-        if(!$this->tokenProvider->verifyToken()) {
-            return new JsonResponse("Couldn't verify token", 403);
-        }
-        return null;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\LabsApi\Framework\AuthenticationProvider;
 use Clearbooks\LabsApi\Framework\ContainerBuilderProvider;
 use Clearbooks\LabsApi\Framework\ControllerResolver;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
@@ -33,11 +34,13 @@ $app = new \Silex\Application();
 $app['debug'] = true;
 
 $app->register(new ContainerBuilderProvider());
+$app->register(new AuthenticationProvider());
 $app['resolver'] = $app->share(function () use ( $app ) {
     return new ControllerResolver( $app, $app['container_builder'] );
 });
 
 $app->before(function(Request $request, Application $app) {
+    return $app['token_authenticator']($request);
 });
 
 /**

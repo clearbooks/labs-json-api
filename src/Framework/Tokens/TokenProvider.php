@@ -81,7 +81,6 @@ class TokenProvider implements TokenProviderInterface
         $exp->setTimestamp($this->token->getPayload()->findClaimByName('exp')->getValue());
         return $exp > $today;
     }
-
     private function hasUserId()
     {
         $userId = $this->token->getPayload()->findClaimByName('userId');
