@@ -10,6 +10,7 @@ namespace Clearbooks\LabsApi\Release;
 
 
 use Clearbooks\Labs\Release\GetPublicReleases;
+use Clearbooks\Labs\Release\Release;
 use Clearbooks\LabsApi\Framework\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,10 +36,13 @@ class GetAllPublicReleases implements Endpoint
         $releases = $this->getReleases->execute();
         $json = [];
 
+        /** @var Release $release */
         foreach($releases as $release) {
             $json[] = [
-                'date' => $release->getReleaseDate()->format('Y-m-d'),
-                'id' => $release->getReleaseId()
+                'id' => $release->getReleaseId(),
+                'name' => $release->getReleaseName(),
+                'releaseInfoUrl' => $release->getReleaseInfoUrl(),
+                'date' => $release->getReleaseDate()->format('Y-m-d')
             ];
         }
 
