@@ -1,3 +1,5 @@
 /vendor/
+config/
 http/api/api-docs/
 .idea/*
+config/mappings.mysql.php
