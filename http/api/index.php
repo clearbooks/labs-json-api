@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\LabsApi\Framework\BaseUrl\BaseUrlProvider;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
@@ -29,11 +30,15 @@ $app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
 $cb->useAutowiring( true );
-
 $cb->addDefinitions( '../../config/mappings.php' );
-$app['resolver'] = $app->share(function () use ( $app, $cb ) {
-    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
+
+$c = $cb->build();
+$app['resolver'] = $app->share( function () use ( $app, $c ) {
+    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $c );
 });
+
+/** @var  BaseUrlProvider $url */
+$url = $c->get( BaseUrlProvider::class );
 
 /**
  * @SWG\Get(
@@ -47,7 +52,7 @@ $app['resolver'] = $app->share(function () use ( $app, $cb ) {
  *  )
  * )
  */
-$app->get( 'public-releases/list', GetAllPublicReleases::class);
+$app->get( $url->getBaseUrl() . '/public-releases/list', GetAllPublicReleases::class);
 
 /**
  * @SWG\Get(
@@ -68,7 +73,7 @@ $app->get( 'public-releases/list', GetAllPublicReleases::class);
  *  )
  * )
  */
-$app->get( 'toggle/list', GetTogglesForRelease::class );
+$app->get( $url->getBaseUrl() . '/toggle/list', GetTogglesForRelease::class );
 
 /**
  * @SWG\Get(
@@ -93,7 +98,7 @@ $app->get( 'toggle/list', GetTogglesForRelease::class );
  *  )
  * )
  */
-$app->get( 'toggle/is-active', GetIsToggleActive::class);
+$app->get( $url->getBaseUrl() . '/toggle/is-active', GetIsToggleActive::class);
 
 /**
  * @SWG\Get(
@@ -118,7 +123,7 @@ $app->get( 'toggle/is-active', GetIsToggleActive::class);
  *  )
  * )
  */
-$app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
+$app->get( $url->getBaseUrl() . '/toggle/user/list', GetUserTogglesForRelease::class);
 
 /**
  * @SWG\Get(
@@ -139,8 +144,8 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  *  )
  * )
  */
-$app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
+$app->get( $url->getBaseUrl() . '/toggle/group/list', GetGroupTogglesForRelease::class);
 
-$app->post('toggle/change-status', UserToggleStatusModifier::class);
+$app->post( $url->getBaseUrl() . '/toggle/change-status', UserToggleStatusModifier::class);
 
 $app->run();
