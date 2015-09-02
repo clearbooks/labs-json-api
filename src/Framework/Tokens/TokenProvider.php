@@ -16,7 +16,7 @@ use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
 use Symfony\Component\HttpFoundation\Request;
 
-class TokenProvider implements AuthenticationProvider, UserInformationProvider
+class TokenProvider implements AuthenticationProvider, UserInformationProvider, TokenProviderInterface
 {
     /**
      * @var Jwt

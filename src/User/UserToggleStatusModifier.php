@@ -14,8 +14,8 @@ use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\LabsApi\Framework\Endpoint;
 use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
-use Emarref\Jwt\Jwt;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -29,20 +29,27 @@ class UserToggleStatusModifier implements Endpoint
      * @var ToggleStatusModifierResponseHandlerSpy
      */
     private $toggleStatusModifierResponseHandler;
+    /**
+     * @var TokenProvider
+     */
+    private $tokenProvider;
 
     /**
      * ToggleStatusModifier constructor.
      * @param ToggleStatusModifier $toggleStatusModifier
      * @param ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler
      * @param AlgorithmInterface $algorithm
+     * @param TokenProviderInterface $tokenProvider
      */
     public function __construct(ToggleStatusModifier $toggleStatusModifier,
                                 ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler,
-                                AlgorithmInterface $algorithm)
+                                AlgorithmInterface $algorithm,
+                                TokenProviderInterface $tokenProvider)
     {
         $this->statusModifier = $toggleStatusModifier;
         $this->toggleStatusModifierResponseHandler = $toggleStatusModifierResponseHandler;
         $this->algorithm = $algorithm;
+        $this->tokenProvider = $tokenProvider;
     }
 
     /**
@@ -55,7 +62,7 @@ class UserToggleStatusModifier implements Endpoint
             return new JsonResponse("You didn't include all the necessary information", 400);
         }
 
-        list($userId, $groupId) = $this->getUserAndGroupIds($request);
+        list($userId, $groupId) = $this->getUserAndGroupIds();
         $labsRequest = $this->createLabsRequest($request, $userId, $groupId);
         $this->statusModifier->execute($labsRequest, $this->toggleStatusModifierResponseHandler);
         $response = $this->toggleStatusModifierResponseHandler->getLastHandledResponse();
@@ -89,9 +96,8 @@ class UserToggleStatusModifier implements Endpoint
         return(!isset($toggleId) || !isset($newStatus));
     }
 
-    private function getUserAndGroupIds($request)
+    private function getUserAndGroupIds()
     {
-        $tokenProvider = new TokenProvider($request, new Jwt(), $this->algorithm);
-        return array($tokenProvider->getUserId(), $tokenProvider->getGroupId());
+        return array($this->tokenProvider->getUserId(), $this->tokenProvider->getGroupId());
     }
 }
