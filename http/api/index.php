@@ -39,7 +39,6 @@ $app['resolver'] = $app->share(function () use ( $app ) {
     return new ControllerResolver( $app, $app['container_builder'] );
 });
 
-
 $app->before(function(Request $request, Application $app) {
     return $app['authenticate_token']($request);
 });
