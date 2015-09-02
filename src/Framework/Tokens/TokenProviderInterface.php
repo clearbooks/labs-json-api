@@ -7,11 +7,9 @@
  */
 namespace Clearbooks\LabsApi\Framework\Tokens;
 
-use Symfony\Component\HttpFoundation\Request;
-
 interface TokenProviderInterface
 {
-    public function setToken(Request $request);
+    public function setToken($serializedToken);
 
     public function verifyToken();
 

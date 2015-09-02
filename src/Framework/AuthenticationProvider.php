@@ -30,7 +30,7 @@ class AuthenticationProvider
 
     public function verify(Request $request)
     {
-        $this->tokenProvider->setToken($request);
+        $this->tokenProvider->setToken($request->headers->get('Authorization'));
         if(!$this->algorithm instanceof Hs512) {
             return new JsonResponse("Algorithm was not Hs512", 403);
         }

@@ -9,12 +9,12 @@
 namespace Clearbooks\LabsApi\Framework\Tokens;
 
 
+use DateTime;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Encryption\Factory;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
-use Symfony\Component\HttpFoundation\Request;
 
 class TokenProvider implements TokenProviderInterface
 {
@@ -51,14 +51,16 @@ class TokenProvider implements TokenProviderInterface
         $this->context = new Context($this->encryption);
     }
 
-    public function setToken(Request $request)
+    public function setToken($serializedToken)
     {
-        $this->token = $this->jwt->deserialize($request->headers->get('Authorization'));
-
+        $this->token = $this->jwt->deserialize($serializedToken);
     }
 
     public function verifyToken()
     {
+        if(!($this->isNotExpired() && $this->hasUserId() && $this->isLabsToken())) {
+            return false;
+        }
         return $this->jwt->verify($this->token, $this->context);
     }
 
@@ -70,5 +72,25 @@ class TokenProvider implements TokenProviderInterface
     public function getGroupId()
     {
         return $this->token->getPayload()->findClaimByName('groupId')->getValue();
+    }
+
+    private function isNotExpired()
+    {
+        $today = new DateTime();
+        $exp = new DateTime();
+        $exp->setTimestamp($this->token->getPayload()->findClaimByName('exp')->getValue());
+        return $exp > $today;
+    }
+
+    private function hasUserId()
+    {
+        $userId = $this->token->getPayload()->findClaimByName('userId');
+        return isset($userId);
+    }
+
+    private function isLabsToken()
+    {
+        $appId = $this->token->getPayload()->findClaimByName('appId');
+        return(isset($appId) && $appId->getValue() == "labs");
     }
 }

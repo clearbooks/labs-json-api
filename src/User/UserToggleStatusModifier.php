@@ -60,14 +60,14 @@ class UserToggleStatusModifier implements Endpoint
      */
     public function execute(Request $request)
     {
-        $this->tokenProvider->setToken($request);
+        $this->tokenProvider->setToken($request->headers->get('Authorization'));
 
         if($this->requestIsNotValid($request)) {
             return new JsonResponse("You didn't include all the necessary information", 400);
         }
 
-        list($userId, $groupId) = $this->getUserAndGroupIds();
-        $labsRequest = $this->createLabsRequest($request, $userId, $groupId);
+        $userId = $this->getUserId();
+        $labsRequest = $this->createLabsRequest($request, $userId);
         $this->statusModifier->execute($labsRequest, $this->toggleStatusModifierResponseHandler);
         $response = $this->toggleStatusModifierResponseHandler->getLastHandledResponse();
 
@@ -80,14 +80,13 @@ class UserToggleStatusModifier implements Endpoint
     /**
      * @param Request $request
      * @param $userId
-     * @param null|string $groupId
      * @return ModifyToggleRequest
      */
-    private function createLabsRequest(Request $request, $userId, $groupId = null)
+    private function createLabsRequest(Request $request, $userId)
     {
         return new ModifyToggleRequest($request->request->get( self::TOGGLE_ID ),
                                        $request->request->get( self::NEW_STATUS ),
-                                       $userId, $groupId);
+                                       $userId);
     }
 
     /**
@@ -101,8 +100,8 @@ class UserToggleStatusModifier implements Endpoint
         return(!isset($toggleId) || !isset($newStatus));
     }
 
-    private function getUserAndGroupIds()
+    private function getUserId()
     {
-        return array($this->tokenProvider->getUserId(), $this->tokenProvider->getGroupId());
+        return $this->tokenProvider->getUserId();
     }
 }
