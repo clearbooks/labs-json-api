@@ -6,5 +6,5 @@ use Emarref\Jwt\Jwt;
 return [
     DateTimeInterface::class => new DateTime,
     AlgorithmInterface::class => new Hs512("{{ encryption_secret_key }}"),
-    Jwt::class => new JWt()
+    Jwt::class => new Jwt()
 ] + include "mappings.mysql.php";
