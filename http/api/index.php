@@ -35,13 +35,17 @@ $app['debug'] = true;
 
 $app->register(new ContainerBuilderProvider());
 $app->register(new AuthenticationProvider());
-$app['resolver'] = $app->share(function () use ( $app ) {
-    return new ControllerResolver( $app, $app['container_builder'] );
-});
+
+$cb = new \DI\ContainerBuilder();
+$cb->addDefinitions( '../../config/mappings.php' );
+$cb->useAutowiring( true );
+$container = $cb->build();
 
 $app->before(function(Request $request, Application $app) {
     return $app['token_authenticator']($request);
 });
+$app['callback_resolver'] =  new \Clearbooks\LabsApi\Framework\CallbackResolver( $container, $app );
+$app['resolver'] =  new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $container );
 
 /**
  * @SWG\Get(
