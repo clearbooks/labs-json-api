@@ -1,4 +1,5 @@
 <?php
+use Clearbooks\LabsApi\Authentication\JwtGuard;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
@@ -28,12 +29,12 @@ $app = new \Silex\Application();
 $app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
-$cb->useAutowiring( true );
-
 $cb->addDefinitions( '../../config/mappings.php' );
-$app['resolver'] = $app->share(function () use ( $app, $cb ) {
-    return new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $cb->build() );
-});
+$cb->useAutowiring( true );
+$container = $cb->build();
+
+$app['callback_resolver'] =  new \Clearbooks\LabsApi\Framework\CallbackResolver( $container, $app );
+$app['resolver'] =  new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $container );
 
 /**
  * @SWG\Get(
