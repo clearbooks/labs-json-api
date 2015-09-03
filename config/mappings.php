@@ -1,8 +1,6 @@
 <?php
-use Emarref\Jwt\Jwt;
 
 return [
-    DateTimeInterface::class => new DateTime,
-    Jwt::class => new Jwt()
+    DateTimeInterface::class => new DateTime
 ] + (include "mappings.mysql.php")
   + (include "mappings.authentication.php");
