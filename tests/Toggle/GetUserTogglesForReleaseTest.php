@@ -22,8 +22,16 @@ class GetUserTogglesForReleaseTest extends EndpointTest
     public function setUp()
     {
         $userToggles = [
-            new Toggle('cat', '0', true),
-            new Toggle('dog', '0', true)
+            new Toggle(
+                'cat', '0', true,
+                "screenshot", "description", "functionality", "implementationReason",
+                "location", "guideUrl", "appNotificationThing"
+            ),
+            new Toggle(
+                'dog', '0', true,
+                "screenshot", "description", "functionality", "implementationReason",
+                "location", "guideUrl", "appNotificationThing"
+            )
         ];
 
         $releaseToggles = [
@@ -52,13 +60,24 @@ class GetUserTogglesForReleaseTest extends EndpointTest
      */
     public function givenReleaseIdWithTwoToggles_returnToggles()
     {
+        $marketingInfo = [
+            'appNotificationCopyText' => 'appNotificationThing',
+            'functionalityDescription' => 'functionality',
+            'implementationReason' => 'implementationReason',
+            'locationDescription' => 'location',
+            'toggleDescription' => 'description',
+            'screenshotUrl' => 'screenshot',
+            'guideUrl' => 'guideUrl'
+        ];
         $this->executeWithQuery(['release' => '0']);
         $this->assertJsonResponse([
             [
-                'name' => 'cat'
+                'name' => 'cat',
+                'marketingInfo' => $marketingInfo
             ],
             [
-                'name' => 'dog'
+                'name' => 'dog',
+                'marketingInfo' => $marketingInfo
             ]
         ]);
     }
