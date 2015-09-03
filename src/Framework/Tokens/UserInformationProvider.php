@@ -9,7 +9,7 @@
 namespace Clearbooks\LabsApi\Framework\Tokens;
 
 
-interface UserInformationProvider
+interface UserInformationProvider extends TokenInterface
 {
     public function getUserId();
 

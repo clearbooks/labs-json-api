@@ -9,28 +9,16 @@
 namespace Clearbooks\LabsApi\User;
 
 
-use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
+use Clearbooks\LabsApi\Framework\Tokens\TokenAuthenticationProvider;
 
-class FailingMockTokenProvider implements TokenProviderInterface
+class FailingMockTokenProvider implements TokenAuthenticationProvider
 {
-
     public function setToken($serializedToken)
     {
         // empty
     }
-
     public function verifyToken()
     {
         return false;
-    }
-
-    public function getUserId()
-    {
-        // empty
-    }
-
-    public function getGroupId()
-    {
-        // empty
     }
 }
