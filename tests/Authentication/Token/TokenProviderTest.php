@@ -6,10 +6,10 @@
  * Time: 14:07
  */
 
-namespace Clearbooks\LabsApi\Framework\Token;
+namespace Clearbooks\LabsApi\Framework\Authentication\Token;
 
 
-use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
 use DateTime;
 use Emarref\Jwt\Algorithm\Hs512;
 use Emarref\Jwt\Claim\PublicClaim;

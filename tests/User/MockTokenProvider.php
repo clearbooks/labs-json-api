@@ -9,8 +9,8 @@
 namespace Clearbooks\LabsApi\User;
 
 
-use Clearbooks\LabsApi\Framework\Tokens\TokenAuthenticationProvider;
-use Clearbooks\LabsApi\Framework\Tokens\UserInformationProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 
 class MockTokenProvider implements UserInformationProvider, TokenAuthenticationProvider
 {

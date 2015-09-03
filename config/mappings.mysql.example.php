@@ -10,9 +10,9 @@ use Clearbooks\Labs\User\ToggleStatusModifier as ToggleStatusModifierImplementat
 use Clearbooks\Labs\User\UseCase\PermissionService;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifierService;
-use Clearbooks\LabsApi\Framework\Tokens\TokenAuthenticationProvider;
-use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
-use Clearbooks\LabsApi\Framework\Tokens\UserInformationProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\LabsMysql\Release\MysqlPublicReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;

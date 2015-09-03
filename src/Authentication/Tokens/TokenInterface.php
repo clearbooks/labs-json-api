@@ -6,7 +6,7 @@
  * Time: 12:29
  */
 
-namespace Clearbooks\LabsApi\Framework\Tokens;
+namespace Clearbooks\LabsApi\Authentication\Tokens;
 
 
 interface TokenInterface

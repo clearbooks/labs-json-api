@@ -6,7 +6,7 @@
  * Time: 10:36
  */
 
-namespace Clearbooks\LabsApi\Framework\Tokens;
+namespace Clearbooks\LabsApi\Authentication\Tokens;
 
 
 use DateTime;

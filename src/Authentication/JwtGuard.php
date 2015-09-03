@@ -1,8 +1,9 @@
 <?php
 namespace Clearbooks\LabsApi\Authentication;
+
 use Clearbooks\LabsApi\Framework\Middleware;
-use Clearbooks\LabsApi\Framework\Tokens\TokenAuthenticationProvider;
-use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Algorithm\Hs512;
 use Symfony\Component\HttpFoundation\JsonResponse;
