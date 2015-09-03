@@ -36,7 +36,7 @@ class CallbackResolverTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->app = new Application;
-        $this->mockContainer = new MockContainer( [ EndpointDummy::class => new EndpointDummy ] );
+        $this->mockContainer = new MockContainer( [ MiddlewareDummy::class => new MiddlewareDummy ] );
         $this->resolver = new CallbackResolver( $this->mockContainer, $this->app );
     }
 
@@ -84,6 +84,6 @@ class CallbackResolverTest extends \PHPUnit_Framework_TestCase
      */
     public function givenClassWhichIsMiddleware_returnArrayOfObjectAndMethod()
     {
-        $this->assertEquals([new EndpointDummy, 'execute'],  $this->resolve( EndpointDummy::class ) );
+        $this->assertEquals([new MiddlewareDummy(), 'execute'],  $this->resolve( MiddlewareDummy::class ) );
     }
 }

@@ -1,6 +1,5 @@
 <?php
 namespace Clearbooks\LabsApi\Framework;
-use Framework\Middleware;
 use Interop\Container\ContainerInterface;
 use Silex\Application;
 
@@ -34,7 +33,10 @@ class CallbackResolver extends \Silex\CallbackResolver
     public function resolveCallback($name)
     {
         if ( !is_callable( $callback = parent::resolveCallback( $name ) ) ) {
-            $callback = [$this->container->get( $name ), 'execute'];
+            if ( !class_exists( $name ) || !in_array( Middleware::class, class_implements( $name ) ) ) {
+                throw new \Exception( $name . ' is not a valid middleware class' );
+            }
+            $callback = [ $this->container->get( $name ), 'execute' ];
         }
         return $callback;
     }
