@@ -31,6 +31,14 @@
             "url": "https://github.com/clearbooks/labs-mysql"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/clearbooks/labs-php-client"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/clearbooks/labs-php-client-mysql"
+        },
+        {
             "type": "composer",
             "url": "https://carefulcoder.co.uk/composer"
         }
