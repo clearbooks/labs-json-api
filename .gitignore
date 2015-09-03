@@ -2,3 +2,4 @@
 http/api/api-docs/
 .idea/*
 config/mappings.mysql.php
+config/mappings.authentication.php
