@@ -13,7 +13,8 @@ use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\LabsApi\Framework\Endpoint;
-use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
+use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Framework\Tokens\UserInformationProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,7 +33,7 @@ class UserToggleStatusModifier implements Endpoint
      */
     private $toggleStatusModifierResponseHandler;
     /**
-     * @var TokenProviderInterface
+     * @var TokenProvider
      */
     private $tokenProvider;
 
@@ -41,12 +42,12 @@ class UserToggleStatusModifier implements Endpoint
      * @param ToggleStatusModifier $toggleStatusModifier
      * @param ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler
      * @param AlgorithmInterface $algorithm
-     * @param TokenProviderInterface $tokenProvider
+     * @param UserInformationProvider $tokenProvider
      */
     public function __construct(ToggleStatusModifier $toggleStatusModifier,
                                 ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler,
                                 AlgorithmInterface $algorithm,
-                                TokenProviderInterface $tokenProvider)
+                                UserInformationProvider $tokenProvider)
     {
         $this->statusModifier = $toggleStatusModifier;
         $this->toggleStatusModifierResponseHandler = $toggleStatusModifierResponseHandler;

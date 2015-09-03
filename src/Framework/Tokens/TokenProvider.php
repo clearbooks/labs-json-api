@@ -17,7 +17,7 @@ use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
 
-class TokenProvider implements TokenProviderInterface
+class TokenProvider implements TokenAuthenticationProvider, UserInformationProvider
 {
     /**
      * @var Jwt
