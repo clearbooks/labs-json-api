@@ -2,6 +2,7 @@
 namespace Clearbooks\LabsApi\Authentication;
 use Clearbooks\LabsApi\Framework\Middleware;
 use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Framework\Tokens\TokenProviderInterface;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Algorithm\Hs512;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,10 +21,10 @@ class JwtGuard implements Middleware
 
     /**
      * JwtGuard constructor.
-     * @param TokenProvider $tokenProvider
+     * @param TokenProviderInterface $tokenProvider
      * @param AlgorithmInterface $algorithm
      */
-    public function __construct(TokenProvider $tokenProvider, AlgorithmInterface $algorithm)
+    public function __construct(TokenProviderInterface $tokenProvider, AlgorithmInterface $algorithm)
     {
         $this->tokenProvider = $tokenProvider;
         $this->algorithm = $algorithm;
