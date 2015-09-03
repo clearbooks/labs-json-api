@@ -11,7 +11,7 @@ namespace Clearbooks\LabsApi\Authentication\Tokens;
 
 use DateTime;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
-use Emarref\Jwt\Encryption\Factory;
+use Emarref\Jwt\Encryption\Factory as EncryptionFactory;
 use Emarref\Jwt\Exception\VerificationException;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
@@ -48,7 +48,7 @@ class TokenProvider implements TokenAuthenticationProvider, UserInformationProvi
     {
         $this->jwt = $jwt;
         $this->algorithm = $algorithm;
-        $this->encryption = Factory::create($algorithm);
+        $this->encryption = EncryptionFactory::create($algorithm);
         $this->context = new Context($this->encryption);
     }
 

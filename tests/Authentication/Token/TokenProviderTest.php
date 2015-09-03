@@ -14,7 +14,7 @@ use DateTime;
 use Emarref\Jwt\Algorithm\Hs512;
 use Emarref\Jwt\Claim\PublicClaim;
 use Emarref\Jwt\Encryption\Asymmetric;
-use Emarref\Jwt\Encryption\Factory;
+use Emarref\Jwt\Encryption\Factory as EncryptionFactory;
 use Emarref\Jwt\Encryption\Symmetric;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
@@ -90,7 +90,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
      */
     private function addValidUserId()
     {
-        $this->token->addClaim(new PublicClaim('userId', $this::USER_ID));
+        $this->token->addClaim(new PublicClaim('userId', self::USER_ID));
     }
 
     /**
@@ -98,7 +98,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
      */
     private function addValidGroupId()
     {
-        $this->token->addClaim(new PublicClaim('groupId', $this::GROUP_ID));
+        $this->token->addClaim(new PublicClaim('groupId', self::GROUP_ID));
     }
 
     /**
@@ -128,7 +128,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
     {
         $this->jwt = new Jwt();
         $this->algorithm = new Hs512("shhh... it's a secret");
-        $this->encryption = Factory::create($this->algorithm);
+        $this->encryption = EncryptionFactory::create($this->algorithm);
         $this->token = new Token();
     }
 
@@ -215,8 +215,8 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $this->createValidToken();
 
         $tokenProvider = $this->createTokenProvider();
-        $this->assertEquals($this::USER_ID, $tokenProvider->getUserId());
-        $this->assertEquals($this::GROUP_ID, $tokenProvider->getGroupId());
+        $this->assertEquals(self::USER_ID, $tokenProvider->getUserId());
+        $this->assertEquals(self::GROUP_ID, $tokenProvider->getGroupId());
     }
 
     /**
@@ -228,7 +228,10 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $tokenProvider = $this->createTokenProvider();
 
         $this->token->setSignature("broken");
-        $tokenProvider->setToken($this->jwt->serialize($this->token, Factory::create(new Hs512("tell everyone the secret"))));
+        $tokenProvider->setToken(
+            $this->jwt->serialize($this->token,
+            EncryptionFactory::create(new Hs512("tell everyone the secret")))
+        );
 
         $this->assertEquals(false, $tokenProvider->verifyToken());
     }
