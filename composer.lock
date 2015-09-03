@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a57a261a9e0eb0cb2db004b2bc4bf072",
+    "hash": "04b99110d647f280d7f7665a998a2d49",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -55,18 +55,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "33b7fd429cf7ead803dd4a8cca162390cfbbc42b"
+                "reference": "ee71bbb8d2de068edac152ddeac4672733ec7215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/33b7fd429cf7ead803dd4a8cca162390cfbbc42b",
-                "reference": "33b7fd429cf7ead803dd4a8cca162390cfbbc42b",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/ee71bbb8d2de068edac152ddeac4672733ec7215",
+                "reference": "ee71bbb8d2de068edac152ddeac4672733ec7215",
                 "shasum": ""
             },
             "require": {
                 "clearbooks/labs": "dev-master",
-                "clearbooks/labs-php-client": "dev-master",
-                "clearbooks/labs-php-client-mysql": "dev-master",
                 "doctrine/dbal": "2.5.1"
             },
             "require-dev": {
@@ -95,102 +93,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-02 10:58:09"
-        },
-        {
-            "name": "clearbooks/labs-php-client",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/clearbooks/labs-php-client.git",
-                "reference": "708020125af679f4f0ef589e9c78b6b814c0a603"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client/zipball/708020125af679f4f0ef589e9c78b6b814c0a603",
-                "reference": "708020125af679f4f0ef589e9c78b6b814c0a603",
-                "shasum": ""
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "4.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\Client\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\Client\\": "test/"
-                }
-            },
-            "license": [
-                "GPL v2"
-            ],
-            "authors": [
-                {
-                    "name": "Clear Books Engineering Team",
-                    "email": "developers@clearbooks.co.uk"
-                }
-            ],
-            "description": "Sensible releases",
-            "support": {
-                "source": "https://github.com/clearbooks/labs-php-client/tree/master",
-                "issues": "https://github.com/clearbooks/labs-php-client/issues"
-            },
-            "time": "2015-08-27 13:43:11"
-        },
-        {
-            "name": "clearbooks/labs-php-client-mysql",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/clearbooks/labs-php-client-mysql.git",
-                "reference": "4de0a91dc8e5627d2bcf7b7b5689490d7c517f11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/4de0a91dc8e5627d2bcf7b7b5689490d7c517f11",
-                "reference": "4de0a91dc8e5627d2bcf7b7b5689490d7c517f11",
-                "shasum": ""
-            },
-            "require": {
-                "clearbooks/labs-php-client": "dev-master",
-                "crodas/notoj": "1.0.8",
-                "doctrine/dbal": "2.5.1",
-                "php-di/php-di": "^5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\": "test/"
-                }
-            },
-            "license": [
-                "GPL v2"
-            ],
-            "authors": [
-                {
-                    "name": "Clear Books Engineering Team",
-                    "email": "developers@clearbooks.co.uk"
-                }
-            ],
-            "description": "DB connection classes for Labs",
-            "support": {
-                "source": "https://github.com/clearbooks/labs-php-client-mysql/tree/master",
-                "issues": "https://github.com/clearbooks/labs-php-client-mysql/issues"
-            },
-            "time": "2015-08-28 12:09:37"
+            "time": "2015-09-01 11:22:18"
         },
         {
             "name": "container-interop/container-interop",
@@ -218,113 +121,6 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
-        },
-        {
-            "name": "crodas/class-info",
-            "version": "v0.1.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/crodas/ClassInfo.git",
-                "reference": "d8e15a64b2b31b5c3ebece582018eee86e9a2638"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/crodas/ClassInfo/zipball/d8e15a64b2b31b5c3ebece582018eee86e9a2638",
-                "reference": "d8e15a64b2b31b5c3ebece582018eee86e9a2638",
-                "shasum": ""
-            },
-            "require": {
-                "nikic/php-parser": "1.1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "crodas": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "César D. Rodas",
-                    "email": "crodas@php.net"
-                }
-            ],
-            "description": "Get classes and functions defined in a given file",
-            "time": "2015-05-02 15:25:50"
-        },
-        {
-            "name": "crodas/file-util",
-            "version": "v0.1.19",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/crodas/FileUtils.git",
-                "reference": "57195fbfea90200361b7b04023687154a7c5dcd7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/crodas/FileUtils/zipball/57195fbfea90200361b7b04023687154a7c5dcd7",
-                "reference": "57195fbfea90200361b7b04023687154a7c5dcd7",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "crodas": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "César D. Rodas",
-                    "email": "crodas@php.net"
-                }
-            ],
-            "description": "Useful libraries to manipulate files",
-            "time": "2015-07-31 06:29:10"
-        },
-        {
-            "name": "crodas/notoj",
-            "version": "v1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/crodas/Notoj.git",
-                "reference": "15c6d108f669a542808061aa4556c0eecfc53162"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/crodas/Notoj/zipball/15c6d108f669a542808061aa4556c0eecfc53162",
-                "reference": "15c6d108f669a542808061aa4556c0eecfc53162",
-                "shasum": ""
-            },
-            "require": {
-                "crodas/class-info": "^0.1.11",
-                "crodas/file-util": "^0.1.18",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Notoj": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-4-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "César D. Rodas",
-                    "email": "crodas@php.net"
-                }
-            ],
-            "description": "Annotation parser. Uses reflection and provides cache out of the box.",
-            "time": "2015-08-08 13:59:42"
         },
         {
             "name": "doctrine/annotations",
@@ -680,12 +476,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "a081a0c2f14486254464f1a657595f5a6b3092f4"
+                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/a081a0c2f14486254464f1a657595f5a6b3092f4",
-                "reference": "a081a0c2f14486254464f1a657595f5a6b3092f4",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
+                "reference": "63c61ba4f8f20c9a013e0fb5b6c0a8d0002f87a9",
                 "shasum": ""
             },
             "require": {
@@ -739,7 +535,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-09-02 15:55:05"
+            "time": "2015-08-26 14:31:47"
         },
         {
             "name": "doctrine/lexer",
@@ -796,62 +592,59 @@
             "time": "2014-09-09 13:34:57"
         },
         {
-            "name": "nikic/php-parser",
-            "version": "v1.1.0",
+            "name": "emarref/jwt",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528"
+                "url": "https://github.com/emarref/jwt.git",
+                "reference": "5af74c1850583eb6981e5e39fec0690e16a5039b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ac05ef6f95bf8361549604b6031c115f92f39528",
-                "reference": "ac05ef6f95bf8361549604b6031c115f92f39528",
+                "url": "https://api.github.com/repos/emarref/jwt/zipball/5af74c1850583eb6981e5e39fec0690e16a5039b",
+                "reference": "5af74c1850583eb6981e5e39fec0690e16a5039b",
                 "shasum": ""
             },
             "require": {
-                "ext-tokenizer": "*",
-                "php": ">=5.3"
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "ext-openssl": "Enables more token encryption options"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
             "autoload": {
-                "files": [
-                    "lib/bootstrap.php"
-                ]
+                "psr-4": {
+                    "Emarref\\Jwt\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Nikita Popov"
+                    "name": "Malcolm Fell",
+                    "email": "emarref@gmail.com"
                 }
             ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "time": "2015-01-18 11:29:59"
+            "description": "A JWT implementation",
+            "time": "2015-04-08 21:14:13"
         },
         {
             "name": "php-di/invoker",
-            "version": "1.0.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/Invoker.git",
-                "reference": "2eb8f3a9b44c1427865134ef585d986ca89bce36"
+                "reference": "7ea703c62dbb29d64763fa85258826034ce3c97d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/2eb8f3a9b44c1427865134ef585d986ca89bce36",
-                "reference": "2eb8f3a9b44c1427865134ef585d986ca89bce36",
+                "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/7ea703c62dbb29d64763fa85258826034ce3c97d",
+                "reference": "7ea703c62dbb29d64763fa85258826034ce3c97d",
                 "shasum": ""
             },
             "require": {
@@ -881,7 +674,7 @@
                 "invoke",
                 "invoker"
             ],
-            "time": "2015-09-02 16:01:10"
+            "time": "2015-04-24 10:18:34"
         },
         {
             "name": "php-di/php-di",
@@ -2576,7 +2369,8 @@
     "stability-flags": {
         "clearbooks/labs": 20,
         "zircote/swagger-php": 20,
-        "clearbooks/labs-mysql": 20
+        "clearbooks/labs-mysql": 20,
+        "emarref/jwt": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
