@@ -12,6 +12,7 @@ namespace Clearbooks\LabsApi\Framework\Tokens;
 use DateTime;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Emarref\Jwt\Encryption\Factory;
+use Emarref\Jwt\Exception\VerificationException;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
@@ -61,7 +62,12 @@ class TokenProvider implements TokenProviderInterface
         if(!($this->isNotExpired() && $this->hasUserId() && $this->isLabsToken())) {
             return false;
         }
-        return $this->jwt->verify($this->token, $this->context);
+        try {
+            $this->jwt->verify($this->token, $this->context);
+            return true;
+        } catch (VerificationException $e) {
+            return false;
+        }
     }
 
     public function getUserId()
