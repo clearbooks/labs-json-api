@@ -13,6 +13,7 @@ use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
 use Clearbooks\Labs\User\ToggleStatusModifier\Response;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
+use Clearbooks\Labs\User\UseCase\ToggleStatusModifier\Response;
 use Clearbooks\LabsApi\Framework\Endpoint;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
@@ -98,7 +99,8 @@ class UserToggleStatusModifier implements Endpoint
     {
         $toggleId = $request->request->get( self::TOGGLE_ID );
         $newStatus = $request->request->get( self::NEW_STATUS );
-        return(!isset($toggleId) || !isset($newStatus));
+        $userId = $this->getUserId();
+        return(!isset($toggleId) || !isset($newStatus) || !isset($userId));
     }
 
     private function getUserId()
