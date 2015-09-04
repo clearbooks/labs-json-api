@@ -98,7 +98,8 @@ class UserToggleStatusModifier implements Endpoint
     {
         $toggleId = $request->request->get( self::TOGGLE_ID );
         $newStatus = $request->request->get( self::NEW_STATUS );
-        return(!isset($toggleId) || !isset($newStatus));
+        $userId = $this->getUserId();
+        return(!isset($toggleId) || !isset($newStatus) || !isset($userId));
     }
 
     private function getUserId()
