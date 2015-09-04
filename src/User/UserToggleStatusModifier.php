@@ -10,6 +10,7 @@ namespace Clearbooks\LabsApi\User;
 
 
 use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
+use Clearbooks\Labs\User\ToggleStatusModifier\Response;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\LabsApi\Framework\Endpoint;
@@ -68,8 +69,8 @@ class UserToggleStatusModifier implements Endpoint
 
         $userId = $this->getUserId();
         $labsRequest = $this->createLabsRequest($request, $userId);
-        $this->statusModifier->execute($labsRequest, $this->toggleStatusModifierResponseHandler);
-        $response = $this->toggleStatusModifierResponseHandler->getLastHandledResponse();
+        /** @var Response $response */
+        $response = $this->statusModifier->execute($labsRequest, $this->toggleStatusModifierResponseHandler);
 
         if(!empty($response->getErrors())) {
             return new JsonResponse("An error occurred", 400);
