@@ -6,11 +6,11 @@
  * Time: 09:35
  */
 
-namespace Clearbooks\LabsApi\Framework\Tokens;
+namespace Clearbooks\LabsApi\Authentication\Tokens;
 
 use Emarref\Jwt\Token;
 
-interface TokenAuthenticationProvider
+interface TokenAuthenticationProvider extends TokenInterface
 {
     public function verifyToken();
 }

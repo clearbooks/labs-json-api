@@ -6,10 +6,10 @@
  * Time: 10:26
  */
 
-namespace Clearbooks\LabsApi\Framework\Tokens;
+namespace Clearbooks\LabsApi\Authentication\Tokens;
 
 
-interface UserInformationProvider
+interface UserInformationProvider extends TokenInterface
 {
     public function getUserId();
 

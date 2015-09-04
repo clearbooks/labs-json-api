@@ -41,7 +41,16 @@ class GetUserTogglesForRelease implements Endpoint
         $json = [];
         foreach ($userToggles as $toggle) {
             $json[] = [
-                'name' => $toggle->getName()
+                'name' => $toggle->getName(),
+                'marketingInfo' => [
+                    'appNotificationCopyText' => $toggle->getAppNotificationCopyText(),
+                    'functionalityDescription' => $toggle->getDescriptionOfFunctionality(),
+                    'implementationReason' => $toggle->getDescriptionOfImplementationReason(),
+                    'locationDescription' => $toggle->getDescriptionOfLocation(),
+                    'toggleDescription' => $toggle->getDescriptionOfToggle(),
+                    'screenshotUrl' => $toggle->getScreenshotUrl(),
+                    'guideUrl' => $toggle->getGuideUrl(),
+                ]
             ];
         }
 

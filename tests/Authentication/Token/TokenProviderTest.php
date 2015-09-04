@@ -6,21 +6,25 @@
  * Time: 14:07
  */
 
-namespace Clearbooks\LabsApi\Framework\Token;
+namespace Clearbooks\LabsApi\Framework\Authentication\Token;
 
 
-use Clearbooks\LabsApi\Framework\Tokens\TokenProvider;
+use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
 use DateTime;
 use Emarref\Jwt\Algorithm\Hs512;
 use Emarref\Jwt\Claim\PublicClaim;
 use Emarref\Jwt\Encryption\Asymmetric;
-use Emarref\Jwt\Encryption\Factory;
+use Emarref\Jwt\Encryption\Factory as EncryptionFactory;
 use Emarref\Jwt\Encryption\Symmetric;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 
 class TokenProviderTest extends \PHPUnit_Framework_TestCase
 {
+
+    const USER_ID = '1';
+    const GROUP_ID = '1';
+
     /**
      * @var Token
      */
@@ -86,7 +90,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
      */
     private function addValidUserId()
     {
-        $this->token->addClaim(new PublicClaim('userId', '1'));
+        $this->token->addClaim(new PublicClaim('userId', self::USER_ID));
     }
 
     /**
@@ -94,7 +98,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
      */
     private function addValidGroupId()
     {
-        $this->token->addClaim(new PublicClaim('groupId', '1'));
+        $this->token->addClaim(new PublicClaim('groupId', self::GROUP_ID));
     }
 
     /**
@@ -105,9 +109,6 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $this->token->addClaim(new PublicClaim('appId', 'labs'));
     }
 
-    /**
-     *
-     */
     private function addAllButAppId()
     {
         $this->addValidExpiryDate();
@@ -115,11 +116,19 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $this->addValidGroupId();
     }
 
+    private function createValidToken()
+    {
+        $this->addValidExpiryDate();
+        $this->addValidUserId();
+        $this->addValidGroupId();
+        $this->addValidAppId();
+    }
+
     public function setUp()
     {
         $this->jwt = new Jwt();
         $this->algorithm = new Hs512("shhh... it's a secret");
-        $this->encryption = Factory::create($this->algorithm);
+        $this->encryption = EncryptionFactory::create($this->algorithm);
         $this->token = new Token();
     }
 
@@ -128,10 +137,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
      */
     public function givenValidToken_whenVerifyingToken_returnTrue()
     {
-        $this->addValidExpiryDate();
-        $this->addValidUserId();
-        $this->addValidGroupId();
-        $this->addValidAppId();
+        $this->createValidToken();
 
         $tokenProvider = $this->createTokenProvider();
         $this->assertEquals(true, $tokenProvider->verifyToken());
@@ -198,6 +204,35 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $this->addAllButAppId();
 
         $tokenProvider = $this->createTokenProvider();
+        $this->assertEquals(false, $tokenProvider->verifyToken());
+    }
+
+    /**
+     * @test
+     */
+    public function givenValidToken_whenSettingToken_getCorrectUserAndGroupId()
+    {
+        $this->createValidToken();
+
+        $tokenProvider = $this->createTokenProvider();
+        $this->assertEquals(self::USER_ID, $tokenProvider->getUserId());
+        $this->assertEquals(self::GROUP_ID, $tokenProvider->getGroupId());
+    }
+
+    /**
+     * @test
+     */
+    public function givenTokenWithInvalidSignature_whenValidatingToken_returnFalse()
+    {
+        $this->createValidToken();
+        $tokenProvider = $this->createTokenProvider();
+
+        $this->token->setSignature("broken");
+        $tokenProvider->setToken(
+            $this->jwt->serialize($this->token,
+            EncryptionFactory::create(new Hs512("tell everyone the secret")))
+        );
+
         $this->assertEquals(false, $tokenProvider->verifyToken());
     }
 }
