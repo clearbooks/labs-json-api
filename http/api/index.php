@@ -2,6 +2,7 @@
 use Clearbooks\LabsApi\Authentication\JwtGuard;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
+use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
@@ -68,7 +69,7 @@ $app->get( 'public-releases/list', GetAllPublicReleases::class);
  *   description="The id of the release to get the toggles for",
  *   in="query",
  *   required=true,
- *   type="integer"
+ *   type="string"
  *  )
  * )
  */
@@ -118,11 +119,32 @@ $app->get( 'toggle/is-active', GetIsToggleActive::class);
  *   description="The release ID to get toggles for",
  *   in="query",
  *   required=true,
- *   type="integer"
+ *   type="string"
  *  )
  * )
  */
 $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/user/is-activated",
+ *  summary="List all toggles that have been activated by a specified user",
+ *  produces={"application/json"},
+ *  tags={"toggles"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of activated toggles"
+ *  ),
+ *  @SWG\Parameter(
+ *   name="release",
+ *   description="The id of the user to get the toggles for",
+ *   in="query",
+ *   required=true,
+ *   type="string"
+ *  )
+ * )
+ */
+$app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
 
 /**
  * @SWG\Get(
@@ -135,11 +157,11 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  *   description="A list of group toggles"
  *  ),
  *  @SWG\Parameter(
- *   name="release",
+ *   name="userId",
  *   description="The id of the release to get the toggles for",
  *   in="query",
  *   required=true,
- *   type="integer"
+ *   type="string"
  *  )
  * )
  */

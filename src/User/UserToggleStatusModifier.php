@@ -10,9 +10,9 @@ namespace Clearbooks\LabsApi\User;
 
 
 use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
+use Clearbooks\Labs\User\ToggleStatusModifier\Response;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
-use Clearbooks\Labs\User\UseCase\ToggleStatusModifier\Response;
 use Clearbooks\LabsApi\Framework\Endpoint;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;
