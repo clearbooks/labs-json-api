@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "d6de4a66fca642206a0f22bc0454bed534f32167"
+                "reference": "464aa5bd0755329d4af18292af024b19630f1917"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/d6de4a66fca642206a0f22bc0454bed534f32167",
-                "reference": "d6de4a66fca642206a0f22bc0454bed534f32167",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/464aa5bd0755329d4af18292af024b19630f1917",
+                "reference": "464aa5bd0755329d4af18292af024b19630f1917",
                 "shasum": ""
             },
             "require-dev": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-03 13:11:23"
+            "time": "2015-09-04 13:24:08"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "a4e67a7abac1bb0ef0e44d540d2ba9a29780ad99"
+                "reference": "d8b9591e535734047aee26563f77edf58f19852f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/a4e67a7abac1bb0ef0e44d540d2ba9a29780ad99",
-                "reference": "a4e67a7abac1bb0ef0e44d540d2ba9a29780ad99",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/d8b9591e535734047aee26563f77edf58f19852f",
+                "reference": "d8b9591e535734047aee26563f77edf58f19852f",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-03 16:19:46"
+            "time": "2015-09-04 15:03:47"
         },
         {
             "name": "clearbooks/labs-php-client",
