@@ -31,6 +31,10 @@ class GetTogglesActivatedByUser implements Endpoint
         $this->getActivatedToggles = $getActivatedToggles;
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function execute(Request $request)
     {
         $userId = $request->get('userId');
