@@ -1,9 +1,13 @@
 <?php
+use Clearbooks\Labs\Client\Toggle\Entity\Group;
+use Clearbooks\Labs\Client\Toggle\Entity\GroupStub;
+use Clearbooks\Labs\Client\Toggle\Entity\User;
 use Clearbooks\Labs\Client\Toggle\UseCase\IsToggleActive;
 use Clearbooks\Labs\Client\Toggle\ToggleChecker;
 use Clearbooks\Labs\Release\Gateway\PublicReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
+use Clearbooks\Labs\Toggle\Entity\UserStub;
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\ActivatedToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
@@ -41,6 +45,8 @@ return [
     UserInformationProvider::class => \Di\object(TokenProvider::class),
     ActivatedToggleGateway::class => \Di\object(MysqlActivatedToggleGateway::class),
     IsToggleActive::class => \Di\object(ToggleChecker::class),
+    User::class => \Di\object(UserStub::class),
+    Group::class=> \Di\object(GroupStub::class),
     Connection::class => function() {
         return DriverManager::getConnection([
             'dbname' => '{{ labs_db_name }}',
