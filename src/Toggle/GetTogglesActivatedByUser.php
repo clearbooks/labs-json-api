@@ -10,6 +10,7 @@ namespace Clearbooks\LabsApi\Toggle;
 
 
 use Clearbooks\Labs\Toggle\GetActivatedToggles;
+use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\LabsApi\Framework\Endpoint;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -21,14 +22,20 @@ class GetTogglesActivatedByUser implements Endpoint
      * @var GetActivatedToggles
      */
     private $getActivatedToggles;
+    /**
+     * @var UserInformationProvider
+     */
+    private $tokenProvider;
 
     /**
      * GetTogglesActivatedByUser constructor.
      * @param GetActivatedToggles $getActivatedToggles
+     * @param UserInformationProvider $tokenProvider
      */
-    public function __construct(GetActivatedToggles $getActivatedToggles)
+    public function __construct(GetActivatedToggles $getActivatedToggles, UserInformationProvider $tokenProvider)
     {
         $this->getActivatedToggles = $getActivatedToggles;
+        $this->tokenProvider = $tokenProvider;
     }
 
     /**
@@ -37,7 +44,7 @@ class GetTogglesActivatedByUser implements Endpoint
      */
     public function execute(Request $request)
     {
-        $userId = $request->get('userId');
+        $userId = $this->tokenProvider->getUserId();
         if(!isset($userId)) {
             return new JsonResponse('Missing user identifier', 400);
         }
@@ -49,8 +56,7 @@ class GetTogglesActivatedByUser implements Endpoint
          */
         foreach($activatedToggles as $toggle) {
             $json[] = [
-                'name' => $toggle->getName(),
-                'release' => $toggle->getRelease()
+                'key' => $toggle->getName(),
             ];
         }
 

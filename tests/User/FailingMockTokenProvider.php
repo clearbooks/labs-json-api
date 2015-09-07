@@ -13,10 +13,6 @@ use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
 
 class FailingMockTokenProvider implements TokenAuthenticationProvider
 {
-    public function setToken($serializedToken)
-    {
-        // empty
-    }
     public function verifyToken()
     {
         return false;
