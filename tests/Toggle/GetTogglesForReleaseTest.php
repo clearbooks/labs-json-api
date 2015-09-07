@@ -49,7 +49,9 @@ class GetTogglesForReleaseTest extends EndpointTest
         $this->executeWithQuery( ['release' => 1] );
         $this->assertJsonResponse( [
             [
-                'name' => BrollyToggle::NAME
+                'id' => BrollyToggle::ID,
+                'name' => BrollyToggle::NAME,
+                'summary' => BrollyToggle::DESC
             ]
         ] );
     }
