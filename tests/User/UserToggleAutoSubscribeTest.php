@@ -15,14 +15,23 @@ use Clearbooks\LabsApi\EndpointTest;
 
 class UserToggleAutoSubscribeTest extends EndpointTest
 {
+    private $user;
+    /** @var AutoSubscriptionProviderSpy */
+    private $autoSubscriptionProvider;
+
     public function setupEndpoint($userId, $subscribed)
     {
+        $this->autoSubscriptionProvider = new AutoSubscriptionProviderSpy($subscribed);
+
+        $userInformationProvider = new MockTokenProvider($userId);
+        $this->user = new User($userInformationProvider);
+
         $this->endpoint = new UserToggleAutoSubscribe(
             new UserAutoSubscriber(
-                new User(new MockTokenProvider('1')),
-                new AutoSubscriptionProviderSpy($subscribed)
+                $this->user,
+                $this->autoSubscriptionProvider
             ),
-            new MockTokenProvider($userId)
+            $userInformationProvider
         );
     }
 
@@ -41,24 +50,26 @@ class UserToggleAutoSubscribeTest extends EndpointTest
     /**
      * @test
      */
-    public function givenCorrectUserIdAndNotSubscribed_whenSubscribing_returnTrue()
+    public function givenCorrectUserIdAndNotSubscribed_whenSubscribing_returnTrueAndSubscribe()
     {
         $this->setupEndpoint('1', false);
 
         $this->executeWithQuery([]);
 
         $this->assertJsonResponse([true]);
+        $this->assertEquals(true, $this->autoSubscriptionProvider->isSubscribed($this->user));
     }
 
     /**
      * @test
      */
-    public function givenCorrectUserIdAndSubscribed_whenSubscribing_returnTrue()
+    public function givenCorrectUserIdAndSubscribed_whenSubscribing_returnTrueAndStopSubscribing()
     {
         $this->setupEndpoint('1', true);
 
         $this->executeWithQuery([]);
 
         $this->assertJsonResponse([true]);
+        $this->assertEquals(false, $this->autoSubscriptionProvider->isSubscribed($this->user));
     }
 }
