@@ -66,8 +66,5 @@ return [
             'host' => '{{ labs_db_host }}',
             'driver' => 'pdo_mysql',
         ] );
-    },
-    Request::class => function() {
-        return Request::createFromGlobals();
     }
 ];
