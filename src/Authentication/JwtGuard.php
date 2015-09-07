@@ -33,12 +33,15 @@ class JwtGuard implements Middleware
 
     public function execute( Request $request )
     {
-            if(!$this->algorithm instanceof Hs512) {
-                return new JsonResponse("Algorithm was not Hs512", 403);
-            }
-            if(!$this->tokenProvider->verifyToken()) {
-                return new JsonResponse("Couldn't verify token", 403);
-            }
-            return null;
+        if ( !$request->headers->get('Authorization') ) {
+            return new JsonResponse("Unable to verify token", 403);
+        }
+        if(!$this->algorithm instanceof Hs512) {
+            return new JsonResponse("Algorithm was not Hs512", 403);
+        }
+        if(!$this->tokenProvider->verifyToken()) {
+            return new JsonResponse("Couldn't verify token", 403);
+        }
+        return null;
     }
 }
