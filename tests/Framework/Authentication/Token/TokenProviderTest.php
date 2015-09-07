@@ -224,14 +224,11 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
     public function givenTokenWithInvalidSignature_whenValidatingToken_returnFalse()
     {
         $this->createValidToken();
-        $tokenProvider = $this->createTokenProvider();
 
         $this->token->setSignature("broken");
-        $tokenProvider->setToken(
-            $this->jwt->serialize($this->token,
-            EncryptionFactory::create(new Hs512("tell everyone the secret")))
-        );
-
+        $token = $this->jwt->serialize($this->token,EncryptionFactory::create(new Hs512("tell everyone the secret")));
+        $request = new MockTokenRequest($token);
+        $tokenProvider = new TokenProvider($this->jwt, $this->algorithm, $request);
         $this->assertEquals(false, $tokenProvider->verifyToken());
     }
 }

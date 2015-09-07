@@ -97,12 +97,4 @@ class TokenProvider implements TokenAuthenticationProvider, UserInformationProvi
         return(isset($appId) && $appId->getValue() == "labs");
     }
 
-    /**
-     * @param $serializedToken
-     */
-    public function setToken($serializedToken)
-    {
-        $this->token = $this->jwt->deserialize($serializedToken);;
-    }
-
 }
