@@ -44,7 +44,6 @@ class GetTogglesActivatedByUser implements Endpoint
      */
     public function execute(Request $request)
     {
-        $this->tokenProvider->setToken($request->headers->get('Authorization'));
         $userId = $this->tokenProvider->getUserId();
         if(!isset($userId)) {
             return new JsonResponse('Missing user identifier', 400);

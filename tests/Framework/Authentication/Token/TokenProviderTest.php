@@ -52,8 +52,7 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
     {
         $serializedToken = $this->jwt->serialize($this->token, $this->encryption);
 
-        $tokenProvider = new TokenProvider($this->jwt, $this->algorithm);
-        $tokenProvider->setToken($serializedToken);
+        $tokenProvider = new TokenProvider($this->jwt, $this->algorithm, new MockTokenRequest($serializedToken));
         return $tokenProvider;
     }
 

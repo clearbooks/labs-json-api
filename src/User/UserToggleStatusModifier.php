@@ -61,8 +61,6 @@ class UserToggleStatusModifier implements Endpoint
      */
     public function execute(Request $request)
     {
-        $this->tokenProvider->setToken($request->headers->get('Authorization'));
-
         if($this->requestIsNotValid($request)) {
             return new JsonResponse("You didn't include all the necessary information", 400);
         }

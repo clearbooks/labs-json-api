@@ -35,9 +35,4 @@ class MockTokenProvider implements UserInformationProvider, TokenAuthenticationP
     public function getGroupId() {
         return $this->groupId;
     }
-
-    public function setToken($serializedToken)
-    {
-        //Empty
-    }
 }

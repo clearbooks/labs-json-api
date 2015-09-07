@@ -16,6 +16,7 @@ use Emarref\Jwt\Exception\VerificationException;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
 use Emarref\Jwt\Verification\Context;
+use Symfony\Component\HttpFoundation\Request;
 
 class TokenProvider implements TokenAuthenticationProvider, UserInformationProvider
 {
@@ -43,18 +44,15 @@ class TokenProvider implements TokenAuthenticationProvider, UserInformationProvi
     /**
      * @param Jwt $jwt
      * @param AlgorithmInterface $algorithm
+     * @param Request $request
      */
-    public function __construct(Jwt $jwt, AlgorithmInterface $algorithm)
+    public function __construct(Jwt $jwt, AlgorithmInterface $algorithm, Request $request)
     {
         $this->jwt = $jwt;
         $this->algorithm = $algorithm;
         $this->encryption = EncryptionFactory::create($algorithm);
         $this->context = new Context($this->encryption);
-    }
-
-    public function setToken($serializedToken)
-    {
-        $this->token = $this->jwt->deserialize($serializedToken);
+        $this->token = $this->jwt->deserialize($request->headers->get('Authorization'));
     }
 
     public function verifyToken()
@@ -87,15 +85,24 @@ class TokenProvider implements TokenAuthenticationProvider, UserInformationProvi
         $exp->setTimestamp($this->token->getPayload()->findClaimByName('exp')->getValue());
         return $exp > $today;
     }
+
     private function hasUserId()
     {
         $userId = $this->token->getPayload()->findClaimByName('userId');
         return isset($userId);
     }
-
     private function isLabsToken()
     {
         $appId = $this->token->getPayload()->findClaimByName('appId');
         return(isset($appId) && $appId->getValue() == "labs");
     }
+
+    /**
+     * @param $serializedToken
+     */
+    public function setToken($serializedToken)
+    {
+        $this->token = $this->jwt->deserialize($serializedToken);;
+    }
+
 }
