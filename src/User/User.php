@@ -11,7 +11,7 @@ namespace Clearbooks\LabsApi\User;
 
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 
-class User implements \Clearbooks\Labs\Client\Toggle\Entity\User
+class User implements \Clearbooks\Labs\Client\Toggle\Entity\User, \Clearbooks\Labs\AutoSubscribe\Entity\User
 {
     private $id;
 
