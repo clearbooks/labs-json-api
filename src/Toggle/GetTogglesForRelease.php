@@ -36,7 +36,9 @@ class GetTogglesForRelease implements Endpoint
 
         foreach ( $toggles as $r ) {
             $json[] = [
-                'name' => $r->getName()
+                'id' => $r->getId(),
+                'name' => $r->getName(),
+                'summary' => $r->getDescription()
             ];
         }
 
