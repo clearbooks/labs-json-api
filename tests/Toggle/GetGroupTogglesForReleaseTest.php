@@ -27,7 +27,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
     public function setUp()
     {
         $this->groupToggles = [
-            new Toggle('cat', '0', true)
+            new Toggle('0', 'dog', '0', true)
         ];
 
         $releases = [
