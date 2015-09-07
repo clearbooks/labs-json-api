@@ -30,10 +30,18 @@ class JwtGuardTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function givenRequestWithNoAuthorization_return403()
+    {
+        $guard = new JwtGuard(new MockTokenProvider( '1' ), new Hs512( 'Do pineapples have families?' ) );
+        $this->assert403( $guard->execute( new Request ) );
+    }
+
+    /**
+     * @test
+     */
     public function givenValidRequest_whenExecuting_returnNull()
     {
         $guard = new JwtGuard(new MockTokenProvider('1'), new Hs512('shh.. secrets'));
-
         $this->assertNull($guard->execute($this->request));
     }
 
@@ -43,7 +51,6 @@ class JwtGuardTest extends \PHPUnit_Framework_TestCase
     public function givenNotHs521Encryption_whenExecuting_return403()
     {
         $guard = new JwtGuard(new MockTokenProvider('1'), new None());
-
         $this->assert403($guard->execute($this->request));
     }
 
@@ -53,7 +60,6 @@ class JwtGuardTest extends \PHPUnit_Framework_TestCase
     public function givenInvalidToken_whenExecuting_return403()
     {
         $guard = new JwtGuard(new FailingMockTokenProvider(), new Hs512("shh.. secrets"));
-
         $this->assert403($guard->execute($this->request));
     }
 
