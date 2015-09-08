@@ -58,7 +58,7 @@ class GetTogglesActivatedByUserTest extends EndpointTest
 
         $this->assertJsonResponse([
             [
-                'key' => 'cats',
+                'cats' => 1,
             ]
         ]);
     }
