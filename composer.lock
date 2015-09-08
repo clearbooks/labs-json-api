@@ -927,42 +927,40 @@
         },
         {
             "name": "php-di/php-di",
-            "version": "5.0.x-dev",
+            "version": "5.1.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "927b36f37201a754ee86957de43d4784336803fe"
+                "reference": "c76acebd31cab0736b739e70d3ab43cda3cf445a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/927b36f37201a754ee86957de43d4784336803fe",
-                "reference": "927b36f37201a754ee86957de43d4784336803fe",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/c76acebd31cab0736b739e70d3ab43cda3cf445a",
+                "reference": "c76acebd31cab0736b739e70d3ab43cda3cf445a",
                 "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "~1.0",
                 "php": ">=5.4.0",
-                "php-di/invoker": "~1.0",
+                "php-di/invoker": "^1.0.1",
                 "php-di/phpdoc-reader": "~2.0"
+            },
+            "replace": {
+                "mnapoli/php-di": "*"
             },
             "require-dev": {
                 "doctrine/annotations": "~1.2",
-                "doctrine/cache": "~1.0",
+                "doctrine/cache": "~1.4",
                 "mnapoli/phpunit-easymock": "~0.1.4",
                 "ocramius/proxy-manager": "~1.0",
                 "phpunit/phpunit": "~4.5"
             },
             "suggest": {
                 "doctrine/annotations": "Install it if you want to use annotations (version ~1.2)",
-                "doctrine/cache": "Install it if you want to use the cache (version ~1.0)",
+                "doctrine/cache": "Install it if you want to use the cache (version ~1.4)",
                 "ocramius/proxy-manager": "Install it if you want to use lazy injection (version ~1.0)"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "DI\\": "src/DI/"
@@ -982,7 +980,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2015-06-04 11:55:24"
+            "time": "2015-09-06 16:59:21"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -1201,12 +1199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "3c14966b099b4ba807f146df4c6a7acffba2f793"
+                "reference": "abb3cc00c091a331876aae4d11a7d505ae585cf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/3c14966b099b4ba807f146df4c6a7acffba2f793",
-                "reference": "3c14966b099b4ba807f146df4c6a7acffba2f793",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/abb3cc00c091a331876aae4d11a7d505ae585cf5",
+                "reference": "abb3cc00c091a331876aae4d11a7d505ae585cf5",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1246,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-31 12:33:08"
+            "time": "2015-09-07 15:20:04"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1256,12 +1254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "d7246885b7fe4cb5a2786bda34362d2f0e40b730"
+                "reference": "8deea7a9f5560b7e70eab8d72e5e8f2d45564d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d7246885b7fe4cb5a2786bda34362d2f0e40b730",
-                "reference": "d7246885b7fe4cb5a2786bda34362d2f0e40b730",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8deea7a9f5560b7e70eab8d72e5e8f2d45564d15",
+                "reference": "8deea7a9f5560b7e70eab8d72e5e8f2d45564d15",
                 "shasum": ""
             },
             "require": {
@@ -1306,7 +1304,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-06-24 15:32:32"
+            "time": "2015-08-24 07:18:02"
         },
         {
             "name": "symfony/finder",
@@ -2069,12 +2067,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c0a9c60434bc8a94115efe40d97f4348352c831a"
+                "reference": "473776571bfcdcf416faca4d31f52c4e5740a9c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c0a9c60434bc8a94115efe40d97f4348352c831a",
-                "reference": "c0a9c60434bc8a94115efe40d97f4348352c831a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/473776571bfcdcf416faca4d31f52c4e5740a9c2",
+                "reference": "473776571bfcdcf416faca4d31f52c4e5740a9c2",
                 "shasum": ""
             },
             "require": {
@@ -2133,7 +2131,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-02 07:15:27"
+            "time": "2015-09-05 08:36:58"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
