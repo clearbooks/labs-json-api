@@ -1,6 +1,10 @@
 <?php
-use Clearbooks\Labs\Client\Toggle\Entity\Group as LabsGroup;
-use Clearbooks\Labs\Client\Toggle\Entity\User as LabsUser;
+use Clearbooks\Labs\AutoSubscribe\Gateway\AutoSubscriptionProvider;
+use Clearbooks\Labs\AutoSubscribe\UseCase\AutoSubscriber;
+use Clearbooks\Labs\AutoSubscribe\UserAutoSubscriber;
+use Clearbooks\Labs\Client\Toggle\Entity\User as ToggleUserEntity;
+use Clearbooks\Labs\Client\Toggle\Entity\Group as ToggleGroupEntity;
+use Clearbooks\Labs\AutoSubscribe\Entity\User as AutoSubscribeUser;
 use Clearbooks\Labs\Client\Toggle\UseCase\IsToggleActive;
 use Clearbooks\Labs\Client\Toggle\ToggleChecker;
 use Clearbooks\Labs\Db\Service\ToggleStorage;
@@ -36,7 +40,6 @@ use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
 use Clearbooks\LabsMysql\User\MysqlToggleStatusModifierService;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
-use Symfony\Component\HttpFoundation\Request;
 
 return [
     ReleaseGateway::class => \DI\object( MysqlReleaseGateway::class ),
@@ -52,12 +55,15 @@ return [
     UserInformationProvider::class => \Di\object(TokenProvider::class),
     ActivatedToggleGateway::class => \Di\object(MysqlActivatedToggleGateway::class),
     IsToggleActive::class => \Di\object(ToggleChecker::class),
-    LabsUser::class => \Di\object(User::class),
-    LabsGroup::class=> \Di\object(Group::class),
+    ToggleUserEntity::class => \Di\object(User::class),
+    ToggleGroupEntity::class=> \Di\object(Group::class),
     ToggleGatewayInterface::class => \Di\object(ToggleGateway::class),
     ToggleRetriever::class => \Di\object(ToggleStorage::class),
     UserPolicyRetriever::class => \Di\object(ToggleStorage::class),
     GroupPolicyRetriever::class => \Di\object(ToggleStorage::class),
+    AutoSubscriber::class => \Di\object(UserAutoSubscriber::class),
+    AutoSubscribeUser::class => \Di\object(User::class),
+    AutoSubscriptionProvider::class => \Di\object(),
     Connection::class => function() {
         return DriverManager::getConnection([
             'dbname' => '{{ labs_db_name }}',
