@@ -18,6 +18,7 @@ use Emarref\Jwt\Encryption\Factory as EncryptionFactory;
 use Emarref\Jwt\Encryption\Symmetric;
 use Emarref\Jwt\Jwt;
 use Emarref\Jwt\Token;
+use Symfony\Component\HttpFoundation\Request;
 
 class TokenProviderTest extends \PHPUnit_Framework_TestCase
 {
@@ -51,9 +52,13 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
     private function createTokenProvider()
     {
         $serializedToken = $this->jwt->serialize($this->token, $this->encryption);
-
         $tokenProvider = new TokenProvider($this->jwt, $this->algorithm, new MockTokenRequest($serializedToken));
         return $tokenProvider;
+    }
+
+    private function createTokenProviderWithBlankRequest()
+    {
+        return new TokenProvider($this->jwt, $this->algorithm, new Request);
     }
 
     /**
@@ -129,6 +134,25 @@ class TokenProviderTest extends \PHPUnit_Framework_TestCase
         $this->algorithm = new Hs512("shhh... it's a secret");
         $this->encryption = EncryptionFactory::create($this->algorithm);
         $this->token = new Token();
+    }
+
+    /**
+     * @test
+     */
+    public function givenNoAuthorizationHeader_whenCallingVerifyToken_returnFalse()
+    {
+        $tp = $this->createTokenProviderWithBlankRequest();
+        $this->assertFalse( $tp->verifyToken() );
+    }
+
+    /**
+     * @test
+     */
+    public function givenNoAuthorizationHeader_whenGettingCredentials_returnNull()
+    {
+        $tp = $this->createTokenProviderWithBlankRequest();
+        $this->assertNull( $tp->getGroupId() );
+        $this->assertNull( $tp->getUserId() );
     }
 
     /**
