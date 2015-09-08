@@ -55,9 +55,7 @@ class GetTogglesActivatedByUser implements Endpoint
          * @var Toggle $toggle
          */
         foreach($activatedToggles as $toggle) {
-            $json[] = [
-                'key' => $toggle->getName(),
-            ];
+            $json[$toggle->getName()] = 1;
         }
 
         return new JsonResponse($json);
