@@ -10,8 +10,11 @@ namespace Clearbooks\LabsApi\Toggle;
 
 
 use Clearbooks\Labs\Toggle\Entity\ActivatableToggle;
+use Clearbooks\Labs\Toggle\Entity\MarketableToggle;
 use Clearbooks\Labs\Toggle\Gateway\ActivatedToggleGatewayStub;
+use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGatewayStub;
 use Clearbooks\Labs\Toggle\GetActivatedToggles;
+use Clearbooks\Labs\Toggle\PassingToggleCheckerStub;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\LabsApi\EndpointTest;
 use Clearbooks\LabsApi\User\MockTokenProvider;
@@ -20,16 +23,17 @@ use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 class GetTogglesActivatedByUserTest extends EndpointTest
 {
     /**
-     * @param ActivatableToggle[] $expectedToggles
+     * @param MarketableToggle[] $expectedToggles
      * @param UserInformationProvider $tokenProvider
      */
     public function createCollectionMocks($expectedToggles, UserInformationProvider $tokenProvider)
     {
         $this->endpoint = new GetTogglesActivatedByUser(
             new GetActivatedToggles(
-                new ActivatedToggleGatewayStub(
+                new GetAllTogglesGatewayStub(
                     $expectedToggles
-                )
+                ),
+                new PassingToggleCheckerStub
             ),
             $tokenProvider
         );

@@ -3,6 +3,7 @@ namespace Clearbooks\LabsApi\Toggle;
 use Clearbooks\Labs\Release\Gateway\BrollyReleaseToggleCollection;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollectionMock;
 use Clearbooks\Labs\Release\GetReleaseToggles;
+use Clearbooks\Labs\Toggle\Entity\Brolly;
 use Clearbooks\Labs\Toggle\Entity\BrollyToggle;
 use Clearbooks\LabsApi\EndpointTest;
 
@@ -47,11 +48,13 @@ class GetTogglesForReleaseTest extends EndpointTest
     {
         $this->endpoint = new GetTogglesForRelease( new GetReleaseToggles( new BrollyReleaseToggleCollection ) );
         $this->executeWithQuery( ['release' => 1] );
+        $brolly = new Brolly;
+
         $this->assertJsonResponse( [
             [
-                'id' => BrollyToggle::ID,
-                'name' => BrollyToggle::NAME,
-                'summary' => BrollyToggle::DESC
+                'id' => $brolly->getId(),
+                'name' => $brolly->getName(),
+                'summary' => $brolly->getDescriptionOfToggle()
             ]
         ] );
     }
