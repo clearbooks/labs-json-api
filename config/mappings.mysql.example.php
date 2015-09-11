@@ -9,14 +9,14 @@ use Clearbooks\Labs\Client\Toggle\Entity\Group as LabsGroup;
 use Clearbooks\Labs\Client\Toggle\Entity\User as LabsUser;
 use Clearbooks\Labs\Client\Toggle\Gateway\GroupTogglePolicyGateway;
 use Clearbooks\Labs\Client\Toggle\Gateway\UserTogglePolicyGateway;
-use Clearbooks\Labs\Client\Toggle\UseCase\IsToggleActive;
-use Clearbooks\Labs\Client\Toggle\ToggleChecker;
+use Clearbooks\Labs\Client\Toggle\StatelessToggleChecker;
+use Clearbooks\Labs\Client\Toggle\UseCase\ToggleChecker;
 use Clearbooks\Labs\Db\Service\ToggleStorage;
 use Clearbooks\Labs\Release\Gateway\PublicReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
-use Clearbooks\Labs\Toggle\Gateway\ActivatedToggleGateway;
+use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
 use Clearbooks\Labs\Toggle\GroupPolicyGateway;
@@ -36,11 +36,11 @@ use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\LabsApi\User\Group;
 use Clearbooks\LabsApi\User\User;
+use Clearbooks\LabsMysql\AutoSubscribe\MysqlAutoSubscriptionProvider;
 use Clearbooks\LabsMysql\Release\MysqlPublicReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlActivatableToggleGateway;
-use Clearbooks\LabsMysql\Toggle\MysqlActivatedToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGetAllTogglesGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGroupToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
@@ -60,14 +60,12 @@ return [
     PublicReleaseGateway::class => \Di\object(MysqlPublicReleaseGateway::class),
     TokenAuthenticationProvider::class => \Di\object(TokenProvider::class),
     UserInformationProvider::class => \Di\object(TokenProvider::class),
-    ActivatedToggleGateway::class => \Di\object(MysqlActivatedToggleGateway::class),
-    IsToggleActive::class => \Di\object(ToggleChecker::class),
     ToggleUserEntity::class => \Di\object(User::class),
     ToggleGroupEntity::class=> \Di\object(Group::class),
     UserTogglePolicyGateway::class => \Di\object( UserPolicyGateway::class ),
     GroupTogglePolicyGateway::class => \Di\object( GroupPolicyGateway::class ),
-    \Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGateway::class => \Di\object(MysqlGetAllTogglesGateway::class),
-    \Clearbooks\Labs\Client\Toggle\UseCase\ToggleChecker::class => \Di\object(\Clearbooks\Labs\Client\Toggle\StatelessToggleChecker::class),
+    GetAllTogglesGateway::class => \Di\object(MysqlGetAllTogglesGateway::class),
+    ToggleChecker::class => \Di\object(StatelessToggleChecker::class),
     LabsUser::class => \Di\object(User::class),
     LabsGroup::class=> \Di\object(Group::class),
     ToggleGatewayInterface::class => \Di\object(ToggleGateway::class),
@@ -76,7 +74,7 @@ return [
     GroupPolicyRetriever::class => \Di\object(ToggleStorage::class),
     AutoSubscriber::class => \Di\object(UserAutoSubscriber::class),
     AutoSubscribeUser::class => \Di\object(User::class),
-    AutoSubscriptionProvider::class => \Di\object(),
+    AutoSubscriptionProvider::class => \Di\object(MysqlAutoSubscriptionProvider::class),
     Connection::class => function() {
         return DriverManager::getConnection([
             'dbname' => '{{ labs_db_name }}',
