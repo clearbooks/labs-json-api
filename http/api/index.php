@@ -6,6 +6,8 @@ use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Clearbooks\LabsApi\User\IsUserAutoSubscribed;
+use Clearbooks\LabsApi\User\UserToggleAutoSubscribe;
 use Clearbooks\LabsApi\User\UserToggleStatusModifier;
 use Emarref\Jwt\Token;
 use Silex\Application;
@@ -167,5 +169,9 @@ $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
 
 $app->post('toggle/change-status', UserToggleStatusModifier::class);
+
+$app->get('user/is-auto-subscribed', IsUserAutoSubscribed::class);
+
+$app->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
 
 $app->run();

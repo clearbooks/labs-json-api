@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e56ef37cc669e4bb82943c78c0e582a2",
+    "hash": "04b99110d647f280d7f7665a998a2d49",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -58,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "61b28b42a91905725840ad478c80ca7268c5774d"
+                "reference": "a69b3b0abdf90df422e4f9012c21aa8917f2b786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/61b28b42a91905725840ad478c80ca7268c5774d",
-                "reference": "61b28b42a91905725840ad478c80ca7268c5774d",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/a69b3b0abdf90df422e4f9012c21aa8917f2b786",
+                "reference": "a69b3b0abdf90df422e4f9012c21aa8917f2b786",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-10 09:56:38"
+            "time": "2015-09-11 09:29:43"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -150,12 +150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-php-client-mysql.git",
-                "reference": "128532d9ce7ca9dde974c640b0e9375b569ee603"
+                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/128532d9ce7ca9dde974c640b0e9375b569ee603",
-                "reference": "128532d9ce7ca9dde974c640b0e9375b569ee603",
+                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/fffb347af9afe39f6b44145bef382bf6fe7e63e2",
+                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2",
                 "shasum": ""
             },
             "require": {
@@ -171,12 +171,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Clearbooks\\Labs\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\": "test/"
+                    "Clearbooks\\Labs\\": [
+                        "src/",
+                        "test/"
+                    ]
                 }
             },
             "license": [
@@ -193,7 +191,7 @@
                 "source": "https://github.com/clearbooks/labs-php-client-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-php-client-mysql/issues"
             },
-            "time": "2015-09-08 13:08:11"
+            "time": "2015-09-10 10:19:08"
         },
         {
             "name": "clearbooks/labs-schema",
@@ -434,12 +432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
+                "reference": "ac3bc1e14fcd429c823fb98b634be1e8e0142eb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/ac3bc1e14fcd429c823fb98b634be1e8e0142eb0",
+                "reference": "ac3bc1e14fcd429c823fb98b634be1e8e0142eb0",
                 "shasum": ""
             },
             "require": {
@@ -496,7 +494,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-08-31 12:36:41"
+            "time": "2015-09-10 14:00:46"
         },
         {
             "name": "doctrine/collections",
@@ -1448,12 +1446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "1e4527c627071f94bd29dca9e62d3f0407687986"
+                "reference": "39aa7db7997031951ad4a4019153199287e1cc88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/1e4527c627071f94bd29dca9e62d3f0407687986",
-                "reference": "1e4527c627071f94bd29dca9e62d3f0407687986",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/39aa7db7997031951ad4a4019153199287e1cc88",
+                "reference": "39aa7db7997031951ad4a4019153199287e1cc88",
                 "shasum": ""
             },
             "require": {
@@ -1520,7 +1518,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-10 07:40:22"
+            "time": "2015-09-10 18:17:51"
         },
         {
             "name": "symfony/routing",
