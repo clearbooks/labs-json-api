@@ -68,9 +68,6 @@ class TokenProvider implements TokenAuthenticationProvider, UserInformationProvi
      */
     private function getClaimOrNull( $claim )
     {
-        if ( !$this->token ) {
-            return null;
-        }
         $claim = $this->token->getPayload()->findClaimByName( $claim );
         return $claim ? $claim->getValue() : null;
     }

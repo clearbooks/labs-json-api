@@ -38,7 +38,8 @@ class GetTogglesForRelease implements Endpoint
             $json[] = [
                 'id' => $r->getId(),
                 'name' => $r->getName(),
-                'summary' => $r->getDescription()
+                'summary' => $r->getDescription(),
+                'url' => $r->getUrl()
             ];
         }
 
