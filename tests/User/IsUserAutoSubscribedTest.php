@@ -51,7 +51,7 @@ class IsUserAutoSubscribedTest extends EndpointTest
 
         $this->executeWithQuery([]);
 
-        $this->assertJsonResponse([false]);
+        $this->assertJsonResponse(['autoSubscribed' => false]);
     }
 
     /**
@@ -63,6 +63,6 @@ class IsUserAutoSubscribedTest extends EndpointTest
 
         $this->executeWithQuery([]);
 
-        $this->assertJsonResponse([true]);
+        $this->assertJsonResponse(['autoSubscribed' => true]);
     }
 }

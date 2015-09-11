@@ -48,6 +48,6 @@ class UserToggleAutoSubscribe implements Endpoint
         } else {
             $this->autoSubscriber->subscribe();
         }
-        return new JsonResponse(true);
+        return new JsonResponse([true]);
     }
 }
