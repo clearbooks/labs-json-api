@@ -54,7 +54,8 @@ class GetTogglesForReleaseTest extends EndpointTest
             [
                 'id' => $brolly->getId(),
                 'name' => $brolly->getName(),
-                'summary' => $brolly->getDescriptionOfToggle()
+                'summary' => $brolly->getDescriptionOfToggle(),
+                'url' => $brolly->getGuideUrl()
             ]
         ] );
     }

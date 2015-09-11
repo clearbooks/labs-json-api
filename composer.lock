@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "04b99110d647f280d7f7665a998a2d49",
+    "hash": "e56ef37cc669e4bb82943c78c0e582a2",
     "packages": [
         {
             "name": "clearbooks/labs",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "d9f0c25b34ba4aded53f55f5c3b33e30b981a529"
+                "reference": "ae73d0c5ffe4f01804205575a22f0279016cb1f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/d9f0c25b34ba4aded53f55f5c3b33e30b981a529",
-                "reference": "d9f0c25b34ba4aded53f55f5c3b33e30b981a529",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/ae73d0c5ffe4f01804205575a22f0279016cb1f5",
+                "reference": "ae73d0c5ffe4f01804205575a22f0279016cb1f5",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-09 15:31:20"
+            "time": "2015-09-11 13:56:09"
         },
         {
             "name": "clearbooks/labs-mysql",
