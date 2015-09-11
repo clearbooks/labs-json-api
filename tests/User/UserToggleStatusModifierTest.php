@@ -92,6 +92,6 @@ class UserToggleStatusModifierTest extends EndpointTest
                 UserToggleStatusModifier::USER_ID => '1'
             ]
         );
-        $this->assertJsonResponse([true]);
+        $this->assertJsonResponse(['result' =>true]);
     }
 }
