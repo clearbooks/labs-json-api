@@ -41,6 +41,6 @@ class IsUserAutoSubscribed implements Endpoint
     {
         $userId = $this->userInformationProvider->getUserId();
         if(!isset($userId)) return new JsonResponse("User ID not provided.", 400);
-        return new JsonResponse([$this->autoSubscriber->isUserAutoSubscribed()]);
+        return new JsonResponse(['autoSubscribed' => $this->autoSubscriber->isUserAutoSubscribed()]);
     }
 }
