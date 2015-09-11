@@ -12,13 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "464aa5bd0755329d4af18292af024b19630f1917"
+                "reference": "d9f0c25b34ba4aded53f55f5c3b33e30b981a529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/464aa5bd0755329d4af18292af024b19630f1917",
-                "reference": "464aa5bd0755329d4af18292af024b19630f1917",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/d9f0c25b34ba4aded53f55f5c3b33e30b981a529",
+                "reference": "d9f0c25b34ba4aded53f55f5c3b33e30b981a529",
                 "shasum": ""
+            },
+            "require": {
+                "clearbooks/labs-php-client": "dev-master"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
@@ -47,7 +50,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-04 13:24:08"
+            "time": "2015-09-09 15:31:20"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -55,18 +58,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "d8b9591e535734047aee26563f77edf58f19852f"
+                "reference": "a69b3b0abdf90df422e4f9012c21aa8917f2b786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/d8b9591e535734047aee26563f77edf58f19852f",
-                "reference": "d8b9591e535734047aee26563f77edf58f19852f",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/a69b3b0abdf90df422e4f9012c21aa8917f2b786",
+                "reference": "a69b3b0abdf90df422e4f9012c21aa8917f2b786",
                 "shasum": ""
             },
             "require": {
                 "clearbooks/labs": "dev-master",
                 "clearbooks/labs-php-client": "dev-master",
                 "clearbooks/labs-php-client-mysql": "dev-master",
+                "clearbooks/labs-schema": "dev-master",
                 "doctrine/dbal": "2.5.1"
             },
             "require-dev": {
@@ -95,7 +99,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-04 15:03:47"
+            "time": "2015-09-11 09:29:43"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -103,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-php-client.git",
-                "reference": "708020125af679f4f0ef589e9c78b6b814c0a603"
+                "reference": "82258e5f15adbac75d44eb64f6b01255c09d9c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client/zipball/708020125af679f4f0ef589e9c78b6b814c0a603",
-                "reference": "708020125af679f4f0ef589e9c78b6b814c0a603",
+                "url": "https://api.github.com/repos/clearbooks/labs-php-client/zipball/82258e5f15adbac75d44eb64f6b01255c09d9c52",
+                "reference": "82258e5f15adbac75d44eb64f6b01255c09d9c52",
                 "shasum": ""
             },
             "require-dev": {
@@ -118,12 +122,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Clearbooks\\Labs\\Client\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\Client\\": "test/"
+                    "Clearbooks\\Labs\\Client\\": [
+                        "src/",
+                        "test/"
+                    ]
                 }
             },
             "license": [
@@ -140,7 +142,7 @@
                 "source": "https://github.com/clearbooks/labs-php-client/tree/master",
                 "issues": "https://github.com/clearbooks/labs-php-client/issues"
             },
-            "time": "2015-08-27 13:43:11"
+            "time": "2015-09-09 13:38:03"
         },
         {
             "name": "clearbooks/labs-php-client-mysql",
@@ -148,16 +150,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-php-client-mysql.git",
-                "reference": "4de0a91dc8e5627d2bcf7b7b5689490d7c517f11"
+                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/4de0a91dc8e5627d2bcf7b7b5689490d7c517f11",
-                "reference": "4de0a91dc8e5627d2bcf7b7b5689490d7c517f11",
+                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/fffb347af9afe39f6b44145bef382bf6fe7e63e2",
+                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2",
                 "shasum": ""
             },
             "require": {
                 "clearbooks/labs-php-client": "dev-master",
+                "clearbooks/labs-schema": "dev-master",
                 "crodas/notoj": "1.0.8",
                 "doctrine/dbal": "2.5.1",
                 "php-di/php-di": "^5.0"
@@ -168,12 +171,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Clearbooks\\Labs\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Clearbooks\\Labs\\": "test/"
+                    "Clearbooks\\Labs\\": [
+                        "src/",
+                        "test/"
+                    ]
                 }
             },
             "license": [
@@ -190,7 +191,38 @@
                 "source": "https://github.com/clearbooks/labs-php-client-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-php-client-mysql/issues"
             },
-            "time": "2015-08-28 12:09:37"
+            "time": "2015-09-10 10:19:08"
+        },
+        {
+            "name": "clearbooks/labs-schema",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clearbooks/labs-schema.git",
+                "reference": "eeb53a92fc3ad9bedb10d40c82edf8ff0c14f2aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clearbooks/labs-schema/zipball/eeb53a92fc3ad9bedb10d40c82edf8ff0c14f2aa",
+                "reference": "eeb53a92fc3ad9bedb10d40c82edf8ff0c14f2aa",
+                "shasum": ""
+            },
+            "type": "library",
+            "license": [
+                "GPL v2"
+            ],
+            "authors": [
+                {
+                    "name": "Clear Books Engineering Team",
+                    "email": "developers@clearbooks.co.uk"
+                }
+            ],
+            "description": "DB schema for Labs",
+            "support": {
+                "source": "https://github.com/clearbooks/labs-schema/tree/master",
+                "issues": "https://github.com/clearbooks/labs-schema/issues"
+            },
+            "time": "2015-09-09 10:43:10"
         },
         {
             "name": "container-interop/container-interop",
@@ -400,12 +432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
+                "reference": "ac3bc1e14fcd429c823fb98b634be1e8e0142eb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/ac3bc1e14fcd429c823fb98b634be1e8e0142eb0",
+                "reference": "ac3bc1e14fcd429c823fb98b634be1e8e0142eb0",
                 "shasum": ""
             },
             "require": {
@@ -462,7 +494,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-08-31 12:36:41"
+            "time": "2015-09-10 14:00:46"
         },
         {
             "name": "doctrine/collections",
@@ -927,16 +959,16 @@
         },
         {
             "name": "php-di/php-di",
-            "version": "5.1.0-beta1",
+            "version": "5.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI/PHP-DI.git",
-                "reference": "c76acebd31cab0736b739e70d3ab43cda3cf445a"
+                "reference": "168172a00c463eeeeaf889f545f6b3f3abfef4a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/c76acebd31cab0736b739e70d3ab43cda3cf445a",
-                "reference": "c76acebd31cab0736b739e70d3ab43cda3cf445a",
+                "url": "https://api.github.com/repos/PHP-DI/PHP-DI/zipball/168172a00c463eeeeaf889f545f6b3f3abfef4a7",
+                "reference": "168172a00c463eeeeaf889f545f6b3f3abfef4a7",
                 "shasum": ""
             },
             "require": {
@@ -980,7 +1012,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2015-09-06 16:59:21"
+            "time": "2015-09-08 09:01:12"
         },
         {
             "name": "php-di/phpdoc-reader",
@@ -1199,12 +1231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "abb3cc00c091a331876aae4d11a7d505ae585cf5"
+                "reference": "7eac742c453af47ae561d6c41743dc7faefc9464"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/abb3cc00c091a331876aae4d11a7d505ae585cf5",
-                "reference": "abb3cc00c091a331876aae4d11a7d505ae585cf5",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/7eac742c453af47ae561d6c41743dc7faefc9464",
+                "reference": "7eac742c453af47ae561d6c41743dc7faefc9464",
                 "shasum": ""
             },
             "require": {
@@ -1246,7 +1278,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-07 15:20:04"
+            "time": "2015-09-10 08:08:06"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1254,12 +1286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "8deea7a9f5560b7e70eab8d72e5e8f2d45564d15"
+                "reference": "69b6037050614d129fee27e17951ec7968f6567e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8deea7a9f5560b7e70eab8d72e5e8f2d45564d15",
-                "reference": "8deea7a9f5560b7e70eab8d72e5e8f2d45564d15",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/69b6037050614d129fee27e17951ec7968f6567e",
+                "reference": "69b6037050614d129fee27e17951ec7968f6567e",
                 "shasum": ""
             },
             "require": {
@@ -1304,7 +1336,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:18:02"
+            "time": "2015-09-09 18:05:45"
         },
         {
             "name": "symfony/finder",
@@ -1414,12 +1446,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "330079921340f2d273dd24df16fc129948614e77"
+                "reference": "39aa7db7997031951ad4a4019153199287e1cc88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/330079921340f2d273dd24df16fc129948614e77",
-                "reference": "330079921340f2d273dd24df16fc129948614e77",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/39aa7db7997031951ad4a4019153199287e1cc88",
+                "reference": "39aa7db7997031951ad4a4019153199287e1cc88",
                 "shasum": ""
             },
             "require": {
@@ -1486,7 +1518,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-01 07:33:03"
+            "time": "2015-09-10 18:17:51"
         },
         {
             "name": "symfony/routing",
@@ -1494,12 +1526,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "e9554bafc78c93b15ef56ce72c5aa2f3a511e683"
+                "reference": "7ee642267d616c9855c28387d30050e093f26c6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/e9554bafc78c93b15ef56ce72c5aa2f3a511e683",
-                "reference": "e9554bafc78c93b15ef56ce72c5aa2f3a511e683",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/7ee642267d616c9855c28387d30050e093f26c6b",
+                "reference": "7ee642267d616c9855c28387d30050e093f26c6b",
                 "shasum": ""
             },
             "require": {
@@ -1557,7 +1589,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2015-08-24 07:31:10"
+            "time": "2015-09-10 08:08:06"
         },
         {
             "name": "tomverran/di-container-mock",
