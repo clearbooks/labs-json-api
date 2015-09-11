@@ -56,7 +56,7 @@ class UserToggleAutoSubscribeTest extends EndpointTest
 
         $this->executeWithQuery([]);
 
-        $this->assertJsonResponse([true]);
+        $this->assertJsonResponse(true);
         $this->assertEquals(true, $this->autoSubscriptionProvider->isUpdateSubscriptionParamSubscribe());
     }
 
@@ -69,7 +69,7 @@ class UserToggleAutoSubscribeTest extends EndpointTest
 
         $this->executeWithQuery([]);
 
-        $this->assertJsonResponse([true]);
+        $this->assertJsonResponse(true);
         $this->assertEquals(false, $this->autoSubscriptionProvider->isUpdateSubscriptionParamSubscribe());
     }
 }
