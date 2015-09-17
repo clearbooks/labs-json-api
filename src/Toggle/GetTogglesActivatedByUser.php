@@ -11,7 +11,7 @@ namespace Clearbooks\LabsApi\Toggle;
 
 use Clearbooks\Labs\Toggle\GetActivatedToggles;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Clearbooks\LabsApi\User\Group;
 use Clearbooks\LabsApi\User\User;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;

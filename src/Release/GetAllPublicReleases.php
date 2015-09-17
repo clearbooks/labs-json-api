@@ -11,7 +11,7 @@ namespace Clearbooks\LabsApi\Release;
 
 use Clearbooks\Labs\Release\GetPublicReleases;
 use Clearbooks\Labs\Release\Release;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

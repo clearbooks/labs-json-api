@@ -1,6 +1,6 @@
 <?php
 namespace Clearbooks\LabsApi;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

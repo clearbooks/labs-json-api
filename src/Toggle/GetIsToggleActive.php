@@ -9,7 +9,7 @@
 namespace Clearbooks\LabsApi\Toggle;
 
 use Clearbooks\Labs\Toggle\IsToggleActive;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

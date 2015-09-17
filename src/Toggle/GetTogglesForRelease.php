@@ -1,7 +1,7 @@
 <?php
 namespace Clearbooks\LabsApi\Toggle;
 use Clearbooks\Labs\Release\GetReleaseToggles;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

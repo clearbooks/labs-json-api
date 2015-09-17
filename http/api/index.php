@@ -37,9 +37,7 @@ $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
 $container = $cb->build();
 
-$app['callback_resolver'] =  new \Clearbooks\LabsApi\Framework\CallbackResolver( $container, $app );
-$app['resolver'] =  new \Clearbooks\LabsApi\Framework\ControllerResolver( $app, $container );
-
+\Clearbooks\Dilex\ApplicationBuilder::build( $container, $app );
 $app->before(JwtGuard::class);
 /**
  * @SWG\Get(

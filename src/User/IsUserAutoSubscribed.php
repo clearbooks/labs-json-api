@@ -11,7 +11,7 @@ namespace Clearbooks\LabsApi\User;
 
 use Clearbooks\Labs\AutoSubscribe\UseCase\AutoSubscriber;
 use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
