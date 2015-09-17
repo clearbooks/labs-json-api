@@ -1,7 +1,7 @@
 <?php
 namespace Clearbooks\LabsApi\Authentication;
 
-use Clearbooks\LabsApi\Framework\Middleware;
+use Clearbooks\Dilex\Middleware;
 use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
 use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
 use Emarref\Jwt\Algorithm\AlgorithmInterface;

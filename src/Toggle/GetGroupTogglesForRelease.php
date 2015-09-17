@@ -10,7 +10,7 @@ namespace Clearbooks\LabsApi\Toggle;
 
 
 use Clearbooks\Labs\Toggle\GetGroupTogglesForRelease as labsGetGroupToggles;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

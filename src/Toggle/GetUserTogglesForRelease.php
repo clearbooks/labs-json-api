@@ -10,7 +10,7 @@ namespace Clearbooks\LabsApi\Toggle;
 
 
 use Clearbooks\Labs\Toggle\GetUserTogglesForRelease as LabsGetUserTogglesForRelease;
-use Clearbooks\LabsApi\Framework\Endpoint;
+use Clearbooks\Dilex\Endpoint;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
