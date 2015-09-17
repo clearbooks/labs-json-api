@@ -17,7 +17,7 @@ class IsUserAutoSubscribedTest extends EndpointTest
 {
     public function setupEndpoint($userId, $isSubscribed)
     {
-        $userInformationProvider = new MockTokenProvider($userId);
+        $userInformationProvider = new MockIdentityProvider($userId);
 
         $this->endpoint = new IsUserAutoSubscribed(
             new UserAutoSubscriber(

@@ -7,10 +7,8 @@
  */
 
 namespace Clearbooks\LabsApi\User;
-
-
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 use Clearbooks\Labs\AutoSubscribe\UseCase\AutoSubscriber;
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\Dilex\Endpoint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,16 +20,16 @@ class IsUserAutoSubscribed implements Endpoint
      */
     private $autoSubscriber;
     /**
-     * @var UserInformationProvider
+     * @var IdentityProvider
      */
     private $userInformationProvider;
 
     /**
      * IsUserAutoSubscribed constructor.
      * @param AutoSubscriber $autoSubscriber
-     * @param UserInformationProvider $userInformationProvider
+     * @param IdentityProvider $userInformationProvider
      */
-    public function __construct(AutoSubscriber $autoSubscriber, UserInformationProvider $userInformationProvider)
+    public function __construct(AutoSubscriber $autoSubscriber, IdentityProvider $userInformationProvider)
     {
         $this->autoSubscriber = $autoSubscriber;
         $this->userInformationProvider = $userInformationProvider;

@@ -16,7 +16,7 @@ class GroupTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->group = new Group(new MockTokenProvider('1', '1'));
+        $this->group = new Group(new MockIdentityProvider('1', '1'));
     }
 
     /**

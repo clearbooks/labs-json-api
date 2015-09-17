@@ -7,12 +7,9 @@
  */
 
 namespace Clearbooks\LabsApi\User;
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 
-
-use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
-
-class MockTokenProvider implements UserInformationProvider, TokenAuthenticationProvider
+class MockIdentityProvider implements IdentityProvider
 {
     private $userId;
 

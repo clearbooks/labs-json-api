@@ -31,7 +31,7 @@ class UserToggleStatusModifierTest extends EndpointTest
             ),
             new ToggleStatusModifierResponseHandlerSpy(),
             new None(),
-            new MockTokenProvider($userId)
+            new MockIdentityProvider($userId)
         );
     }
 

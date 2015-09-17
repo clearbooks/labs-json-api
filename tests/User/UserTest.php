@@ -16,7 +16,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->user = new User(new MockTokenProvider('1'));
+        $this->user = new User(new MockIdentityProvider('1'));
     }
 
     /**
