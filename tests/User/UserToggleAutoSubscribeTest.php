@@ -23,7 +23,7 @@ class UserToggleAutoSubscribeTest extends EndpointTest
     {
         $this->autoSubscriptionProvider = new AutoSubscriptionProviderSpy($subscribed);
 
-        $userInformationProvider = new MockTokenProvider($userId);
+        $userInformationProvider = new MockIdentityProvider($userId);
         $this->user = new User($userInformationProvider);
 
         $this->endpoint = new UserToggleAutoSubscribe(

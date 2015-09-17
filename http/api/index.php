@@ -1,5 +1,5 @@
 <?php
-use Clearbooks\LabsApi\Authentication\JwtGuard;
+use Clearbooks\Dilex\JwtGuard;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
@@ -38,7 +38,7 @@ $cb->useAutowiring( true );
 $container = $cb->build();
 
 \Clearbooks\Dilex\ApplicationBuilder::build( $container, $app );
-$app->before(JwtGuard::class);
+$app->before( JwtGuard::class );
 /**
  * @SWG\Get(
  *  path="/public-releases/list",

@@ -7,26 +7,22 @@
  */
 
 namespace Clearbooks\LabsApi\Toggle;
-
-
-use Clearbooks\Labs\Toggle\Entity\ActivatableToggle;
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 use Clearbooks\Labs\Toggle\Entity\MarketableToggle;
-use Clearbooks\Labs\Toggle\Gateway\ActivatedToggleGatewayStub;
 use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGatewayStub;
 use Clearbooks\Labs\Toggle\GetActivatedToggles;
 use Clearbooks\Labs\Toggle\PassingToggleCheckerStub;
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\LabsApi\EndpointTest;
-use Clearbooks\LabsApi\User\MockTokenProvider;
+use Clearbooks\LabsApi\User\MockIdentityProvider;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 
 class GetTogglesActivatedByUserTest extends EndpointTest
 {
     /**
      * @param MarketableToggle[] $expectedToggles
-     * @param UserInformationProvider $tokenProvider
+     * @param IdentityProvider $tokenProvider
      */
-    public function createCollectionMocks($expectedToggles, UserInformationProvider $tokenProvider)
+    public function createCollectionMocks($expectedToggles, IdentityProvider $tokenProvider)
     {
         $this->endpoint = new GetTogglesActivatedByUser(
             new GetActivatedToggles(
@@ -44,7 +40,7 @@ class GetTogglesActivatedByUserTest extends EndpointTest
      */
     public function givenNoUserIdentifier_WhenGettingActiveToggles_return400()
     {
-        $this->createCollectionMocks([], new MockTokenProvider(null));
+        $this->createCollectionMocks([], new MockIdentityProvider(null));
         $this->executeWithQuery([]);
         $this->assertEquals(400, $this->response->getStatusCode());
     }
@@ -58,7 +54,7 @@ class GetTogglesActivatedByUserTest extends EndpointTest
             new Toggle('1', 'cats', '0', true),
             new Toggle('2', 'dogs', '0', true)
         ];
-        $this->createCollectionMocks($expectedToggles, new MockTokenProvider(1));
+        $this->createCollectionMocks($expectedToggles, new MockIdentityProvider(1));
         $this->executeWithQuery(['userId' => 0]);
 
         $this->assertJsonResponse([

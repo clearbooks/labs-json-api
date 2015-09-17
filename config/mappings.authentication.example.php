@@ -5,5 +5,7 @@ use Emarref\Jwt\Jwt;
 
 return [
     Jwt::class => new Jwt(),
-    AlgorithmInterface::class => new Hs512("{{ encryption_secret_key }}")
+    AlgorithmInterface::class => new Hs512("{{ encryption_secret_key }}"),
+    \Clearbooks\Dilex\JwtGuard\RequestAuthoriser::class => \Di\object(\Clearbooks\Dilex\JwtGuard\JwtTokenAuthenticator::class),
+    \Clearbooks\Dilex\JwtGuard\IdentityProvider::class => \Di\get(\Clearbooks\Dilex\JwtGuard\RequestAuthoriser::class),
 ];

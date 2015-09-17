@@ -58,8 +58,6 @@ return [
     ToggleStatusModifierService::class => \Di\object(MysqlToggleStatusModifierService::class),
     PermissionService::class => \Di\object(MockPermissionService::class),
     PublicReleaseGateway::class => \Di\object(MysqlPublicReleaseGateway::class),
-    TokenAuthenticationProvider::class => \Di\object(TokenProvider::class),
-    UserInformationProvider::class => \Di\object(TokenProvider::class),
     ToggleUserEntity::class => \Di\object(User::class),
     ToggleGroupEntity::class=> \Di\object(Group::class),
     UserTogglePolicyGateway::class => \Di\object( UserPolicyGateway::class ),
