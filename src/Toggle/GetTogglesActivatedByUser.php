@@ -9,8 +9,8 @@
 namespace Clearbooks\LabsApi\Toggle;
 
 
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 use Clearbooks\Labs\Toggle\GetActivatedToggles;
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
 use Clearbooks\Dilex\Endpoint;
 use Clearbooks\LabsApi\User\Group;
 use Clearbooks\LabsApi\User\User;
@@ -25,19 +25,19 @@ class GetTogglesActivatedByUser implements Endpoint
      */
     private $getActivatedToggles;
     /**
-     * @var UserInformationProvider
+     * @var IdentityProvider
      */
-    private $tokenProvider;
+    private $identityProvider;
 
     /**
      * GetTogglesActivatedByUser constructor.
      * @param GetActivatedToggles $getActivatedToggles
-     * @param UserInformationProvider $tokenProvider
+     * @param IdentityProvider $identityProvider
      */
-    public function __construct(GetActivatedToggles $getActivatedToggles, UserInformationProvider $tokenProvider)
+    public function __construct(GetActivatedToggles $getActivatedToggles, IdentityProvider $identityProvider)
     {
         $this->getActivatedToggles = $getActivatedToggles;
-        $this->tokenProvider = $tokenProvider;
+        $this->identityProvider = $identityProvider;
     }
 
     /**
@@ -46,12 +46,12 @@ class GetTogglesActivatedByUser implements Endpoint
      */
     public function execute(Request $request)
     {
-        $userId = $this->tokenProvider->getUserId();
+        $userId = $this->identityProvider->getUserId();
         if(!isset($userId)) {
             return new JsonResponse('Missing user identifier', 400);
         }
 
-        $activatedToggles = $this->getActivatedToggles->execute( new User( $this->tokenProvider ) , new Group( $this->tokenProvider ));
+        $activatedToggles = $this->getActivatedToggles->execute( new User( $this->identityProvider ) , new Group( $this->identityProvider ));
         $json = [];
         /**
          * @var Toggle $toggle

@@ -9,15 +9,15 @@
 namespace Clearbooks\LabsApi\User;
 
 
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 
 class Group implements \Clearbooks\Labs\Client\Toggle\Entity\Group
 {
     /**
      * Group constructor.
-     * @param UserInformationProvider $userInformationProvider
+     * @param IdentityProvider $userInformationProvider
      */
-    public function __construct(UserInformationProvider $userInformationProvider)
+    public function __construct(IdentityProvider $userInformationProvider)
     {
         $this->id = $userInformationProvider->getGroupId();
     }

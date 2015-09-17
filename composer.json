@@ -4,12 +4,10 @@
     "type": "project",
     "require": {
         "clearbooks/labs": "dev-master",
-        "tomverran/di-container-mock": "*",
         "zircote/swagger-php": "dev-master",
         "clearbooks/labs-mysql": "dev-master",
-        "clearbooks/dilex": "^1.0",
-        "php-di/php-di": "^5.0",
-        "emarref/jwt": "dev-master"
+        "clearbooks/dilex-jwt": "^1.0",
+        "php-di/php-di": "^5.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -46,6 +44,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/clearbooks/dilex"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/clearbooks/dilex-jwt"
         },
         {
             "type": "composer",

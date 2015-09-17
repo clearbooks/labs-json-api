@@ -7,9 +7,7 @@
  */
 
 namespace Clearbooks\LabsApi\User;
-
-
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
+use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 
 class User implements \Clearbooks\Labs\Client\Toggle\Entity\User, \Clearbooks\Labs\AutoSubscribe\Entity\User
 {
@@ -17,9 +15,9 @@ class User implements \Clearbooks\Labs\Client\Toggle\Entity\User, \Clearbooks\La
 
     /**
      * User constructor.
-     * @param UserInformationProvider $userInformationProvider
+     * @param IdentityProvider $userInformationProvider
      */
-    public function __construct(UserInformationProvider $userInformationProvider)
+    public function __construct(IdentityProvider $userInformationProvider)
     {
         $this->id = $userInformationProvider->getUserId();
     }
