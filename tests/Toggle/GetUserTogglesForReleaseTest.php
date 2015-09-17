@@ -23,12 +23,12 @@ class GetUserTogglesForReleaseTest extends EndpointTest
     {
         $userToggles = [
             new Toggle(
-                '0', 'cat', '0', true,
+                '0', 'cat', '0', true, "simple",
                 "screenshot", "description", "functionality", "implementationReason",
                 "location", "guideUrl", "appNotificationThing"
             ),
             new Toggle(
-                '1', 'dog', '0', true,
+                '1', 'dog', '0', true, "simple",
                 "screenshot", "description", "functionality", "implementationReason",
                 "location", "guideUrl", "appNotificationThing"
             )
