@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "e2724f053ead19c3db03a9cd8eeb198f",
+    "content-hash": "a7427aaef756b2963f5a908c73f70df3",
     "packages": [
         {
             "name": "clearbooks/dilex",
@@ -98,7 +99,7 @@
             ],
             "description": "JWT authentication middleware for Dilex",
             "support": {
-                "source": "https://github.com/clearbooks/dilex-jwt/tree/master",
+                "source": "https://github.com/clearbooks/dilex-jwt/tree/1.0.0",
                 "issues": "https://github.com/clearbooks/dilex-jwt/issues"
             },
             "time": "2015-09-17 13:47:00"
@@ -109,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "e03cf042bcafb5ee014a7322a57458edf73c13a2"
+                "reference": "b016001f79edbe3e8f40569d8d5a0e313b53d1ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/e03cf042bcafb5ee014a7322a57458edf73c13a2",
-                "reference": "e03cf042bcafb5ee014a7322a57458edf73c13a2",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/b016001f79edbe3e8f40569d8d5a0e313b53d1ea",
+                "reference": "b016001f79edbe3e8f40569d8d5a0e313b53d1ea",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +148,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-17 11:35:52"
+            "time": "2015-09-17 14:12:52"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -155,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67"
+                "reference": "bc4dac592edc3a14ea52e15cbcecb63b3e5546a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67",
-                "reference": "fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/bc4dac592edc3a14ea52e15cbcecb63b3e5546a8",
+                "reference": "bc4dac592edc3a14ea52e15cbcecb63b3e5546a8",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +197,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-16 13:44:52"
+            "time": "2015-09-17 15:09:55"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -1731,12 +1732,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "1ad6399dd305a82a9a9c3ef89da0ea5884d283b9"
+                "reference": "db703c1ae4a4a43a5abfed226d84e03b31589371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/1ad6399dd305a82a9a9c3ef89da0ea5884d283b9",
-                "reference": "1ad6399dd305a82a9a9c3ef89da0ea5884d283b9",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/db703c1ae4a4a43a5abfed226d84e03b31589371",
+                "reference": "db703c1ae4a4a43a5abfed226d84e03b31589371",
                 "shasum": ""
             },
             "require": {
@@ -1783,7 +1784,7 @@
                 "rest",
                 "service discovery"
             ],
-            "time": "2015-09-17 11:48:41"
+            "time": "2015-09-17 21:08:20"
         }
     ],
     "packages-dev": [

@@ -31,7 +31,7 @@ use Silex\Application;
  */
 require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
-
+$app['debug'] = true;
 $cb = new \DI\ContainerBuilder();
 $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
@@ -171,5 +171,7 @@ $app->post('toggle/change-status', UserToggleStatusModifier::class);
 $app->get('user/is-auto-subscribed', IsUserAutoSubscribed::class);
 
 $app->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
+
+$app->post('feedback/give', UserToggleAutoSubscribe::class);
 
 $app->run();
