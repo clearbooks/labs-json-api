@@ -41,7 +41,7 @@ class UserToggleStatusModifierTest extends EndpointTest
     public function givenNoToggleId_WhenTogglingStatus_Return400()
     {
         $this->setUpEndpoint(1);
-        $this->executeWithPostParams([UserToggleStatusModifier::NEW_STATUS => "active", UserToggleStatusModifier::USER_ID => '1']);
+        $this->executeWithPostParams([UserToggleStatusModifier::NEW_STATUS => "active"]);
         $this->assert400();
     }
 
@@ -51,7 +51,7 @@ class UserToggleStatusModifierTest extends EndpointTest
     public function givenNoNewStatus_WhenTogglingStatus_Return400()
     {
         $this->setUpEndpoint(1);
-        $this->executeWithPostParams([UserToggleStatusModifier::TOGGLE_ID => '1', UserToggleStatusModifier::USER_ID => '1']);
+        $this->executeWithPostParams([UserToggleStatusModifier::TOGGLE_ID => '1']);
         $this->assert400();
     }
 
@@ -73,8 +73,7 @@ class UserToggleStatusModifierTest extends EndpointTest
         $this->setUpEndpoint(1);
         $this->executeWithPostParams([
             UserToggleStatusModifier::TOGGLE_ID => '1',
-            UserToggleStatusModifier::NEW_STATUS => 'asdf',
-            UserToggleStatusModifier::USER_ID => '1'
+            UserToggleStatusModifier::NEW_STATUS => 'asdf'
         ]);
         $this->assert400();
     }
@@ -88,8 +87,7 @@ class UserToggleStatusModifierTest extends EndpointTest
         $this->executeWithPostParams(
             [
                 UserToggleStatusModifier::TOGGLE_ID => '1',
-                UserToggleStatusModifier::NEW_STATUS => "active",
-                UserToggleStatusModifier::USER_ID => '1'
+                UserToggleStatusModifier::NEW_STATUS => "active"
             ]
         );
         $this->assertJsonResponse(['result' =>true]);
