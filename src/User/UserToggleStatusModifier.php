@@ -9,13 +9,12 @@
 namespace Clearbooks\LabsApi\User;
 
 
+use Clearbooks\Dilex\Endpoint;
 use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 use Clearbooks\Labs\User\ToggleStatusModifier\Request as ModifyToggleRequest;
 use Clearbooks\Labs\User\ToggleStatusModifier\Response;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
-use Clearbooks\Dilex\Endpoint;
-use Emarref\Jwt\Algorithm\AlgorithmInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -41,17 +40,12 @@ class UserToggleStatusModifier implements Endpoint
      * ToggleStatusModifier constructor.
      * @param ToggleStatusModifier $toggleStatusModifier
      * @param ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler
-     * @param AlgorithmInterface $algorithm
      * @param IdentityProvider $tokenProvider
      */
-    public function __construct(ToggleStatusModifier $toggleStatusModifier,
-                                ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler,
-                                AlgorithmInterface $algorithm,
-                                IdentityProvider $tokenProvider)
+    public function __construct(ToggleStatusModifier $toggleStatusModifier, ToggleStatusModifierResponseHandlerSpy $toggleStatusModifierResponseHandler, IdentityProvider $tokenProvider)
     {
         $this->statusModifier = $toggleStatusModifier;
         $this->toggleStatusModifierResponseHandler = $toggleStatusModifierResponseHandler;
-        $this->algorithm = $algorithm;
         $this->tokenProvider = $tokenProvider;
     }
 

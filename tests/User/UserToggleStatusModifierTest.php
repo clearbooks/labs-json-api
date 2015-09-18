@@ -15,7 +15,6 @@ use Clearbooks\Labs\User\ToggleStatusModifier;
 use Clearbooks\Labs\User\ToggleStatusModifierRequestValidator;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\LabsApi\EndpointTest;
-use Emarref\Jwt\Algorithm\None;
 
 class UserToggleStatusModifierTest extends EndpointTest
 {
@@ -30,7 +29,6 @@ class UserToggleStatusModifierTest extends EndpointTest
                 )
             ),
             new ToggleStatusModifierResponseHandlerSpy(),
-            new None(),
             new MockIdentityProvider($userId)
         );
     }
