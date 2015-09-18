@@ -73,6 +73,7 @@ return [
     AutoSubscriber::class => \Di\object(UserAutoSubscriber::class),
     AutoSubscribeUser::class => \Di\object(User::class),
     AutoSubscriptionProvider::class => \Di\object(MysqlAutoSubscriptionProvider::class),
+    AutoSubscriber::class => UserAutoSubscriber::class,
     Connection::class => function() {
         return DriverManager::getConnection([
             'dbname' => '{{ labs_db_name }}',
