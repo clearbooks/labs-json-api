@@ -23,7 +23,7 @@ class AddFeedbackForToggleTest extends EndpointTest
     /**
      * @test
      */
-    public function givenNoParrameters_return400WithAllParametersMissingResponse()
+    public function givenNoParrameters_return400()
     {
         $this->executeWithPostParams( [ ] );
         $this->assert400();
@@ -32,9 +32,36 @@ class AddFeedbackForToggleTest extends EndpointTest
     /**
      * @test
      */
-    public function givenNoToggleId_return400WithMissingToggleIdResponse()
+    public function givenNoToggleId_return400()
     {
         $this->executeWithPostParams( [ AddFeedbackForToggle::MOOD => true, AddFeedbackForToggle::MESSAGE => "hello world" ] );
         $this->assert400();
+    }
+
+    /**
+     * @test
+     */
+    public function givenNoMood_return400()
+    {
+        $this->executeWithPostParams( [ AddFeedbackForToggle::TOGGLE_ID => "1234123412", AddFeedbackForToggle::MESSAGE => "hello world" ] );
+        $this->assert400();
+    }
+
+    /**
+     * @test
+     */
+    public function givenNoMessage_return400()
+    {
+        $this->executeWithPostParams( [ AddFeedbackForToggle::TOGGLE_ID => "123412341234fasdf", AddFeedbackForToggle::MOOD => false ] );
+        $this->assert400();
+    }
+
+    /**
+     * @test
+     */
+    public function givenAllParameters_returnJsonResponseResultTrue()
+    {
+        $this->executeWithPostParams( [ AddFeedbackForToggle::TOGGLE_ID => "123412341234fasdf", AddFeedbackForToggle::MOOD => false, AddFeedbackForToggle::MESSAGE => "hello" ] );
+        $this->assertJsonResponse( [ 'result' => true ] );
     }
 }
