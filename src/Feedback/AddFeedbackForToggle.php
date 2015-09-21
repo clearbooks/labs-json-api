@@ -40,10 +40,10 @@ class AddFeedbackForToggle implements Endpoint
     public function execute( Request $request )
     {
         $toggleId = $request->request->get( self::TOGGLE_ID );
-        $mood = $request->request->get( self::MOOD );
+        $mood = (bool) $request->request->get( self::MOOD );
         $message = $request->request->get( self::MESSAGE );
 
-        if ( !isset( $toggleId ) || !isset( $mood ) || !isset( $message ) ) {
+        if ( !isset( $toggleId ) || !is_bool( $mood ) || !isset( $message ) ) {
             return new JsonResponse( "Missing arguments error.", 400 );
         }
 

@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "b016001f79edbe3e8f40569d8d5a0e313b53d1ea"
+                "reference": "e6ce5cd6c74a273713bb79af60517e9f1a260c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/b016001f79edbe3e8f40569d8d5a0e313b53d1ea",
-                "reference": "b016001f79edbe3e8f40569d8d5a0e313b53d1ea",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/e6ce5cd6c74a273713bb79af60517e9f1a260c4d",
+                "reference": "e6ce5cd6c74a273713bb79af60517e9f1a260c4d",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-17 14:12:52"
+            "time": "2015-09-21 10:17:08"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -156,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "bc4dac592edc3a14ea52e15cbcecb63b3e5546a8"
+                "reference": "7eb86705edc9669416775be44fac4c86082d8d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/bc4dac592edc3a14ea52e15cbcecb63b3e5546a8",
-                "reference": "bc4dac592edc3a14ea52e15cbcecb63b3e5546a8",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/7eb86705edc9669416775be44fac4c86082d8d88",
+                "reference": "7eb86705edc9669416775be44fac4c86082d8d88",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-17 15:09:55"
+            "time": "2015-09-21 10:34:01"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -1442,12 +1442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65"
+                "reference": "417363162e45dc8066a33e9df426b42920472866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/0b7491ac2f12058fda021a3a1542ea42f170ca65",
-                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/417363162e45dc8066a33e9df426b42920472866",
+                "reference": "417363162e45dc8066a33e9df426b42920472866",
                 "shasum": ""
             },
             "require": {
@@ -1483,7 +1483,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-27 07:55:57"
+            "time": "2015-09-19 20:03:10"
         },
         {
             "name": "symfony/http-foundation",
@@ -1732,12 +1732,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "db703c1ae4a4a43a5abfed226d84e03b31589371"
+                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/db703c1ae4a4a43a5abfed226d84e03b31589371",
-                "reference": "db703c1ae4a4a43a5abfed226d84e03b31589371",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/b0cf646758ce7d6807678107ce95c4573abefb0e",
+                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e",
                 "shasum": ""
             },
             "require": {
@@ -1784,7 +1784,7 @@
                 "rest",
                 "service discovery"
             ],
-            "time": "2015-09-17 21:08:20"
+            "time": "2015-09-20 18:04:13"
         }
     ],
     "packages-dev": [
@@ -2197,12 +2197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "032a3ded5c5ad0d52caf541b393979a5e9c3af4c"
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/032a3ded5c5ad0d52caf541b393979a5e9c3af4c",
-                "reference": "032a3ded5c5ad0d52caf541b393979a5e9c3af4c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
                 "shasum": ""
             },
             "require": {
@@ -2261,7 +2261,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-15 15:00:29"
+            "time": "2015-09-20 12:56:44"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

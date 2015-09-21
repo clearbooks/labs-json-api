@@ -61,7 +61,7 @@ class AddFeedbackForToggleTest extends EndpointTest
      */
     public function givenAllParameters_returnJsonResponseResultTrue()
     {
-        $this->executeWithPostParams( [ AddFeedbackForToggle::TOGGLE_ID => "123412341234fasdf", AddFeedbackForToggle::MOOD => false, AddFeedbackForToggle::MESSAGE => "hello" ] );
+        $this->executeWithPostParams( [ AddFeedbackForToggle::TOGGLE_ID => "1", AddFeedbackForToggle::MOOD => false, AddFeedbackForToggle::MESSAGE => "hello" ] );
         $this->assertJsonResponse( [ 'result' => true ] );
     }
 }
