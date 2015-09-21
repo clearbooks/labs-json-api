@@ -1,9 +1,10 @@
 <?php
 use Clearbooks\Dilex\JwtGuard;
+use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
-use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
+use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
 use Clearbooks\LabsApi\User\IsUserAutoSubscribed;
@@ -31,6 +32,7 @@ use Silex\Application;
  */
 require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
+$app['debug'] = true;
 
 $cb = new \DI\ContainerBuilder();
 $cb->addDefinitions( '../../config/mappings.php' );
@@ -166,10 +168,12 @@ $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
 
-$app->post('toggle/change-status', UserToggleStatusModifier::class);
+$app->post('user/toggle/change-status', UserToggleStatusModifier::class);
 
 $app->get('user/is-auto-subscribed', IsUserAutoSubscribed::class);
 
 $app->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
+
+$app->post('group/toggle/change-status', GroupToggleStatusModifier::class);
 
 $app->run();

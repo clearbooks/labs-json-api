@@ -1,13 +1,14 @@
 <?php
+use Clearbooks\Labs\AutoSubscribe\Entity\User as AutoSubscribeUser;
 use Clearbooks\Labs\AutoSubscribe\Gateway\AutoSubscriptionProvider;
 use Clearbooks\Labs\AutoSubscribe\UseCase\AutoSubscriber;
 use Clearbooks\Labs\AutoSubscribe\UserAutoSubscriber;
-use Clearbooks\Labs\Client\Toggle\Entity\User as ToggleUserEntity;
 use Clearbooks\Labs\Client\Toggle\Entity\Group as ToggleGroupEntity;
-use Clearbooks\Labs\AutoSubscribe\Entity\User as AutoSubscribeUser;
 use Clearbooks\Labs\Client\Toggle\Entity\Group as LabsGroup;
+use Clearbooks\Labs\Client\Toggle\Entity\User as ToggleUserEntity;
 use Clearbooks\Labs\Client\Toggle\Entity\User as LabsUser;
 use Clearbooks\Labs\Client\Toggle\Gateway\GroupTogglePolicyGateway;
+use Clearbooks\Labs\Client\Toggle\Gateway\ToggleGateway as ToggleGatewayInterface;
 use Clearbooks\Labs\Client\Toggle\Gateway\UserTogglePolicyGateway;
 use Clearbooks\Labs\Client\Toggle\StatelessToggleChecker;
 use Clearbooks\Labs\Client\Toggle\UseCase\ToggleChecker;
@@ -21,19 +22,15 @@ use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
 use Clearbooks\Labs\Toggle\GroupPolicyGateway;
 use Clearbooks\Labs\Toggle\ToggleGateway;
-use Clearbooks\Labs\Client\Toggle\Gateway\ToggleGateway as ToggleGatewayInterface;
 use Clearbooks\Labs\Toggle\UseCase\GroupPolicyRetriever;
 use Clearbooks\Labs\Toggle\UseCase\ToggleRetriever;
 use Clearbooks\Labs\Toggle\UseCase\UserPolicyRetriever;
 use Clearbooks\Labs\Toggle\UserPolicyGateway;
-use Clearbooks\Labs\User\MockPermissionService;
 use Clearbooks\Labs\User\ToggleStatusModifier as ToggleStatusModifierImplementation;
 use Clearbooks\Labs\User\UseCase\PermissionService;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifier;
 use Clearbooks\Labs\User\UseCase\ToggleStatusModifierService;
-use Clearbooks\LabsApi\Authentication\Tokens\TokenAuthenticationProvider;
-use Clearbooks\LabsApi\Authentication\Tokens\TokenProvider;
-use Clearbooks\LabsApi\Authentication\Tokens\UserInformationProvider;
+use Clearbooks\LabsApi\Group\GroupToggleModifierPermissionService;
 use Clearbooks\LabsApi\User\Group;
 use Clearbooks\LabsApi\User\User;
 use Clearbooks\LabsMysql\AutoSubscribe\MysqlAutoSubscriptionProvider;
@@ -56,7 +53,7 @@ return [
     GroupToggleGateway::class => \Di\object(MysqlGroupToggleGateway::class),
     ToggleStatusModifier::class => \Di\object(ToggleStatusModifierImplementation::class),
     ToggleStatusModifierService::class => \Di\object(MysqlToggleStatusModifierService::class),
-    PermissionService::class => \Di\object(MockPermissionService::class),
+    PermissionService::class => \Di\object(GroupToggleModifierPermissionService::class),
     PublicReleaseGateway::class => \Di\object(MysqlPublicReleaseGateway::class),
     ToggleUserEntity::class => \Di\object(User::class),
     ToggleGroupEntity::class=> \Di\object(Group::class),

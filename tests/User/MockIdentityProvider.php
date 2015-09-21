@@ -15,9 +15,15 @@ class MockIdentityProvider implements IdentityProvider
 
     private $groupId;
 
-    public function __construct($userId, $groupId = null) {
+    /**
+     * @var bool
+     */
+    private $isAdmin;
+
+    public function __construct($userId, $groupId = null, $isAdmin = true) {
         $this->userId = $userId;
         $this->groupId = $groupId;
+        $this->isAdmin = $isAdmin;
     }
 
     public function verifyToken()
@@ -31,5 +37,9 @@ class MockIdentityProvider implements IdentityProvider
 
     public function getGroupId() {
         return $this->groupId;
+    }
+
+    public function isAdmin() {
+        return $this->isAdmin;
     }
 }
