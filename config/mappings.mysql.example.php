@@ -78,6 +78,7 @@ return [
     AutoSubscriber::class => \Di\object( UserAutoSubscriber::class ),
     AutoSubscribeUser::class => \Di\object( User::class ),
     AutoSubscriptionProvider::class => \Di\object( MysqlAutoSubscriptionProvider::class ),
+    AutoSubscriber::class => UserAutoSubscriber::class,
     IAddFeedbackForToggle::class => \Di\object( AddFeedbackForToggle::class ),
     InsertFeedbackForToggleGateway::class => \Di\object( MysqlInsertFeedbackForToggleGateway::class ),
     Connection::class => function () {
