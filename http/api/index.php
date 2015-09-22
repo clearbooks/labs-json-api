@@ -1,5 +1,6 @@
 <?php
 use Clearbooks\Dilex\JwtGuard;
+use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
@@ -51,7 +52,7 @@ $app->before( JwtGuard::class );
  *  )
  * )
  */
-$app->get( 'public-releases/list', GetAllPublicReleases::class);
+$app->get( 'public-releases/list', GetAllPublicReleases::class );
 
 /**
  * @SWG\Get(
@@ -97,7 +98,7 @@ $app->get( 'toggle/list', GetTogglesForRelease::class );
  *  )
  * )
  */
-$app->get( 'toggle/is-active', GetIsToggleActive::class);
+$app->get( 'toggle/is-active', GetIsToggleActive::class );
 
 /**
  * @SWG\Get(
@@ -122,7 +123,7 @@ $app->get( 'toggle/is-active', GetIsToggleActive::class);
  *  )
  * )
  */
-$app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
+$app->get( 'toggle/user/list', GetUserTogglesForRelease::class );
 
 /**
  * @SWG\Get(
@@ -143,7 +144,7 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class);
  *  )
  * )
  */
-$app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
+$app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class );
 
 /**
  * @SWG\Get(
@@ -164,12 +165,14 @@ $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class);
  *  )
  * )
  */
-$app->get( 'toggle/group/list', GetGroupTogglesForRelease::class);
+$app->get( 'toggle/group/list', GetGroupTogglesForRelease::class );
 
-$app->post('toggle/change-status', UserToggleStatusModifier::class);
+$app->post( 'toggle/change-status', UserToggleStatusModifier::class );
 
-$app->get('user/is-auto-subscribed', IsUserAutoSubscribed::class);
+$app->get( 'user/is-auto-subscribed', IsUserAutoSubscribed::class );
 
-$app->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
+$app->post( 'user/toggle-auto-subscribe', UserToggleAutoSubscribe::class );
+
+$app->post( 'feedback/give', AddFeedbackForToggle::class );
 
 $app->run();
