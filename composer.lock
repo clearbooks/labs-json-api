@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "e2724f053ead19c3db03a9cd8eeb198f",
+    "content-hash": "a7427aaef756b2963f5a908c73f70df3",
     "packages": [
         {
             "name": "clearbooks/dilex",
@@ -98,7 +99,7 @@
             ],
             "description": "JWT authentication middleware for Dilex",
             "support": {
-                "source": "https://github.com/clearbooks/dilex-jwt/tree/master",
+                "source": "https://github.com/clearbooks/dilex-jwt/tree/1.0.0",
                 "issues": "https://github.com/clearbooks/dilex-jwt/issues"
             },
             "time": "2015-09-17 13:47:00"
@@ -109,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "e03cf042bcafb5ee014a7322a57458edf73c13a2"
+                "reference": "e6ce5cd6c74a273713bb79af60517e9f1a260c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/e03cf042bcafb5ee014a7322a57458edf73c13a2",
-                "reference": "e03cf042bcafb5ee014a7322a57458edf73c13a2",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/e6ce5cd6c74a273713bb79af60517e9f1a260c4d",
+                "reference": "e6ce5cd6c74a273713bb79af60517e9f1a260c4d",
                 "shasum": ""
             },
             "require": {
@@ -147,7 +148,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-09-17 11:35:52"
+            "time": "2015-09-21 10:17:08"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -155,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67"
+                "reference": "7eb86705edc9669416775be44fac4c86082d8d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67",
-                "reference": "fa7c1ef35ac1a197a370b47fbf76b18eb5b6dd67",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/7eb86705edc9669416775be44fac4c86082d8d88",
+                "reference": "7eb86705edc9669416775be44fac4c86082d8d88",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +197,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-16 13:44:52"
+            "time": "2015-09-21 10:34:01"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -1441,12 +1442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65"
+                "reference": "417363162e45dc8066a33e9df426b42920472866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/0b7491ac2f12058fda021a3a1542ea42f170ca65",
-                "reference": "0b7491ac2f12058fda021a3a1542ea42f170ca65",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/417363162e45dc8066a33e9df426b42920472866",
+                "reference": "417363162e45dc8066a33e9df426b42920472866",
                 "shasum": ""
             },
             "require": {
@@ -1482,7 +1483,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-27 07:55:57"
+            "time": "2015-09-19 20:03:10"
         },
         {
             "name": "symfony/http-foundation",
@@ -1731,12 +1732,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "1ad6399dd305a82a9a9c3ef89da0ea5884d283b9"
+                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/1ad6399dd305a82a9a9c3ef89da0ea5884d283b9",
-                "reference": "1ad6399dd305a82a9a9c3ef89da0ea5884d283b9",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/b0cf646758ce7d6807678107ce95c4573abefb0e",
+                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e",
                 "shasum": ""
             },
             "require": {
@@ -1783,7 +1784,7 @@
                 "rest",
                 "service discovery"
             ],
-            "time": "2015-09-17 11:48:41"
+            "time": "2015-09-20 18:04:13"
         }
     ],
     "packages-dev": [
@@ -2196,12 +2197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "032a3ded5c5ad0d52caf541b393979a5e9c3af4c"
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/032a3ded5c5ad0d52caf541b393979a5e9c3af4c",
-                "reference": "032a3ded5c5ad0d52caf541b393979a5e9c3af4c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
                 "shasum": ""
             },
             "require": {
@@ -2260,7 +2261,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-15 15:00:29"
+            "time": "2015-09-20 12:56:44"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
