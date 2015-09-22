@@ -32,7 +32,7 @@ use Silex\Application;
  */
 require_once "../../vendor/autoload.php";
 $app = new \Silex\Application();
-$app[ 'debug' ] = true;
+
 $cb = new \DI\ContainerBuilder();
 $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
