@@ -60,7 +60,6 @@ class GroupToggleStatusModifier implements Endpoint
         $toggleStatus = $request->request->get(self::TOGGLE_STATUS);
         $userId = $this->identityProvider->getUserId();
         $groupId = $this->identityProvider->getGroupId();
-        echo $this->identityProvider->isAdmin();
         if($this->requestNotValid($toggleId, $toggleStatus, $userId, $groupId)) {
             return new JsonResponse("You didn't include all the necessary information.", 400);
         }

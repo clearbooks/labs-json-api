@@ -94,7 +94,9 @@ class GroupToggleStatusModifierTest extends EndpointTest
     {
         $this->createEndpoint(1,1);
 
-        $this->executeWithPostParams(["toggleId" => '1', "toggleStatus" => "chumpMode"]);
+        $this->executeWithPostParams([
+            GroupToggleStatusModifier::TOGGLE_ID => '1',
+            GroupToggleStatusModifier::TOGGLE_STATUS => "chumpMode"]);
         $this->assert400();
     }
 
@@ -105,7 +107,9 @@ class GroupToggleStatusModifierTest extends EndpointTest
     {
         $this->createEndpoint(1, 1, false);
 
-        $this->executeWithPostParams(["toggleId" => '1', "toggleStatus" => 'active']);
+        $this->executeWithPostParams([
+            GroupToggleStatusModifier::TOGGLE_ID => '1',
+            GroupToggleStatusModifier::TOGGLE_STATUS => 'active']);
         $this->assertEquals(403, $this->response->getStatusCode());
     }
 
@@ -116,7 +120,9 @@ class GroupToggleStatusModifierTest extends EndpointTest
     {
         $this->createEndpoint(1,1);
 
-        $this->executeWithPostParams(["toggleId" => '1', "toggleStatus" => 'active']);
+        $this->executeWithPostParams([
+            GroupToggleStatusModifier::TOGGLE_ID => '1',
+            GroupToggleStatusModifier::TOGGLE_STATUS => 'active']);
         $this->assertJsonResponse(['result' => true]);
     }
 }
