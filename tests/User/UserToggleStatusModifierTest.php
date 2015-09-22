@@ -15,7 +15,6 @@ use Clearbooks\Labs\User\ToggleStatusModifier;
 use Clearbooks\Labs\User\ToggleStatusModifierRequestValidator;
 use Clearbooks\Labs\User\ToggleStatusModifierResponseHandlerSpy;
 use Clearbooks\LabsApi\EndpointTest;
-use Emarref\Jwt\Algorithm\None;
 
 class UserToggleStatusModifierTest extends EndpointTest
 {
@@ -30,7 +29,6 @@ class UserToggleStatusModifierTest extends EndpointTest
                 )
             ),
             new ToggleStatusModifierResponseHandlerSpy(),
-            new None(),
             new MockIdentityProvider($userId)
         );
     }
@@ -41,7 +39,7 @@ class UserToggleStatusModifierTest extends EndpointTest
     public function givenNoToggleId_WhenTogglingStatus_Return400()
     {
         $this->setUpEndpoint(1);
-        $this->executeWithPostParams([UserToggleStatusModifier::NEW_STATUS => "active", UserToggleStatusModifier::USER_ID => '1']);
+        $this->executeWithPostParams([UserToggleStatusModifier::NEW_STATUS => "active"]);
         $this->assert400();
     }
 
@@ -51,7 +49,7 @@ class UserToggleStatusModifierTest extends EndpointTest
     public function givenNoNewStatus_WhenTogglingStatus_Return400()
     {
         $this->setUpEndpoint(1);
-        $this->executeWithPostParams([UserToggleStatusModifier::TOGGLE_ID => '1', UserToggleStatusModifier::USER_ID => '1']);
+        $this->executeWithPostParams([UserToggleStatusModifier::TOGGLE_ID => '1']);
         $this->assert400();
     }
 
@@ -73,8 +71,7 @@ class UserToggleStatusModifierTest extends EndpointTest
         $this->setUpEndpoint(1);
         $this->executeWithPostParams([
             UserToggleStatusModifier::TOGGLE_ID => '1',
-            UserToggleStatusModifier::NEW_STATUS => 'asdf',
-            UserToggleStatusModifier::USER_ID => '1'
+            UserToggleStatusModifier::NEW_STATUS => 'asdf'
         ]);
         $this->assert400();
     }
@@ -88,8 +85,7 @@ class UserToggleStatusModifierTest extends EndpointTest
         $this->executeWithPostParams(
             [
                 UserToggleStatusModifier::TOGGLE_ID => '1',
-                UserToggleStatusModifier::NEW_STATUS => "active",
-                UserToggleStatusModifier::USER_ID => '1'
+                UserToggleStatusModifier::NEW_STATUS => "active"
             ]
         );
         $this->assertJsonResponse(['result' =>true]);

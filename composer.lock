@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "e2724f053ead19c3db03a9cd8eeb198f",
-    "content-hash": "a7427aaef756b2963f5a908c73f70df3",
     "packages": [
         {
             "name": "clearbooks/dilex",
@@ -297,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-schema.git",
-                "reference": "20cb4b181bf191ab52c694c5dcd5d0936c49d45c"
+                "reference": "a87d4b33763326fd19375d7cf4a47651845b965b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-schema/zipball/20cb4b181bf191ab52c694c5dcd5d0936c49d45c",
-                "reference": "20cb4b181bf191ab52c694c5dcd5d0936c49d45c",
+                "url": "https://api.github.com/repos/clearbooks/labs-schema/zipball/a87d4b33763326fd19375d7cf4a47651845b965b",
+                "reference": "a87d4b33763326fd19375d7cf4a47651845b965b",
                 "shasum": ""
             },
             "type": "library",
@@ -320,7 +319,7 @@
                 "source": "https://github.com/clearbooks/labs-schema/tree/master",
                 "issues": "https://github.com/clearbooks/labs-schema/issues"
             },
-            "time": "2015-09-14 15:03:19"
+            "time": "2015-09-21 14:45:16"
         },
         {
             "name": "container-interop/container-interop",

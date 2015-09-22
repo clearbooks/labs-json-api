@@ -1,5 +1,6 @@
 <?php
 use Clearbooks\Dilex\JwtGuard;
+use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
@@ -167,11 +168,13 @@ $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class );
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class );
 
-$app->post( 'toggle/change-status', UserToggleStatusModifier::class );
+$app->post('user/toggle/change-status', UserToggleStatusModifier::class);
 
 $app->get( 'user/is-auto-subscribed', IsUserAutoSubscribed::class );
 
-$app->post( 'user/toggle-auto-subscribe', UserToggleAutoSubscribe::class );
+$app->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
+
+$app->post('group/toggle/change-status', GroupToggleStatusModifier::class);
 
 $app->post( 'feedback/give', AddFeedbackForToggle::class );
 
