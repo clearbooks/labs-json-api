@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "e2724f053ead19c3db03a9cd8eeb198f",
-    "content-hash": "a7427aaef756b2963f5a908c73f70df3",
     "packages": [
         {
             "name": "clearbooks/dilex",
