@@ -155,12 +155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "7eb86705edc9669416775be44fac4c86082d8d88"
+                "reference": "884aa3a872dd62ecbab1dec07a0cb7037a2632f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/7eb86705edc9669416775be44fac4c86082d8d88",
-                "reference": "7eb86705edc9669416775be44fac4c86082d8d88",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/884aa3a872dd62ecbab1dec07a0cb7037a2632f6",
+                "reference": "884aa3a872dd62ecbab1dec07a0cb7037a2632f6",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-09-21 10:34:01"
+            "time": "2015-09-23 15:35:58"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -1383,12 +1383,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "e79162fa079bb559ddad17c58cf8b7ecbaffd9b6"
+                "reference": "0ef7669c0af9f62752a96a5d43c1b13c5c2e70e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e79162fa079bb559ddad17c58cf8b7ecbaffd9b6",
-                "reference": "e79162fa079bb559ddad17c58cf8b7ecbaffd9b6",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/0ef7669c0af9f62752a96a5d43c1b13c5c2e70e9",
+                "reference": "0ef7669c0af9f62752a96a5d43c1b13c5c2e70e9",
                 "shasum": ""
             },
             "require": {
@@ -1433,7 +1433,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-14 06:10:06"
+            "time": "2015-09-22 13:49:41"
         },
         {
             "name": "symfony/finder",
@@ -1441,12 +1441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "417363162e45dc8066a33e9df426b42920472866"
+                "reference": "daa74e0593ae7bd591510279590d8e3d5c29a22a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/417363162e45dc8066a33e9df426b42920472866",
-                "reference": "417363162e45dc8066a33e9df426b42920472866",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/daa74e0593ae7bd591510279590d8e3d5c29a22a",
+                "reference": "daa74e0593ae7bd591510279590d8e3d5c29a22a",
                 "shasum": ""
             },
             "require": {
@@ -1482,7 +1482,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-19 20:03:10"
+            "time": "2015-09-22 18:24:44"
         },
         {
             "name": "symfony/http-foundation",
@@ -1490,12 +1490,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "ff8b1222ab4fb12023eda2fc721ca321448e9f7a"
+                "reference": "50b6115569b6517fda41e702acdb62bfc9dc36c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/ff8b1222ab4fb12023eda2fc721ca321448e9f7a",
-                "reference": "ff8b1222ab4fb12023eda2fc721ca321448e9f7a",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/50b6115569b6517fda41e702acdb62bfc9dc36c8",
+                "reference": "50b6115569b6517fda41e702acdb62bfc9dc36c8",
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1535,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-14 14:15:17"
+            "time": "2015-09-22 13:49:41"
         },
         {
             "name": "symfony/http-kernel",
@@ -1731,12 +1731,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e"
+                "reference": "d9d3c3162a7d3c02ec9c4e1534acb586df55c0b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/b0cf646758ce7d6807678107ce95c4573abefb0e",
-                "reference": "b0cf646758ce7d6807678107ce95c4573abefb0e",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/d9d3c3162a7d3c02ec9c4e1534acb586df55c0b6",
+                "reference": "d9d3c3162a7d3c02ec9c4e1534acb586df55c0b6",
                 "shasum": ""
             },
             "require": {
@@ -1783,7 +1783,7 @@
                 "rest",
                 "service discovery"
             ],
-            "time": "2015-09-20 18:04:13"
+            "time": "2015-09-23 07:59:30"
         }
     ],
     "packages-dev": [
@@ -1896,12 +1896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "80da5500014051b9e70740f183c5e5586f38f977"
+                "reference": "4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/80da5500014051b9e70740f183c5e5586f38f977",
-                "reference": "80da5500014051b9e70740f183c5e5586f38f977",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
+                "reference": "4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1948,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-08-13 10:25:47"
+            "time": "2015-09-22 14:49:23"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2147,12 +2147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da"
+                "reference": "cab6c6fefee93d7b7c3a01292a0fe0884ea66644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
-                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/cab6c6fefee93d7b7c3a01292a0fe0884ea66644",
+                "reference": "cab6c6fefee93d7b7c3a01292a0fe0884ea66644",
                 "shasum": ""
             },
             "require": {
@@ -2188,7 +2188,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-09-15 10:49:45"
+            "time": "2015-09-23 14:46:55"
         },
         {
             "name": "phpunit/phpunit",

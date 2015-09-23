@@ -12,10 +12,11 @@ namespace Clearbooks\LabsApi\Toggle;
 use Clearbooks\Labs\Release\Gateway\MockReleaseGateway;
 use Clearbooks\Labs\Release\Release;
 use Clearbooks\Labs\Toggle\Gateway\StubGroupToggleGateway;
+use Clearbooks\Labs\Toggle\GetGroupTogglesForRelease as labsGetGroupToggles;
 use Clearbooks\LabsApi\EndpointTest;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use DateTime;
-use Clearbooks\Labs\Toggle\GetGroupTogglesForRelease as labsGetGroupToggles;
+
 class GetGroupTogglesForReleaseTest extends EndpointTest
 {
 
@@ -27,7 +28,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
     public function setUp()
     {
         $this->groupToggles = [
-            new Toggle('0', 'dog', '0', true)
+            new Toggle('0', 'dog', '0', true, "group")
         ];
 
         $releases = [
@@ -57,7 +58,16 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
         $this->executeWithQuery(['release' => 0]);
         $this->assertJsonResponse([
             [
-                'name' => $this->groupToggles[0]->getName()
+                'name' => $this->groupToggles[0]->getName(),
+                'marketingInfo' => [
+                    'appNotificationCopyText' => "",
+                    'functionalityDescription' => "",
+                    'implementationReason' => "",
+                    'locationDescription' => "",
+                    'toggleDescription' => "",
+                    'screenshotUrl' => "",
+                    'guideUrl' => "",
+                ]
             ]
         ]);
     }

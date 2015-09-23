@@ -9,8 +9,9 @@
 namespace Clearbooks\LabsApi\Toggle;
 
 
-use Clearbooks\Labs\Toggle\GetGroupTogglesForRelease as labsGetGroupToggles;
 use Clearbooks\Dilex\Endpoint;
+use Clearbooks\Labs\Toggle\GetGroupTogglesForRelease as labsGetGroupToggles;
+use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -45,9 +46,19 @@ class GetGroupTogglesForRelease implements Endpoint
         $toggles = $this->getToggles->execute($releaseId);
         $json = [];
 
+        /** @var Toggle $toggle */
         foreach($toggles as $toggle) {
             $json[] = [
-                'name' => $toggle->getName()
+                'name' => $toggle->getName(),
+                'marketingInfo' => [
+                    'appNotificationCopyText' => $toggle->getAppNotificationCopyText(),
+                    'functionalityDescription' => $toggle->getDescriptionOfFunctionality(),
+                    'implementationReason' => $toggle->getDescriptionOfImplementationReason(),
+                    'locationDescription' => $toggle->getDescriptionOfLocation(),
+                    'toggleDescription' => $toggle->getDescriptionOfToggle(),
+                    'screenshotUrl' => $toggle->getScreenshotUrl(),
+                    'guideUrl' => $toggle->getGuideUrl(),
+                ]
             ];
         }
         return new JsonResponse($json);
