@@ -61,12 +61,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
     public function givenReleaseIdWithTwoToggles_returnToggles()
     {
         $marketingInfo = [
-            'appNotificationCopyText' => 'appNotificationThing',
-            'functionalityDescription' => 'functionality',
-            'implementationReason' => 'implementationReason',
-            'locationDescription' => 'location',
             'toggleDescription' => 'description',
-            'screenshotUrl' => 'screenshot',
             'guideUrl' => 'guideUrl'
         ];
         $this->executeWithQuery(['release' => '0']);
@@ -74,12 +69,14 @@ class GetUserTogglesForReleaseTest extends EndpointTest
             [
                 'id' => '0',
                 'name' => 'cat',
-                'marketingInfo' => $marketingInfo
+                'summary' => $marketingInfo['toggleDescription'],
+                'url' => $marketingInfo['guideUrl']
             ],
             [
                 'id' => '1',
                 'name' => 'dog',
-                'marketingInfo' => $marketingInfo
+                'summary' => $marketingInfo['toggleDescription'],
+                'url' => $marketingInfo['guideUrl']
             ]
         ]);
     }

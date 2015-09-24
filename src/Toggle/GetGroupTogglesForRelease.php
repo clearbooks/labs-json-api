@@ -51,15 +51,8 @@ class GetGroupTogglesForRelease implements Endpoint
             $json[] = [
                 'id' => $toggle->getId(),
                 'name' => $toggle->getName(),
-                'marketingInfo' => [
-                    'appNotificationCopyText' => $toggle->getAppNotificationCopyText(),
-                    'functionalityDescription' => $toggle->getDescriptionOfFunctionality(),
-                    'implementationReason' => $toggle->getDescriptionOfImplementationReason(),
-                    'locationDescription' => $toggle->getDescriptionOfLocation(),
-                    'toggleDescription' => $toggle->getDescriptionOfToggle(),
-                    'screenshotUrl' => $toggle->getScreenshotUrl(),
-                    'guideUrl' => $toggle->getGuideUrl(),
-                ]
+                'summary' => $toggle->getDescriptionOfToggle(),
+                'url' => $toggle->getGuideUrl()
             ];
         }
         return new JsonResponse($json);

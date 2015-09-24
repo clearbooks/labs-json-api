@@ -60,15 +60,8 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
             [
                 'id' => $this->groupToggles[0]->getId(),
                 'name' => $this->groupToggles[0]->getName(),
-                'marketingInfo' => [
-                    'appNotificationCopyText' => "",
-                    'functionalityDescription' => "",
-                    'implementationReason' => "",
-                    'locationDescription' => "",
-                    'toggleDescription' => "",
-                    'screenshotUrl' => "",
-                    'guideUrl' => "",
-                ]
+                'summary' => "",
+                'url' => ""
             ]
         ]);
     }
