@@ -72,10 +72,12 @@ class GetUserTogglesForReleaseTest extends EndpointTest
         $this->executeWithQuery(['release' => '0']);
         $this->assertJsonResponse([
             [
+                'id' => '0',
                 'name' => 'cat',
                 'marketingInfo' => $marketingInfo
             ],
             [
+                'id' => '1',
                 'name' => 'dog',
                 'marketingInfo' => $marketingInfo
             ]

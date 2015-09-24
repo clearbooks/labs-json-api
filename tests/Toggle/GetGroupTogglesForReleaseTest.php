@@ -58,6 +58,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
         $this->executeWithQuery(['release' => 0]);
         $this->assertJsonResponse([
             [
+                'id' => $this->groupToggles[0]->getId(),
                 'name' => $this->groupToggles[0]->getName(),
                 'marketingInfo' => [
                     'appNotificationCopyText' => "",

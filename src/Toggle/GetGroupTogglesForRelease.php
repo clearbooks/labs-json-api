@@ -49,6 +49,7 @@ class GetGroupTogglesForRelease implements Endpoint
         /** @var Toggle $toggle */
         foreach($toggles as $toggle) {
             $json[] = [
+                'id' => $toggle->getId(),
                 'name' => $toggle->getName(),
                 'marketingInfo' => [
                     'appNotificationCopyText' => $toggle->getAppNotificationCopyText(),
