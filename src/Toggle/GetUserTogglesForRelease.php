@@ -44,7 +44,8 @@ class GetUserTogglesForRelease implements Endpoint
                 'id' => $toggle->getId(),
                 'name' => $toggle->getName(),
                 'summary' => $toggle->getDescriptionOfToggle(),
-                'url' => $toggle->getGuideUrl()
+                'url' => $toggle->getGuideUrl(),
+                'type' => $toggle->getType()
             ];
         }
 

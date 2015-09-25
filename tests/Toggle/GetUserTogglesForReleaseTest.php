@@ -70,13 +70,15 @@ class GetUserTogglesForReleaseTest extends EndpointTest
                 'id' => '0',
                 'name' => 'cat',
                 'summary' => $marketingInfo['toggleDescription'],
-                'url' => $marketingInfo['guideUrl']
+                'url' => $marketingInfo['guideUrl'],
+                'type' => "simple"
             ],
             [
                 'id' => '1',
                 'name' => 'dog',
                 'summary' => $marketingInfo['toggleDescription'],
-                'url' => $marketingInfo['guideUrl']
+                'url' => $marketingInfo['guideUrl'],
+                'type' => "simple"
             ]
         ]);
     }
