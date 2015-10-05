@@ -62,6 +62,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
                 'name' => $this->groupToggles[0]->getName(),
                 'summary' => "",
                 'url' => "",
+                'screenshot' => "",
                 'type' => "group"
             ]
         ]);
