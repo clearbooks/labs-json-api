@@ -53,6 +53,7 @@ class GetGroupTogglesForRelease implements Endpoint
                 'name' => $toggle->getName(),
                 'summary' => $toggle->getDescriptionOfToggle(),
                 'url' => $toggle->getGuideUrl(),
+                'screenshot' => $toggle->getScreenshotUrl(),
                 'type' => $toggle->getType()
             ];
         }

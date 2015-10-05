@@ -71,6 +71,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
                 'name' => 'cat',
                 'summary' => $marketingInfo['toggleDescription'],
                 'url' => $marketingInfo['guideUrl'],
+                'screenshot' => 'screenshot',
                 'type' => "simple"
             ],
             [
@@ -78,6 +79,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
                 'name' => 'dog',
                 'summary' => $marketingInfo['toggleDescription'],
                 'url' => $marketingInfo['guideUrl'],
+                'screenshot' => 'screenshot',
                 'type' => "simple"
             ]
         ]);
