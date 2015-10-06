@@ -39,7 +39,7 @@ class MockIdentityProvider implements IdentityProvider
         return $this->groupId;
     }
 
-    public function isAdmin() {
+    public function getIsAdmin() {
         return $this->isAdmin;
     }
 }
