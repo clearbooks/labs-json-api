@@ -37,6 +37,6 @@ class GroupToggleModifierPermissionService implements PermissionService
      */
     public function isGroupAdmin($userIdentifier, $groupIdentifier)
     {
-        return $this->identityProvider->isAdmin();
+        return $this->identityProvider->getIsAdmin();
     }
 }
