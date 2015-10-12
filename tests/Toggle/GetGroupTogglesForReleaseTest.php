@@ -28,7 +28,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
     public function setUp()
     {
         $this->groupToggles = [
-            new Toggle('0', 'dog', '0', true, "group")
+            new Toggle('0', 'dog', '0', true, "group", "", "","","","","","","Dog title")
         ];
 
         $releases = [
@@ -59,7 +59,7 @@ class GetGroupTogglesForReleaseTest extends EndpointTest
         $this->assertJsonResponse([
             [
                 'id' => $this->groupToggles[0]->getId(),
-                'name' => $this->groupToggles[0]->getName(),
+                'name' => $this->groupToggles[0]->getMarketingToggleTitle(),
                 'summary' => "",
                 'url' => "",
                 'screenshot' => "",

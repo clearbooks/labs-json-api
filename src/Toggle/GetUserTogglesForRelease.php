@@ -42,7 +42,7 @@ class GetUserTogglesForRelease implements Endpoint
         foreach ($userToggles as $toggle) {
             $json[] = [
                 'id' => $toggle->getId(),
-                'name' => $toggle->getName(),
+                'name' => $toggle->getMarketingToggleTitle(),
                 'summary' => $toggle->getDescriptionOfToggle(),
                 'url' => $toggle->getGuideUrl(),
                 'screenshot' => $toggle->getScreenshotUrl(),
