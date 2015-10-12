@@ -51,8 +51,8 @@ class GetTogglesActivatedByUserTest extends EndpointTest
     public function givenUserIdentifier_WhenGettingTwoActiveToggles_returnActiveToggles()
     {
         $expectedToggles = [
-            new Toggle('1', 'cats', '0', true),
-            new Toggle('2', 'dogs', '0', true)
+            new Toggle('1', 'cats', '0', true, "", "", "", "", "", "", "", "", "cats"),
+            new Toggle('2', 'dogs', '0', true, "", "", "", "", "", "", "", "", "dogs")
         ];
         $this->createCollectionMocks($expectedToggles, new MockIdentityProvider(1));
         $this->executeWithQuery(['userId' => 0]);
