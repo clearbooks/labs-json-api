@@ -50,7 +50,7 @@ class GetGroupTogglesForRelease implements Endpoint
         foreach($toggles as $toggle) {
             $json[] = [
                 'id' => $toggle->getId(),
-                'name' => $toggle->getName(),
+                'name' => $toggle->getMarketingToggleTitle(),
                 'summary' => $toggle->getDescriptionOfToggle(),
                 'url' => $toggle->getGuideUrl(),
                 'screenshot' => $toggle->getScreenshotUrl(),

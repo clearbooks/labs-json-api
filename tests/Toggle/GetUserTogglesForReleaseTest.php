@@ -25,12 +25,12 @@ class GetUserTogglesForReleaseTest extends EndpointTest
             new Toggle(
                 '0', 'cat', '0', true, "simple",
                 "screenshot", "description", "functionality", "implementationReason",
-                "location", "guideUrl", "appNotificationThing"
+                "location", "guideUrl", "appNotificationThing", "animal noise"
             ),
             new Toggle(
                 '1', 'dog', '0', true, "simple",
                 "screenshot", "description", "functionality", "implementationReason",
-                "location", "guideUrl", "appNotificationThing"
+                "location", "guideUrl", "appNotificationThing", "animal noise"
             )
         ];
 
@@ -62,13 +62,14 @@ class GetUserTogglesForReleaseTest extends EndpointTest
     {
         $marketingInfo = [
             'toggleDescription' => 'description',
-            'guideUrl' => 'guideUrl'
+            'guideUrl' => 'guideUrl',
+            'toggleTitle' => 'animal noise'
         ];
         $this->executeWithQuery(['release' => '0']);
         $this->assertJsonResponse([
             [
                 'id' => '0',
-                'name' => 'cat',
+                'name' => $marketingInfo['toggleTitle'],
                 'summary' => $marketingInfo['toggleDescription'],
                 'url' => $marketingInfo['guideUrl'],
                 'screenshot' => 'screenshot',
@@ -76,7 +77,7 @@ class GetUserTogglesForReleaseTest extends EndpointTest
             ],
             [
                 'id' => '1',
-                'name' => 'dog',
+                'name' => $marketingInfo['toggleTitle'],
                 'summary' => $marketingInfo['toggleDescription'],
                 'url' => $marketingInfo['guideUrl'],
                 'screenshot' => 'screenshot',
