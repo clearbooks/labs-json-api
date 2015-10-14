@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "155bc63d500d0eff8e9f89203ef12e9335875e31"
+                "reference": "41b4568ad146c707b4e0bb2036272c6524e7f564"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/155bc63d500d0eff8e9f89203ef12e9335875e31",
-                "reference": "155bc63d500d0eff8e9f89203ef12e9335875e31",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/41b4568ad146c707b4e0bb2036272c6524e7f564",
+                "reference": "41b4568ad146c707b4e0bb2036272c6524e7f564",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
                 "source": "https://github.com/clearbooks/labs/tree/master",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-10-12 09:13:23"
+            "time": "2015-10-14 08:27:55"
         },
         {
             "name": "clearbooks/labs-mysql",
@@ -156,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "05f26d2230a7493d7db07c9577f816f6eea9172d"
+                "reference": "799c3c1a5622ea3b412effcfd9871bf6ed09559c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/05f26d2230a7493d7db07c9577f816f6eea9172d",
-                "reference": "05f26d2230a7493d7db07c9577f816f6eea9172d",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/799c3c1a5622ea3b412effcfd9871bf6ed09559c",
+                "reference": "799c3c1a5622ea3b412effcfd9871bf6ed09559c",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "source": "https://github.com/clearbooks/labs-mysql/tree/master",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-10-12 12:04:27"
+            "time": "2015-10-14 08:45:45"
         },
         {
             "name": "clearbooks/labs-php-client",
@@ -297,12 +297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-schema.git",
-                "reference": "00bb7d86c93136a9947221189d167f2955429d99"
+                "reference": "1b489b82a1b775318a632fe9c0fdd1090a685f24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-schema/zipball/00bb7d86c93136a9947221189d167f2955429d99",
-                "reference": "00bb7d86c93136a9947221189d167f2955429d99",
+                "url": "https://api.github.com/repos/clearbooks/labs-schema/zipball/1b489b82a1b775318a632fe9c0fdd1090a685f24",
+                "reference": "1b489b82a1b775318a632fe9c0fdd1090a685f24",
                 "shasum": ""
             },
             "type": "library",
@@ -320,7 +320,7 @@
                 "source": "https://github.com/clearbooks/labs-schema/tree/master",
                 "issues": "https://github.com/clearbooks/labs-schema/issues"
             },
-            "time": "2015-10-09 08:19:34"
+            "time": "2015-10-14 08:19:26"
         },
         {
             "name": "container-interop/container-interop",
@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "221907f3d956928665ae3b2367bf1dacc842dfe7"
+                "reference": "7e8c33e9e6464d75091296e4615852ec4981ed80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/221907f3d956928665ae3b2367bf1dacc842dfe7",
-                "reference": "221907f3d956928665ae3b2367bf1dacc842dfe7",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/7e8c33e9e6464d75091296e4615852ec4981ed80",
+                "reference": "7e8c33e9e6464d75091296e4615852ec4981ed80",
                 "shasum": ""
             },
             "require": {
@@ -1530,7 +1530,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-12 08:02:31"
+            "time": "2015-10-13 16:11:28"
         },
         {
             "name": "symfony/http-kernel",
@@ -1538,12 +1538,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "6d0129dac29d0a449452153b4477a8f07b833724"
+                "reference": "8f2cb3dfac5090be80fdf71e13f41aadaefc31e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/6d0129dac29d0a449452153b4477a8f07b833724",
-                "reference": "6d0129dac29d0a449452153b4477a8f07b833724",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8f2cb3dfac5090be80fdf71e13f41aadaefc31e0",
+                "reference": "8f2cb3dfac5090be80fdf71e13f41aadaefc31e0",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-12 09:25:14"
+            "time": "2015-10-13 16:11:28"
         },
         {
             "name": "symfony/routing",
@@ -2690,12 +2690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "242be30271c7daafda80e471a7fcf71303facd93"
+                "reference": "8d32eb597b531eb915b4fee3dc582ade5ae1fe6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/242be30271c7daafda80e471a7fcf71303facd93",
-                "reference": "242be30271c7daafda80e471a7fcf71303facd93",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
+                "reference": "8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
                 "shasum": ""
             },
             "require": {
@@ -2728,7 +2728,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-12 10:22:36"
+            "time": "2015-10-13 16:01:35"
         }
     ],
     "aliases": [],
