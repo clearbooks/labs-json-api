@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2724f053ead19c3db03a9cd8eeb198f",
-    "content-hash": "a7427aaef756b2963f5a908c73f70df3",
+    "hash": "0c541a9e1f0a1a9aa228a2e13b1c67f3",
+    "content-hash": "2fc0668bf1edf72713a96962cd9fe083",
     "packages": [
         {
             "name": "clearbooks/dilex",
@@ -106,20 +106,20 @@
         },
         {
             "name": "clearbooks/labs",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "41b4568ad146c707b4e0bb2036272c6524e7f564"
+                "reference": "54dd8d39278beb615404fe93c7f25aa68b333fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/41b4568ad146c707b4e0bb2036272c6524e7f564",
-                "reference": "41b4568ad146c707b4e0bb2036272c6524e7f564",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/54dd8d39278beb615404fe93c7f25aa68b333fcc",
+                "reference": "54dd8d39278beb615404fe93c7f25aa68b333fcc",
                 "shasum": ""
             },
             "require": {
-                "clearbooks/labs-php-client": "dev-master"
+                "clearbooks/labs-php-client": "1.0.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
@@ -145,30 +145,30 @@
             ],
             "description": "Sensible releases",
             "support": {
-                "source": "https://github.com/clearbooks/labs/tree/master",
+                "source": "https://github.com/clearbooks/labs/tree/1.0.0",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2015-10-14 08:27:55"
+            "time": "2016-02-22 16:09:05"
         },
         {
             "name": "clearbooks/labs-mysql",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "799c3c1a5622ea3b412effcfd9871bf6ed09559c"
+                "reference": "ec7726a728dba700d1f1913aff4a3b72895a9d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/799c3c1a5622ea3b412effcfd9871bf6ed09559c",
-                "reference": "799c3c1a5622ea3b412effcfd9871bf6ed09559c",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/ec7726a728dba700d1f1913aff4a3b72895a9d18",
+                "reference": "ec7726a728dba700d1f1913aff4a3b72895a9d18",
                 "shasum": ""
             },
             "require": {
-                "clearbooks/labs": "dev-master",
-                "clearbooks/labs-php-client": "dev-master",
-                "clearbooks/labs-php-client-mysql": "dev-master",
-                "clearbooks/labs-schema": "dev-master",
+                "clearbooks/labs": "1.0.0",
+                "clearbooks/labs-php-client": "1.0.0",
+                "clearbooks/labs-php-client-mysql": "1.0.0",
+                "clearbooks/labs-schema": "1.0.0",
                 "doctrine/dbal": "2.5.1"
             },
             "require-dev": {
@@ -194,14 +194,14 @@
             ],
             "description": "DB gateway classes for Labs",
             "support": {
-                "source": "https://github.com/clearbooks/labs-mysql/tree/master",
+                "source": "https://github.com/clearbooks/labs-mysql/tree/1.0.0",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2015-10-14 08:45:45"
+            "time": "2016-02-22 16:17:28"
         },
         {
             "name": "clearbooks/labs-php-client",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-php-client.git",
@@ -244,21 +244,21 @@
         },
         {
             "name": "clearbooks/labs-php-client-mysql",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-php-client-mysql.git",
-                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2"
+                "reference": "c39703b41d3937cbe2fdebcc2630874811258898"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/fffb347af9afe39f6b44145bef382bf6fe7e63e2",
-                "reference": "fffb347af9afe39f6b44145bef382bf6fe7e63e2",
+                "url": "https://api.github.com/repos/clearbooks/labs-php-client-mysql/zipball/c39703b41d3937cbe2fdebcc2630874811258898",
+                "reference": "c39703b41d3937cbe2fdebcc2630874811258898",
                 "shasum": ""
             },
             "require": {
-                "clearbooks/labs-php-client": "dev-master",
-                "clearbooks/labs-schema": "dev-master",
+                "clearbooks/labs-php-client": "1.0.0",
+                "clearbooks/labs-schema": "1.0.0",
                 "crodas/notoj": "1.0.8",
                 "doctrine/dbal": "2.5.1",
                 "php-di/php-di": "^5.0"
@@ -286,14 +286,14 @@
             ],
             "description": "DB connection classes for Labs",
             "support": {
-                "source": "https://github.com/clearbooks/labs-php-client-mysql/tree/master",
+                "source": "https://github.com/clearbooks/labs-php-client-mysql/tree/1.0.0",
                 "issues": "https://github.com/clearbooks/labs-php-client-mysql/issues"
             },
-            "time": "2015-09-10 10:19:08"
+            "time": "2015-12-08 11:27:00"
         },
         {
             "name": "clearbooks/labs-schema",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-schema.git",
@@ -534,7 +534,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/1c3483678ab767c3e21d3a96d6dd1006b327d425",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/e0ef9e9833ca024d251e77e8d82a00ca92b0aa71",
                 "reference": "1c3483678ab767c3e21d3a96d6dd1006b327d425",
                 "shasum": ""
             },
@@ -670,7 +670,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/68c0e2f52fce0b8379ddcee7d5e85f32387559c2",
                 "reference": "26727ba78de21a824dcbfa5a8ab52c21fe7d71d5",
                 "shasum": ""
             },
@@ -814,7 +814,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/097e7ba84f64a427e55008117ef2bb94096731dc",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
                 "reference": "097e7ba84f64a427e55008117ef2bb94096731dc",
                 "shasum": ""
             },
@@ -1205,7 +1205,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/9e45edca52cc9c954680072c93e621f8b71fab26",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
                 "reference": "9e45edca52cc9c954680072c93e621f8b71fab26",
                 "shasum": ""
             },
@@ -1333,7 +1333,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/0c250fd873c7ceb31a9e7ad629b4a7048c931c28",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/8e255a0c551d443a8159e3da95b5f99997d100fd",
                 "reference": "0c250fd873c7ceb31a9e7ad629b4a7048c931c28",
                 "shasum": ""
             },
@@ -1387,7 +1387,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/41899a21d196332ab23e40f76e1276f2b7aa4d0d",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/78c468665c9568c3faaa9c416a7134308f2d85c3",
                 "reference": "41899a21d196332ab23e40f76e1276f2b7aa4d0d",
                 "shasum": ""
             },
@@ -1444,7 +1444,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/ec67ae3149ee985775a374c6ae1a1f58013e9671",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/43a0bde21f9f390131917b6202eb02b3fea1f799",
                 "reference": "ec67ae3149ee985775a374c6ae1a1f58013e9671",
                 "shasum": ""
             },
@@ -1490,7 +1490,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/7e8c33e9e6464d75091296e4615852ec4981ed80",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/c93f9c84414b088a5da946ea5dbee3eb52502eaa",
                 "reference": "7e8c33e9e6464d75091296e4615852ec4981ed80",
                 "shasum": ""
             },
@@ -1542,7 +1542,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8f2cb3dfac5090be80fdf71e13f41aadaefc31e0",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/b7d6241b39094ffb1d8432ec2b7b4b03186b51e0",
                 "reference": "8f2cb3dfac5090be80fdf71e13f41aadaefc31e0",
                 "shasum": ""
             },
@@ -1621,7 +1621,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/765f56756fdd425e73224980693c97d4862e4b6f",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/ae38e64bae52753c0f4a1a6583f5ba9bb2b742ab",
                 "reference": "765f56756fdd425e73224980693c97d4862e4b6f",
                 "shasum": ""
             },
@@ -1729,7 +1729,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/81f4935de731829869452be21d791029539adcce",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/0dfc289d53bad4a2bd193adc8d4bd058029ab417",
                 "reference": "81f4935de731829869452be21d791029539adcce",
                 "shasum": ""
             },
@@ -1894,7 +1894,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b02221e42163be673f9b44a0bc92a8b4907a7c6d",
                 "reference": "4f9b1eaf0a7da77c362f8d91cbc68ab1f4718d62",
                 "shasum": ""
             },
@@ -2194,7 +2194,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/00194eb95989190a73198390ceca081ad3441a7f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
                 "reference": "00194eb95989190a73198390ceca081ad3441a7f",
                 "shasum": ""
             },
@@ -2386,7 +2386,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/6899b3e33bfbd386d88b5eea5f65f563e8793051",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
                 "reference": "6899b3e33bfbd386d88b5eea5f65f563e8793051",
                 "shasum": ""
             },
@@ -2438,7 +2438,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6324c907ce7a52478eeeaede764f48733ef5ae44",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e7133793a8e5a5714a551a8324337374be209df",
                 "reference": "6324c907ce7a52478eeeaede764f48733ef5ae44",
                 "shasum": ""
             },
@@ -2606,7 +2606,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/994d4a811bafe801fb06dccbee797863ba2792ba",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/7ff5b1b3dcc55b8ab8ae61ef99d4730940856ee7",
                 "reference": "994d4a811bafe801fb06dccbee797863ba2792ba",
                 "shasum": ""
             },
@@ -2694,7 +2694,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/13797a2598154e4663f31360733434e56924e20a",
                 "reference": "8d32eb597b531eb915b4fee3dc582ade5ae1fe6a",
                 "shasum": ""
             },
@@ -2734,9 +2734,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "clearbooks/labs": 20,
-        "zircote/swagger-php": 20,
-        "clearbooks/labs-mysql": 20
+        "zircote/swagger-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
