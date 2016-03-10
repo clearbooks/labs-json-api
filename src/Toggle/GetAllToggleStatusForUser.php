@@ -1,31 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dan
- * Date: 27/08/15
- * Time: 09:52
- */
-
 namespace Clearbooks\LabsApi\Toggle;
 
-
 use Clearbooks\Dilex\JwtGuard\IdentityProvider;
-use Clearbooks\Labs\Toggle\GetActivatedToggles;
 use Clearbooks\Dilex\Endpoint;
-use Clearbooks\Labs\Toggle\Object\GetActivatedTogglesRequest;
+use Clearbooks\Labs\Toggle\Object\GetAllToggleStatusRequest;
+use Clearbooks\Labs\Toggle\UseCase\GetAllToggleStatus;
 use Clearbooks\LabsApi\User\Group;
 use Clearbooks\LabsApi\User\RawSegmentDataToSegmentObjectConverter;
 use Clearbooks\LabsApi\User\User;
-use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class GetTogglesActivatedByUser implements Endpoint
+class GetAllToggleStatusForUser implements Endpoint
 {
+
     /**
-     * @var GetActivatedToggles
+     * @var GetAllToggleStatus
      */
-    private $getActivatedToggles;
+    private $getAllToggleStatus;
 
     /**
      * @var IdentityProvider
@@ -38,15 +30,14 @@ class GetTogglesActivatedByUser implements Endpoint
     private $rawSegmentDataToSegmentObjectConverter;
 
     /**
-     * GetTogglesActivatedByUser constructor.
-     * @param GetActivatedToggles $getActivatedToggles
+     * @param GetAllToggleStatus $getAllToggleStatus
      * @param IdentityProvider $identityProvider
      * @param RawSegmentDataToSegmentObjectConverter $rawSegmentDataToSegmentObjectConverter
      */
-    public function __construct( GetActivatedToggles $getActivatedToggles, IdentityProvider $identityProvider,
+    public function __construct( GetAllToggleStatus $getAllToggleStatus, IdentityProvider $identityProvider,
                                  RawSegmentDataToSegmentObjectConverter $rawSegmentDataToSegmentObjectConverter )
     {
-        $this->getActivatedToggles = $getActivatedToggles;
+        $this->getAllToggleStatus = $getAllToggleStatus;
         $this->identityProvider = $identityProvider;
         $this->rawSegmentDataToSegmentObjectConverter = $rawSegmentDataToSegmentObjectConverter;
     }
@@ -55,23 +46,26 @@ class GetTogglesActivatedByUser implements Endpoint
      * @param Request $request
      * @return JsonResponse
      */
-    public function execute(Request $request)
+    public function execute( Request $request )
     {
         $userId = $this->identityProvider->getUserId();
-        if(!isset($userId)) {
-            return new JsonResponse('Missing user identifier', 400);
+        if ( !isset( $userId ) ) {
+            return new JsonResponse( "Missing user identifier", 400 );
         }
 
         $segments = $this->rawSegmentDataToSegmentObjectConverter->getSegmentObjects( $this->identityProvider->getSegments() );
-        $request = new GetActivatedTogglesRequest( new User( $this->identityProvider ), new Group( $this->identityProvider ), $segments );
-        $activatedToggles = $this->getActivatedToggles->execute( $request );
-        $json = [];
-        /**
-         * @var Toggle $toggle
-         */
-        foreach($activatedToggles as $toggle) {
-            $json[$toggle->getMarketingToggleTitle()] = 1;
+        $request = new GetAllToggleStatusRequest( new User( $this->identityProvider ), new Group( $this->identityProvider ), $segments );
+        $toggleStatuses = $this->getAllToggleStatus->execute( $request );
+
+        $returnData = [ ];
+        foreach ( $toggleStatuses as $toggleStatus ) {
+            $returnData[$toggleStatus->getId()] = [
+                    "id"     => $toggleStatus->getId(),
+                    "active" => $toggleStatus->isActive() ? 1 : 0,
+                    "locked" => $toggleStatus->isLocked() ? 1 : 0
+            ];
         }
-        return new JsonResponse($json);
+
+        return new JsonResponse( $returnData );
     }
 }
