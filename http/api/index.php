@@ -5,10 +5,12 @@ use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetAllToggleStatusForUser;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
+use Clearbooks\LabsApi\Toggle\GetAllGroupTogglesVisibleWithoutRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 use Clearbooks\LabsApi\Toggle\GetTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetUserTogglesForRelease;
+use Clearbooks\LabsApi\Toggle\GetAllUserTogglesVisibleWithoutRelease;
 use Clearbooks\LabsApi\User\IsUserAutoSubscribed;
 use Clearbooks\LabsApi\User\UserToggleAutoSubscribe;
 use Clearbooks\LabsApi\User\UserToggleStatusModifier;
@@ -183,6 +185,34 @@ $app->get( 'toggle/user/all-toggle-status', GetAllToggleStatusForUser::class );
  * )
  */
 $app->get( 'toggle/group/list', GetGroupTogglesForRelease::class );
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/user/list-without-release",
+ *  summary="Get all user toggles visible without release",
+ *  produces={"application/json"},
+ *  tags={"toggles"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of the toggles without release"
+ *  )
+ * )
+ */
+$app->get( 'toggle/user/list-without-release', GetAllUserTogglesVisibleWithoutRelease::class );
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/group/list-without-release",
+ *  summary="Get all group toggles visible without release",
+ *  produces={"application/json"},
+ *  tags={"toggles"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of the toggles without release"
+ *  )
+ * )
+ */
+$app->get( 'toggle/group/list-without-release', GetAllGroupTogglesVisibleWithoutRelease::class );
 
 $app->post('user/toggle/change-status', UserToggleStatusModifier::class);
 
