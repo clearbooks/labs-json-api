@@ -7,6 +7,7 @@
  */
 
 namespace Clearbooks\LabsApi\Toggle;
+
 use Clearbooks\Dilex\JwtGuard\IdentityProvider;
 use Clearbooks\Labs\Toggle\Entity\MarketableToggle;
 use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGatewayStub;
@@ -14,6 +15,7 @@ use Clearbooks\Labs\Toggle\GetActivatedToggles;
 use Clearbooks\Labs\Toggle\PassingToggleCheckerStub;
 use Clearbooks\LabsApi\EndpointTest;
 use Clearbooks\LabsApi\User\MockIdentityProvider;
+use Clearbooks\LabsApi\User\RawSegmentDataToSegmentObjectConverter;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 
 class GetTogglesActivatedByUserTest extends EndpointTest
@@ -31,7 +33,8 @@ class GetTogglesActivatedByUserTest extends EndpointTest
                 ),
                 new PassingToggleCheckerStub
             ),
-            $tokenProvider
+            $tokenProvider,
+            new RawSegmentDataToSegmentObjectConverter()
         );
     }
 

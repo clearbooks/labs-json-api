@@ -3,15 +3,23 @@ use Clearbooks\Labs\AutoSubscribe\Entity\User as AutoSubscribeUser;
 use Clearbooks\Labs\AutoSubscribe\Gateway\AutoSubscriptionProvider;
 use Clearbooks\Labs\AutoSubscribe\UseCase\AutoSubscriber;
 use Clearbooks\Labs\AutoSubscribe\UserAutoSubscriber;
+use Clearbooks\Labs\Client\Toggle\CanDefaultToggleStatusBeOverruled;
 use Clearbooks\Labs\Client\Toggle\Entity\Group as LabsGroup;
 use Clearbooks\Labs\Client\Toggle\Entity\Group as ToggleGroupEntity;
 use Clearbooks\Labs\Client\Toggle\Entity\User as LabsUser;
 use Clearbooks\Labs\Client\Toggle\Entity\User as ToggleUserEntity;
+use Clearbooks\Labs\Client\Toggle\Gateway\AutoSubscribersGateway as IAutoSubscribersGateway;
 use Clearbooks\Labs\Client\Toggle\Gateway\GroupTogglePolicyGateway;
+use Clearbooks\Labs\Client\Toggle\Gateway\SegmentTogglePolicyGateway;
 use Clearbooks\Labs\Client\Toggle\Gateway\ToggleGateway as ToggleGatewayInterface;
 use Clearbooks\Labs\Client\Toggle\Gateway\UserTogglePolicyGateway;
 use Clearbooks\Labs\Client\Toggle\StatelessToggleChecker;
+use Clearbooks\Labs\Client\Toggle\UseCase\CanDefaultToggleStatusBeOverruled as ICanDefaultToggleStatusBeOverruled;
 use Clearbooks\Labs\Client\Toggle\UseCase\ToggleChecker;
+use Clearbooks\Labs\DateTime\CurrentDateTimeProvider;
+use Clearbooks\Labs\DateTime\UseCase\DateTimeProvider;
+use Clearbooks\Labs\Db\Service\AutoSubscribersStorage;
+use Clearbooks\Labs\Db\Service\ReleaseStorage;
 use Clearbooks\Labs\Db\Service\ToggleStorage;
 use Clearbooks\Labs\Feedback\AddFeedbackForToggle;
 use Clearbooks\Labs\Feedback\Gateway\InsertFeedbackForToggleGateway;
@@ -19,14 +27,21 @@ use Clearbooks\Labs\Feedback\UseCase\AddFeedbackForToggle as IAddFeedbackForTogg
 use Clearbooks\Labs\Release\Gateway\PublicReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseGateway;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
+use Clearbooks\Labs\Toggle\AutoSubscribersGateway;
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
+use Clearbooks\Labs\Toggle\UseCase\GetAllToggleStatus as IGetAllToggleStatus;
+use Clearbooks\Labs\Toggle\GetAllToggleStatus;
 use Clearbooks\Labs\Toggle\GroupPolicyGateway;
+use Clearbooks\Labs\Toggle\SegmentPolicyGateway;
 use Clearbooks\Labs\Toggle\ToggleGateway;
 use Clearbooks\Labs\Toggle\UseCase\GroupPolicyRetriever;
+use Clearbooks\Labs\Toggle\UseCase\ReleaseRetriever;
+use Clearbooks\Labs\Toggle\UseCase\SegmentPolicyRetriever;
 use Clearbooks\Labs\Toggle\UseCase\ToggleRetriever;
+use Clearbooks\Labs\Toggle\UseCase\UserAutoSubscriptionChecker;
 use Clearbooks\Labs\Toggle\UseCase\UserPolicyRetriever;
 use Clearbooks\Labs\Toggle\UserPolicyGateway;
 use Clearbooks\Labs\User\ToggleStatusModifier as ToggleStatusModifierImplementation;
@@ -76,6 +91,14 @@ return [
     AutoSubscriptionProvider::class => \Di\object(MysqlAutoSubscriptionProvider::class),
     IAddFeedbackForToggle::class => \Di\object( AddFeedbackForToggle::class ),
     InsertFeedbackForToggleGateway::class => \Di\object( MysqlInsertFeedbackForToggleGateway::class ),
+    IGetAllToggleStatus::class => \Di\Object( GetAllToggleStatus::class ),
+    ReleaseRetriever::class => \Di\Object( ReleaseStorage::class ),
+    DateTimeProvider::class => \Di\Object( CurrentDateTimeProvider::class ),
+    IAutoSubscribersGateway::class => \Di\Object( AutoSubscribersGateway::class ),
+    UserAutoSubscriptionChecker::class => \Di\Object( AutoSubscribersStorage::class ),
+    SegmentTogglePolicyGateway::class => \Di\Object( SegmentPolicyGateway::class ),
+    SegmentPolicyRetriever::class => \Di\Object( ToggleStorage::class ),
+    ICanDefaultToggleStatusBeOverruled::class => \Di\Object( CanDefaultToggleStatusBeOverruled::class ),
     Connection::class => function () {
         return DriverManager::getConnection( [
             'dbname' => '{{ labs_db_name }}',

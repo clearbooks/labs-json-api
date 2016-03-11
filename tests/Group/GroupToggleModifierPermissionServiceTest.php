@@ -22,7 +22,7 @@ class GroupToggleModifierPermissionServiceTest extends \PHPUnit_Framework_TestCa
 
     public function setUp()
     {
-        $this->permissionService = new GroupToggleModifierPermissionService(new MockIdentityProvider(self::USER_ID, self::GROUP_ID, true));
+        $this->permissionService = new GroupToggleModifierPermissionService(new MockIdentityProvider(self::USER_ID, self::GROUP_ID, [], true));
     }
 
     /**

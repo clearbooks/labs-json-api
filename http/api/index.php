@@ -3,6 +3,7 @@ use Clearbooks\Dilex\JwtGuard;
 use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
+use Clearbooks\LabsApi\Toggle\GetAllToggleStatusForUser;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
 use Clearbooks\LabsApi\Toggle\GetTogglesActivatedByUser;
 use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
@@ -40,6 +41,7 @@ $cb->useAutowiring( true );
 $container = $cb->build();
 
 \Clearbooks\Dilex\ApplicationBuilder::build( $container, $app );
+
 $app->before( JwtGuard::class );
 /**
  * @SWG\Get(
@@ -146,6 +148,20 @@ $app->get( 'toggle/user/list', GetUserTogglesForRelease::class );
  * )
  */
 $app->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class );
+
+/**
+ * @SWG\Get(
+ *  path="/toggle/user/all-toggle-status",
+ *  summary="List status for all toggles, including if a toggle is active or locked for the current login",
+ *  produces={"application/json"},
+ *  tags={"toggles"},
+ *  @SWG\Response(
+ *   response=200,
+ *   description="A list of activated toggles"
+ *  )
+ * )
+ */
+$app->get( 'toggle/user/all-toggle-status', GetAllToggleStatusForUser::class );
 
 /**
  * @SWG\Get(
