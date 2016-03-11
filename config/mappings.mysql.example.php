@@ -30,13 +30,19 @@ use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollection;
 use Clearbooks\Labs\Toggle\AutoSubscribersGateway;
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\GetAllTogglesGateway;
+use Clearbooks\Labs\Toggle\Gateway\GetGroupTogglesVisibleWithoutReleaseGateway;
+use Clearbooks\Labs\Toggle\Gateway\GetUserTogglesVisibleWithoutReleaseGateway;
 use Clearbooks\Labs\Toggle\Gateway\GroupToggleGateway;
 use Clearbooks\Labs\Toggle\Gateway\UserToggleGateway;
+use Clearbooks\Labs\Toggle\GetGroupTogglesVisibleWithoutRelease;
+use Clearbooks\Labs\Toggle\GetUserTogglesVisibleWithoutRelease;
 use Clearbooks\Labs\Toggle\UseCase\GetAllToggleStatus as IGetAllToggleStatus;
 use Clearbooks\Labs\Toggle\GetAllToggleStatus;
 use Clearbooks\Labs\Toggle\GroupPolicyGateway;
 use Clearbooks\Labs\Toggle\SegmentPolicyGateway;
 use Clearbooks\Labs\Toggle\ToggleGateway;
+use Clearbooks\Labs\Toggle\UseCase\GetUserTogglesVisibleWithoutRelease as IGetUserTogglesVisibleWithoutRelease;
+use Clearbooks\Labs\Toggle\UseCase\GetGroupTogglesVisibleWithoutRelease as IGetGroupTogglesVisibleWithoutRelease;
 use Clearbooks\Labs\Toggle\UseCase\GroupPolicyRetriever;
 use Clearbooks\Labs\Toggle\UseCase\ReleaseRetriever;
 use Clearbooks\Labs\Toggle\UseCase\SegmentPolicyRetriever;
@@ -58,6 +64,7 @@ use Clearbooks\LabsMysql\Release\MysqlReleaseGateway;
 use Clearbooks\LabsMysql\Release\MysqlReleaseToggleCollectionGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlActivatableToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGetAllTogglesGateway;
+use Clearbooks\LabsMysql\Toggle\MysqlGetTogglesVisibleWithoutReleaseGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlGroupToggleGateway;
 use Clearbooks\LabsMysql\Toggle\MysqlUserToggleGateway;
 use Clearbooks\LabsMysql\User\MysqlToggleStatusModifierService;
@@ -99,6 +106,10 @@ return [
     SegmentTogglePolicyGateway::class => \Di\Object( SegmentPolicyGateway::class ),
     SegmentPolicyRetriever::class => \Di\Object( ToggleStorage::class ),
     ICanDefaultToggleStatusBeOverruled::class => \Di\Object( CanDefaultToggleStatusBeOverruled::class ),
+    GetUserTogglesVisibleWithoutReleaseGateway::class => \Di\Object( MysqlGetTogglesVisibleWithoutReleaseGateway::class ),
+    GetGroupTogglesVisibleWithoutReleaseGateway::class => \Di\Object( MysqlGetTogglesVisibleWithoutReleaseGateway::class ),
+    IGetUserTogglesVisibleWithoutRelease::class => \Di\Object( GetUserTogglesVisibleWithoutRelease::class ),
+    IGetGroupTogglesVisibleWithoutRelease::class => \Di\Object( GetGroupTogglesVisibleWithoutRelease::class ),
     Connection::class => function () {
         return DriverManager::getConnection( [
             'dbname' => '{{ labs_db_name }}',
