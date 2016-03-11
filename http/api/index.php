@@ -41,7 +41,6 @@ $cb->useAutowiring( true );
 $container = $cb->build();
 
 \Clearbooks\Dilex\ApplicationBuilder::build( $container, $app );
-$app['debug'] = true;
 
 $app->before( JwtGuard::class );
 /**
