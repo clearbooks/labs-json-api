@@ -3,9 +3,9 @@
     "description": "The labs JSON api",
     "type": "project",
     "require": {
-        "clearbooks/labs": "1.0.2",
+        "clearbooks/labs": "^1.1",
         "zircote/swagger-php": "dev-master",
-        "clearbooks/labs-mysql": "1.0.3",
+        "clearbooks/labs-mysql": "^1.1",
         "clearbooks/dilex-jwt": "1.1.2",
         "php-di/php-di": "^5.0"
     },
@@ -50,8 +50,8 @@
             "url": "https://github.com/clearbooks/dilex-jwt"
         },
         {
-            "type": "composer",
-            "url": "https://carefulcoder.co.uk/composer"
+            "type": "vcs",
+            "url": "https://github.com/tomverran/di-container-mock"
         }
     ],
     "autoload": {
