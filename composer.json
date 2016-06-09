@@ -3,7 +3,7 @@
     "description": "The labs JSON api",
     "type": "project",
     "require": {
-        "clearbooks/labs": "^1.1",
+        "clearbooks/labs": "^1.1.2",
         "zircote/swagger-php": "dev-master",
         "clearbooks/labs-mysql": "^1.1",
         "clearbooks/dilex-jwt": "1.1.2",
