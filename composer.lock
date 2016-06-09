@@ -105,16 +105,16 @@
         },
         {
             "name": "clearbooks/labs",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs.git",
-                "reference": "6bcb1d380721bf8942d000ea9ee3f9a8be2cf94f"
+                "reference": "3461e0ffe204957976e0ca559cd282e1281a3dd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs/zipball/6bcb1d380721bf8942d000ea9ee3f9a8be2cf94f",
-                "reference": "6bcb1d380721bf8942d000ea9ee3f9a8be2cf94f",
+                "url": "https://api.github.com/repos/clearbooks/labs/zipball/3461e0ffe204957976e0ca559cd282e1281a3dd8",
+                "reference": "3461e0ffe204957976e0ca559cd282e1281a3dd8",
                 "shasum": ""
             },
             "require": {
@@ -144,23 +144,23 @@
             ],
             "description": "Sensible releases",
             "support": {
-                "source": "https://github.com/clearbooks/labs/tree/1.1.0",
+                "source": "https://github.com/clearbooks/labs/tree/1.1.1",
                 "issues": "https://github.com/clearbooks/labs/issues"
             },
-            "time": "2016-06-08 12:58:04"
+            "time": "2016-06-09 11:19:21"
         },
         {
             "name": "clearbooks/labs-mysql",
-            "version": "1.1",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clearbooks/labs-mysql.git",
-                "reference": "fc10affda4e9fee73becabf30baa456ed6db7cc4"
+                "reference": "d138675400ef262f58c56fe8f370195f0afed2ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/fc10affda4e9fee73becabf30baa456ed6db7cc4",
-                "reference": "fc10affda4e9fee73becabf30baa456ed6db7cc4",
+                "url": "https://api.github.com/repos/clearbooks/labs-mysql/zipball/d138675400ef262f58c56fe8f370195f0afed2ef",
+                "reference": "d138675400ef262f58c56fe8f370195f0afed2ef",
                 "shasum": ""
             },
             "require": {
@@ -193,10 +193,10 @@
             ],
             "description": "DB gateway classes for Labs",
             "support": {
-                "source": "https://github.com/clearbooks/labs-mysql/tree/1.1",
+                "source": "https://github.com/clearbooks/labs-mysql/tree/1.1.1",
                 "issues": "https://github.com/clearbooks/labs-mysql/issues"
             },
-            "time": "2016-06-08 13:02:07"
+            "time": "2016-06-09 11:21:10"
         },
         {
             "name": "clearbooks/labs-php-client",
