@@ -36,7 +36,7 @@ class GetAllPublicReleasesTest extends EndpointTest
     private function getDateTenDaysIntoFuture()
     {
         $futureDate = new DateTime();
-        $futureDate->modify("+7 day");
+        $futureDate->modify("+10 day");
         return $futureDate;
     }
 
