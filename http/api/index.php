@@ -2,6 +2,7 @@
 use Clearbooks\Dilex\JwtGuard;
 use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
+use Clearbooks\LabsApi\Release\GetAllFutureVisibleReleases;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
 use Clearbooks\LabsApi\Toggle\GetAllToggleStatusForUser;
 use Clearbooks\LabsApi\Toggle\GetGroupTogglesForRelease;
@@ -58,6 +59,8 @@ $app->before( JwtGuard::class );
  * )
  */
 $app->get( 'public-releases/list', GetAllPublicReleases::class );
+
+$app->get( 'future-visible-releases/list', GetAllFutureVisibleReleases::class);
 
 /**
  * @SWG\Get(
