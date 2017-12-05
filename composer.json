@@ -5,7 +5,7 @@
     "require": {
         "clearbooks/labs": "^1.1.2",
         "zircote/swagger-php": "dev-master",
-        "clearbooks/labs-mysql": "^1.1",
+        "clearbooks/labs-mysql": "^2.0.0",
         "clearbooks/dilex-jwt": "1.1.2",
         "php-di/php-di": "^5.0"
     },
