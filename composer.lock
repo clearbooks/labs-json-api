@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b15231cebc94a13a93ef5ca1eed3a65",
+    "content-hash": "42fc50d52bc50db911d0533e993ee84b",
     "packages": [
         {
             "name": "clearbooks/dilex",
@@ -3107,6 +3107,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0"
+    },
     "platform-dev": []
 }
