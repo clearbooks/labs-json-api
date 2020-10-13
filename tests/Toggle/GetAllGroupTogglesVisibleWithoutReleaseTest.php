@@ -17,7 +17,7 @@ class GetAllGroupTogglesVisibleWithoutReleaseTest extends EndpointTest
      */
     private $getVisibleTogglesWithoutRelease;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->marketableToggleToArrayConverter = new MarketableToggleToArrayConverter();

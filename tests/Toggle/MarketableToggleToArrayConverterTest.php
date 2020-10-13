@@ -4,15 +4,16 @@ namespace Clearbooks\LabsApi\Toggle;
 use Clearbooks\Labs\Toggle\Entity\MarketableToggle;
 use Clearbooks\LabsMysql\Toggle\Entity\Toggle;
 use Clearbooks\Labs\Db\Table\Toggle as ToggleTable;
+use PHPUnit\Framework\TestCase;
 
-class MarketableToggleToArrayConverterTest extends \PHPUnit_Framework_TestCase
+class MarketableToggleToArrayConverterTest extends TestCase
 {
     /**
      * @var MarketableToggleToArrayConverter
      */
     private $marketableToggleToArrayConverter;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->marketableToggleToArrayConverter = new MarketableToggleToArrayConverter();

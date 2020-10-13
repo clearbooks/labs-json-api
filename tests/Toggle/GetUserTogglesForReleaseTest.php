@@ -19,7 +19,7 @@ use DateTime;
 
 class GetUserTogglesForReleaseTest extends EndpointTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         $userToggles = [
             new Toggle(

@@ -65,6 +65,4 @@ class GetTogglesActivatedByUserTest extends EndpointTest
             'dogs' => 1,
         ]);
     }
-
-
 }

@@ -8,7 +8,6 @@
 
 namespace Clearbooks\LabsApi\Release;
 
-
 use Clearbooks\Labs\Release\Gateway\MockPublicReleaseGateway;
 use Clearbooks\Labs\Release\GetPublicReleases;
 use Clearbooks\Labs\Release\Release;
@@ -17,16 +16,10 @@ use DateTime;
 
 class GetAllPublicReleasesTest extends EndpointTest
 {
-    private $collectionMock;
-
     public function createCollectionMock(array $releases)
     {
-
-
         $this->endpoint = new GetAllPublicReleases(
-            new GetPublicReleases(
-                $this->collectionMock = new MockPublicReleaseGateway($releases), new DateTime()
-            )
+            new GetPublicReleases(new MockPublicReleaseGateway($releases))
         );
     }
 
@@ -111,5 +104,4 @@ class GetAllPublicReleasesTest extends EndpointTest
             ]]
         );
     }
-
 }

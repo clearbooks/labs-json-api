@@ -8,13 +8,14 @@
 
 namespace Clearbooks\LabsApi\User;
 
+use PHPUnit\Framework\TestCase;
 
-class GroupTest extends \PHPUnit_Framework_TestCase
+class GroupTest extends TestCase
 {
     /** @var Group */
     private $group;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->group = new Group(new MockIdentityProvider('1', '1'));
     }

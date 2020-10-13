@@ -1,4 +1,6 @@
 <?php
+
+use Clearbooks\Dilex\Dilex;
 use Clearbooks\Dilex\JwtGuard;
 use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Feedback\AddFeedbackForToggle;
@@ -14,8 +16,7 @@ use Clearbooks\LabsApi\Toggle\GetAllUserTogglesVisibleWithoutRelease;
 use Clearbooks\LabsApi\User\IsUserAutoSubscribed;
 use Clearbooks\LabsApi\User\UserToggleAutoSubscribe;
 use Clearbooks\LabsApi\User\UserToggleStatusModifier;
-use Emarref\Jwt\Token;
-use Silex\Application;
+use DI\ContainerBuilder;
 
 /**
  * Swagger api information
@@ -35,14 +36,16 @@ use Silex\Application;
  * )
  */
 require_once "../../vendor/autoload.php";
-$app = new \Silex\Application();
 
-$cb = new \DI\ContainerBuilder();
+$cb = new ContainerBuilder();
 $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
 $container = $cb->build();
 
-\Clearbooks\Dilex\ApplicationBuilder::build( $container, $app );
+$app = new Dilex( 'production', false, $container );
+$app->setProjectDirectory( __DIR__ . '../../var/' );
+$this->dilex->setCacheDirectory( "cache" );
+$this->dilex->setLogDirectory( "log" );
 
 $app->before( JwtGuard::class );
 /**

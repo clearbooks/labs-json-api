@@ -1,14 +1,16 @@
 <?php
 namespace Clearbooks\LabsApi\User;
 
-class RawSegmentDataToSegmentObjectConverterTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class RawSegmentDataToSegmentObjectConverterTest extends TestCase
 {
     /**
      * @var RawSegmentDataToSegmentObjectConverter
      */
     private $rawSegmentDataToSegmentObjectConverter;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->rawSegmentDataToSegmentObjectConverter = new RawSegmentDataToSegmentObjectConverter();

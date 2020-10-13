@@ -8,10 +8,10 @@
 
 namespace Clearbooks\LabsApi\Group;
 
-
 use Clearbooks\LabsApi\User\MockIdentityProvider;
+use PHPUnit\Framework\TestCase;
 
-class GroupToggleModifierPermissionServiceTest extends \PHPUnit_Framework_TestCase
+class GroupToggleModifierPermissionServiceTest extends TestCase
 {
     const USER_ID = 1;
     const GROUP_ID = 2;
@@ -20,7 +20,7 @@ class GroupToggleModifierPermissionServiceTest extends \PHPUnit_Framework_TestCa
      */
     private $permissionService;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->permissionService = new GroupToggleModifierPermissionService(new MockIdentityProvider(self::USER_ID, self::GROUP_ID, [], true));
     }
