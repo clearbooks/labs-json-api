@@ -47,7 +47,7 @@ $app->setProjectDirectory( __DIR__ . '/../../var/' );
 $app->setCacheDirectory( "cache" );
 $app->setLogDirectory( "log" );
 
-$app->before( [ JwtGuard::class, 'execute' ] );
+$app->before( JwtGuard::class );
 /**
  * @SWG\Get(
  *  path="/public-releases/list",
