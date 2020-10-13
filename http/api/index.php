@@ -42,12 +42,12 @@ $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
 $container = $cb->build();
 
-$app = new Dilex( 'production', false, $container );
-$app->setProjectDirectory( __DIR__ . '../../var/' );
-$this->dilex->setCacheDirectory( "cache" );
-$this->dilex->setLogDirectory( "log" );
+$app = new Dilex( 'production', true, $container );
+$app->setProjectDirectory( __DIR__ . '/../../var/' );
+$app->setCacheDirectory( "cache" );
+$app->setLogDirectory( "log" );
 
-$app->before( JwtGuard::class );
+$app->before( [ JwtGuard::class, 'execute' ] );
 /**
  * @SWG\Get(
  *  path="/public-releases/list",
