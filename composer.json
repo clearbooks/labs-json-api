@@ -5,7 +5,8 @@
     "require": {
         "php": ">=7.2",
         "zircote/swagger-php": "^3.1.0",
-        "clearbooks/dilex-jwt": "dev-migrate-silex-to-symfony",
+        "clearbooks/dilex": "^3.0.0-alpha.1",
+        "clearbooks/dilex-jwt": "^3.0.0-alpha.1",
         "clearbooks/labs": "^2.0.0",
         "clearbooks/labs-mysql": "^3.0.0"
     },
@@ -64,5 +65,5 @@
             "Clearbooks\\LabsApi\\": "tests/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
