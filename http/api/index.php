@@ -40,10 +40,11 @@ require_once "../../vendor/autoload.php";
 $cb = new ContainerBuilder();
 $cb->addDefinitions( '../../config/mappings.php' );
 $cb->useAutowiring( true );
+$cb->enableCompilation( __DIR__ . '/../../var/php-di' );
 $container = $cb->build();
 
 $app = new Dilex( 'production', true, $container );
-$app->setProjectDirectory( __DIR__ . '/../../var/' );
+$app->setProjectDirectory( __DIR__ . '/../../var/symfony/' );
 $app->setCacheDirectory( "cache" );
 $app->setLogDirectory( "log" );
 
