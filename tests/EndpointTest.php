@@ -1,10 +1,12 @@
 <?php
 namespace Clearbooks\LabsApi;
+
 use Clearbooks\Dilex\Endpoint;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class EndpointTest extends \PHPUnit_Framework_TestCase
+abstract class EndpointTest extends TestCase
 {
     /**
      * @var Endpoint
@@ -35,7 +37,7 @@ abstract class EndpointTest extends \PHPUnit_Framework_TestCase
      */
     protected function assertJsonResponse( $expected )
     {
-        $this->assertEquals( $expected, json_decode( $this->response->getContent(), true ) );
+        $this->assertEquals( $expected, \json_decode( $this->response->getContent(), true ) );
     }
 
     protected function assert400()

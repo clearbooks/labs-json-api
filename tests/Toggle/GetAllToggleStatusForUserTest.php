@@ -33,7 +33,7 @@ class GetAllToggleStatusForUserTest extends EndpointTest
      */
     private $identityProviderMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->nameBasedToggleCheckerMock = new NameBasedToggleCheckerMock();

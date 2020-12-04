@@ -6,13 +6,11 @@
  * Time: 10:17
  */
 
-namespace Toggle;
-
+namespace Clearbooks\LabsApi\Toggle;
 
 use Clearbooks\Labs\Toggle\Gateway\ActivatableToggleGatewayStub;
 use Clearbooks\Labs\Toggle\IsToggleActive;
 use Clearbooks\LabsApi\EndpointTest;
-use Clearbooks\LabsApi\Toggle\GetIsToggleActive;
 
 class GetIsToggleActiveTest extends EndpointTest
 {
@@ -21,7 +19,7 @@ class GetIsToggleActiveTest extends EndpointTest
      */
     private $collectionMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->endpoint = new GetIsToggleActive(
             new IsToggleActive(

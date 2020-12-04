@@ -3,3 +3,7 @@ http/api/api-docs/
 .idea/*
 config/mappings.mysql.php
 config/mappings.authentication.php
+.phpunit.result.cache
+var/
+!var/php-di/.gitkeep
+!var/symfony/.gitkeep

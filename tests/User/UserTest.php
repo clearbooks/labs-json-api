@@ -8,13 +8,14 @@
 
 namespace Clearbooks\LabsApi\User;
 
+use PHPUnit\Framework\TestCase;
 
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends TestCase
 {
     /** @var User */
     private $user;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->user = new User(new MockIdentityProvider('1'));
     }

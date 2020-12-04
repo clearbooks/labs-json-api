@@ -12,11 +12,10 @@ use Clearbooks\Labs\Feedback\AddFeedbackForToggle as LabsAddFeedbackForToggle;
 use Clearbooks\Labs\Feedback\Gateway\InsertFeedbackForToggleGatewaySpy;
 use Clearbooks\LabsApi\EndpointTest;
 use Clearbooks\LabsApi\User\MockIdentityProvider;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AddFeedbackForToggleTest extends EndpointTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->endpoint = new AddFeedbackForToggle( new LabsAddFeedbackForToggle( new InsertFeedbackForToggleGatewaySpy() ), new MockIdentityProvider('1', '1') );
     }

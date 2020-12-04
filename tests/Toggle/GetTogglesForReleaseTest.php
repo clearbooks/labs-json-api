@@ -1,10 +1,10 @@
 <?php
 namespace Clearbooks\LabsApi\Toggle;
+
 use Clearbooks\Labs\Release\Gateway\BrollyReleaseToggleCollection;
 use Clearbooks\Labs\Release\Gateway\ReleaseToggleCollectionMock;
 use Clearbooks\Labs\Release\GetReleaseToggles;
 use Clearbooks\Labs\Toggle\Entity\Brolly;
-use Clearbooks\Labs\Toggle\Entity\BrollyToggle;
 use Clearbooks\LabsApi\EndpointTest;
 
 /**
@@ -18,7 +18,7 @@ class GetTogglesForReleaseTest extends EndpointTest
      */
     private $collectionMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->endpoint = new GetTogglesForRelease( new GetReleaseToggles( $this->collectionMock = new ReleaseToggleCollectionMock() ) );
     }

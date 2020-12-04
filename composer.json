@@ -3,16 +3,17 @@
     "description": "The labs JSON api",
     "type": "project",
     "require": {
-        "clearbooks/labs": "^1.1.2",
-        "zircote/swagger-php": "dev-master",
-        "clearbooks/labs-mysql": "^2.0.0",
-        "clearbooks/dilex-jwt": "1.1.2",
-        "php-di/php-di": "^5.0",
-        "php": ">=7.0"
+        "php": ">=7.2",
+        "zircote/swagger-php": "^3.1.0",
+        "clearbooks/dilex": "^3.0.0-alpha.1",
+        "clearbooks/dilex-jwt": "^3.0.0-alpha.1",
+        "clearbooks/labs": "^2.0.0",
+        "clearbooks/labs-mysql": "^3.0.0",
+        "php-di/php-di": "^6.3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "tomverran/di-container-mock": "*"
+        "phpunit/phpunit": "^8",
+        "ext-json": "*"
     },
     "license": "LGPL-v3",
     "authors": [
@@ -65,5 +66,5 @@
             "Clearbooks\\LabsApi\\": "tests/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
