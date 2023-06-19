@@ -44,6 +44,7 @@ class CorsMiddleware implements Middleware
         if (in_array($origin, $allowedOrigins) || in_array('*', $allowedOrigins)) {
             $response->headers->set('Access-Control-Allow-Origin', $origin);
             $response->headers->set('Access-Control-Allow-Credentials', 'true');
+            $response->headers->set('Access-Control-Allow-Headers', 'Authorization');
         }
     }
 }
