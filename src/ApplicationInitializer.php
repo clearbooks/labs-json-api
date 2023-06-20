@@ -3,11 +3,16 @@ namespace Clearbooks\LabsApi;
 
 use Clearbooks\Dilex\Dilex;
 use Clearbooks\Dilex\JwtGuard;
+use Clearbooks\Dilex\Route;
+use Clearbooks\Dilex\RouteContainer;
 use Clearbooks\Labs\Feedback\UseCase\AddFeedbackForToggle;
 use Clearbooks\Labs\Toggle\UseCase\GetGroupTogglesForRelease;
 use Clearbooks\Labs\Toggle\UseCase\GetUserTogglesForRelease;
+use Clearbooks\LabsApi\Cors\CorsMiddleware;
+use Clearbooks\LabsApi\Cors\OptionsController;
 use Clearbooks\LabsApi\Group\GroupToggleStatusModifier;
 use Clearbooks\LabsApi\Release\GetAllPublicReleases;
+use Clearbooks\LabsApi\Status\StatusController;
 use Clearbooks\LabsApi\Toggle\GetAllGroupTogglesVisibleWithoutRelease;
 use Clearbooks\LabsApi\Toggle\GetAllToggleStatusForUser;
 use Clearbooks\LabsApi\Toggle\GetAllUserTogglesVisibleWithoutRelease;
@@ -55,6 +60,7 @@ class ApplicationInitializer
     private function loadMiddleware(): void
     {
         $this->dilex->before( JwtGuard::class );
+        $this->dilex->after(CorsMiddleware::class);
     }
 
     private function loadRoutes(): void
@@ -71,7 +77,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'public-releases/list', GetAllPublicReleases::class );
+        $this->cors($this->dilex->get( 'public-releases/list', GetAllPublicReleases::class ));
 
         /**
          * @SWG\Get(
@@ -92,7 +98,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/list', GetTogglesForRelease::class );
+        $this->cors($this->dilex->get( 'toggle/list', GetTogglesForRelease::class ));
 
         /**
          * @SWG\Get(
@@ -117,7 +123,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/is-active', GetIsToggleActive::class );
+        $this->cors($this->dilex->get( 'toggle/is-active', GetIsToggleActive::class ));
 
         /**
          * @SWG\Get(
@@ -142,7 +148,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/user/list', GetUserTogglesForRelease::class );
+        $this->cors($this->dilex->get( 'toggle/user/list', GetUserTogglesForRelease::class ));
 
         /**
          * @SWG\Get(
@@ -163,7 +169,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class );
+        $this->cors($this->dilex->get( 'toggle/user/is-activated', GetTogglesActivatedByUser::class ));
 
         /**
          * @SWG\Get(
@@ -177,7 +183,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/user/all-toggle-status', GetAllToggleStatusForUser::class );
+        $this->cors($this->dilex->get( 'toggle/user/all-toggle-status', GetAllToggleStatusForUser::class ));
 
         /**
          * @SWG\Get(
@@ -198,7 +204,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/group/list', GetGroupTogglesForRelease::class );
+        $this->cors($this->dilex->get( 'toggle/group/list', GetGroupTogglesForRelease::class ));
 
         /**
          * @SWG\Get(
@@ -212,7 +218,7 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/user/list-without-release', GetAllUserTogglesVisibleWithoutRelease::class );
+        $this->cors($this->dilex->get( 'toggle/user/list-without-release', GetAllUserTogglesVisibleWithoutRelease::class ));
 
         /**
          * @SWG\Get(
@@ -226,17 +232,19 @@ class ApplicationInitializer
          *  )
          * )
          */
-        $this->dilex->get( 'toggle/group/list-without-release', GetAllGroupTogglesVisibleWithoutRelease::class );
+        $this->cors($this->dilex->get( 'toggle/group/list-without-release', GetAllGroupTogglesVisibleWithoutRelease::class ));
 
-        $this->dilex->post('user/toggle/change-status', UserToggleStatusModifier::class);
+        $this->cors($this->dilex->post('user/toggle/change-status', UserToggleStatusModifier::class));
 
-        $this->dilex->get( 'user/is-auto-subscribed', IsUserAutoSubscribed::class );
+        $this->cors($this->dilex->get( 'user/is-auto-subscribed', IsUserAutoSubscribed::class ));
 
-        $this->dilex->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class);
+        $this->cors($this->dilex->post('user/toggle-auto-subscribe', UserToggleAutoSubscribe::class));
 
-        $this->dilex->post('group/toggle/change-status', GroupToggleStatusModifier::class);
+        $this->cors($this->dilex->post('group/toggle/change-status', GroupToggleStatusModifier::class));
 
-        $this->dilex->post( 'feedback/give', AddFeedbackForToggle::class );
+        $this->cors($this->dilex->post( 'feedback/give', AddFeedbackForToggle::class ));
+
+        $this->dilex->get('status', StatusController::class);
     }
 
     public function init(): Dilex
@@ -246,7 +254,7 @@ class ApplicationInitializer
         }
 
         $container = $this->containerBuilderProvider->getContainerBuilder()->build();
-        $this->dilex = new Dilex( 'production', true, $container );
+        $this->dilex = new Dilex( 'production', false, $container );
         $this->dilex->setProjectDirectory( __DIR__ . '/../var/symfony/' );
         $this->dilex->setCacheDirectory( "cache" );
         $this->dilex->setLogDirectory( "log" );
@@ -255,5 +263,12 @@ class ApplicationInitializer
         $this->loadRoutes();
 
         return $this->dilex;
+    }
+
+    private function cors(Route $route): Route
+    {
+        $this->dilex->options($route->getPath(), OptionsController::class);
+
+        return $route;
     }
 }
