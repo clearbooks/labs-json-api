@@ -55,7 +55,7 @@ class MockIdentityProvider implements IdentityProvider
     /**
      * @return string
      */
-    public function getUserId()
+    public function getUserId(): mixed
     {
         return $this->userId;
     }
@@ -63,7 +63,7 @@ class MockIdentityProvider implements IdentityProvider
     /**
      * @return string
      */
-    public function getGroupId()
+    public function getGroupId(): mixed
     {
         return $this->groupId;
     }
@@ -71,7 +71,7 @@ class MockIdentityProvider implements IdentityProvider
     /**
      * @return array
      */
-    public function getSegments()
+    public function getSegments(): array
     {
         return $this->segments;
     }
@@ -79,7 +79,7 @@ class MockIdentityProvider implements IdentityProvider
     /**
      * @return bool
      */
-    public function getIsAdmin()
+    public function getIsAdmin(): bool
     {
         return $this->isAdmin;
     }
